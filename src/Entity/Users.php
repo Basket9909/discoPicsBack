@@ -6,10 +6,15 @@ use App\Repository\UsersRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
+#[UniqueEntity("mail", message : "Un utilisateur ayant cette adresse email existe déjà")]
+#[ApiResource]
 class Users implements PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -26,6 +31,7 @@ class Users implements PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 100)]
     private ?string $mail = null;
 
+    #[Assert\NotBlank(message : "Le mot de passe est obligatoire")]
     #[ORM\Column(length: 255)]
     private ?string $password = null;
 
