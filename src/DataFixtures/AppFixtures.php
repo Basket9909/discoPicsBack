@@ -2,9 +2,13 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Users;
 use Faker\Factory;
+use App\Entity\Users;
+use App\Entity\Images;
+use App\Entity\Coments;
 use Cocur\Slugify\Slugify;
+use App\Entity\Publication;
+use App\Entity\Rating;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -44,9 +48,11 @@ class AppFixtures extends Fixture
         
               $manager->persist($admin);
 
-        //gestion des users
-        $users = [];
 
+        $users = [];
+        $publications = [];
+
+        //gestion des users
         for($u=1; $u<=20; $u++){
             $user = new Users();
             $hash = $this->passwordHasher->hashPassword($user,'password');
@@ -60,11 +66,58 @@ class AppFixtures extends Fixture
                   ->setBird($faker->dateTime())
                   ->setInstaLink('https://www.instagram.com/romeoo09/')
                   ->setPicture($picture)
-                  ->setSlug($firstName.$lastName.rand(1,1000))
+                  ->setSlug($slugify->slugify($firstName.$lastName.rand(1,1000)))
                   ->setRole(['ROLE_USER']);
 
             $manager->persist($user);
             $users[] = $user;
+        }
+
+        for ($p=1; $p<=20; $p++){
+            $publication = new Publication();
+            $name = $faker->sentence($nbWords = 5, $variableNbWords = true);
+            $city = $faker->city();
+            $country = $faker->country();
+
+            $publication->setName($name)
+                        ->setCity($city)
+                        ->setCountry($country)
+                        ->setAdress($faker->streetName().' '.rand(1,99).','.$faker->postcode().' '.$city.' '.$country)
+                        ->setdetails('<p>'.join('</p><p>',$faker->paragraphs(3)).'</p>')
+                        ->setTips('<p>'.join('</p><p>',$faker->paragraphs(2)).'</p>')
+                        ->setUser($users[rand(0,count($users)-1)])
+                        ->setSlug( $slugify->slugify($name.rand(1,10000)));
+
+            $manager->persist($publication);
+            $publications[] = $publication;
+
+            for($i=1; $i<=5; $i++){
+                $images = new Images();
+                $images->setCaption($faker->sentence($nbWords = 5, $variableNbWords = true))
+                       ->setUrl('https://picsum.photos/500/500')
+                       ->setPublication($publication);
+
+                $manager->persist($images);
+            }
+
+            for($c=1; $c<=10; $c++)
+            {
+                $comments = new Coments();
+                $comments->setDate($faker->dateTime())
+                         ->setComment($faker->paragraph())
+                         ->setUser($users[rand(0,count($users)-1)])
+                         ->setPublication($publication);
+                $manager->persist($comments);
+            }
+
+            for($r=1; $r<=10; $r++)
+            {
+                $rating = new Rating();
+                $rating->setRate(rand(1,5))
+                       ->setUser($users[rand(0,count($users)-1)])
+                       ->setPublication($publication);
+                $manager->persist($rating);
+            }
         }
 
         $manager->flush();

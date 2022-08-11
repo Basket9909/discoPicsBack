@@ -21,6 +21,9 @@ class Rating
     #[ORM\JoinColumn(nullable: false)]
     private ?Publication $publication = null;
 
+    #[ORM\Column]
+    private ?int $rate = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +49,18 @@ class Rating
     public function setPublication(?Publication $publication): self
     {
         $this->publication = $publication;
+
+        return $this;
+    }
+
+    public function getRate(): ?int
+    {
+        return $this->rate;
+    }
+
+    public function setRate(int $rate): self
+    {
+        $this->rate = $rate;
 
         return $this;
     }
