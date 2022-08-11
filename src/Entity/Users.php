@@ -6,10 +6,11 @@ use App\Repository\UsersRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
-class Users
+class Users implements PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -25,7 +26,7 @@ class Users
     #[ORM\Column(length: 100)]
     private ?string $mail = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 255)]
     private ?string $password = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
@@ -57,8 +58,6 @@ class Users
         $this->publications = new ArrayCollection();
         $this->coments = new ArrayCollection();
         $this->ratings = new ArrayCollection();
-        $this->favoritePublications = new ArrayCollection();
-        $this->favoriteUsers = new ArrayCollection();
     }
 
     public function getId(): ?int

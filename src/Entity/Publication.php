@@ -51,8 +51,6 @@ class Publication
     {
         $this->coments = new ArrayCollection();
         $this->ratings = new ArrayCollection();
-        $this->favoritePublications = new ArrayCollection();
-        $this->favoriteUsers = new ArrayCollection();
         $this->images = new ArrayCollection();
     }
 
