@@ -4,11 +4,9 @@ namespace App\Entity;
 
 use App\Repository\ComentsRepository;
 use Doctrine\DBAL\Types\Types;
-use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ComentsRepository::class)]
-#[ApiResource]
 class Coments
 {
     #[ORM\Id]
