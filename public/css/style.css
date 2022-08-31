@@ -1,3 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    background-color: #F9F1E0;
+}
+
+.text{
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.text_white{
+    color: #F9F1E0;
+}
+
+.text_black{
+    color: black;
+    font-weight: 900;
+}
+
+.hight_title{
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.middle_title{
+    font-size: 1.5rem;
+}
+
+.little_title{
+    font-size: 1.2rem;
+}
+
+.button{
+    transform-origin: 0 0;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #7BA05B;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.button p{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 12px;
+}
+
+
 nav{
     width: 100%;
     height: 100px;
@@ -5,6 +73,13 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#logoImage{
+    width: 100px;
+}
+.margin_nav{
+    margin-left: 50px;
 }
 
 nav ul{
@@ -20,13 +95,102 @@ nav .connexionZone{
 nav ul li{
     width: 150px;
     list-style: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li a{
     color: #F9F1E0;
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 #burger, .menuBurger{
     display: none;
+}
+
+.home_section{
+    width: 100%;
+    height: fit-content;
+}
+.home_section_img{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/home_img.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home_section_img img{
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%,-50%);
+}
+.opacity_color{
+    width: 100%;
+    height: 100%;
+    background-color: #7b56443d;
+}
+.center_title{
+    width: 250px;
+    height: 250px;
+}
+.title{
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.title_img{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/discopicslogo_white.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.text_zone h1, .text_zone h2, .text_zone h3{
+    text-align: center;
+    margin:20px 0 20px;
+}
+
+.text_zone h2{
+    margin: 50px 0 50px;
+}
+
+.container_img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container_img .line{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0 50px;
+}
+
+.container_img .line .rect{
+    width: 300px;
+    height: 300px;
+    background-color:greenyellow ;
+}
+
+.footer{
+    background-color: #7B5644;
+    height: 20vh;
+    width: 100%;
+}
+
+.footer h2{
+    text-align: center;
+    padding-top: 25px;
 }
