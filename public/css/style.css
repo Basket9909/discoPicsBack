@@ -7,9 +7,6 @@
 
 html, body{
     background-color: #F9F1E0;
-}
-
-.text{
     font-family: 'Poppins', sans-serif;
 }
 
@@ -59,7 +56,6 @@ html, body{
 
 .button p{
     color: white;
-    font-family: 'Poppins', sans-serif;
     margin: 0 auto;
     text-align: center;
     padding-top: 12px;
@@ -103,7 +99,6 @@ nav ul li{
 nav ul li a{
     color: #F9F1E0;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
 }
 
 #burger, .menuBurger{
@@ -166,31 +161,80 @@ nav ul li a{
 }
 
 .container_img{
-    width: 100%;
+    width: 1200px;
     margin: 0 auto;
-}
-
-.container_img .line{
-    width: 100%;
     height: auto;
     display: flex;
     justify-content: space-around;
-    margin: 50px 0 50px;
+    flex-wrap: wrap;
 }
 
-.container_img .line .rect{
+.container_img .rect{
     width: 300px;
     height: 300px;
-    background-color:greenyellow ;
+    margin: 50px;
+}
+
+.container_img .rect img{
+    width: 300px;
+    height: 300px;
+}
+.container_img .rect img:hover{
+    cursor: pointer;
+}
+
+.container_img .hover_infos{
+    width: 300px;
+    height: 300px;
+    background-color: #7ba05baa;
+    position: absolute;
+    margin-top: -306px;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.container_img .hover_infos:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.container_img .container_infos{
+    width: 90%;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+.container_img .hoverInfos .infos{
+    color: white;
+    text-align: center;
+}
+
+.rating{
+    color: gold;
 }
 
 .footer{
     background-color: #7B5644;
-    height: 20vh;
+    min-height: 20vh;
     width: 100%;
 }
 
 .footer h2{
     text-align: center;
     padding-top: 25px;
+}
+
+.footer_link{
+    color: #F9F1E0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer_link a{
+    color: #F9F1E0;
+    text-decoration: none;
 }

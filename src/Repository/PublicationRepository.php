@@ -39,6 +39,18 @@ class PublicationRepository extends ServiceEntityRepository
         }
     }
 
+
+    public function findBestPubli(int $limit): array
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p as publication, AVG(r.rate) as avgRatings')
+            ->join('p.ratings', 'r')
+            ->groupBy('p')
+            ->orderBy('avgRatings', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult();
+    }
 //    /**
 //     * @return Publication[] Returns an array of Publication objects
 //     */

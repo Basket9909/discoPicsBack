@@ -50,11 +50,30 @@ class Publication
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
     public function __construct()
     {
         $this->coments = new ArrayCollection();
         $this->ratings = new ArrayCollection();
         $this->images = new ArrayCollection();
+    }
+
+    # Permet de récupérer la note d'une publication
+    # return int 
+    public function getAvgRatings()
+    {
+        // Calculer la somme des notations 
+        // la fonction php array_reduce permet de réduire le tableau à une seule valeur (attention il faut un tableau pas une array Collection, on va utiliser toArray() - 2ème paramètre c'est la fonction pour chaque valeur, 3ème param valeur par défaut)
+        $sum = array_reduce($this->ratings->toArray(),function($total, $rating){
+            return $total + $rating->getRate();
+        },0);
+
+        // faire la division pour avoir la moyenne (ternaire)
+        if(count($this->ratings) > 0) return $moyenne = round($sum / count($this->ratings));
+
+        return 0;
     }
 
     public function getId(): ?int
@@ -244,6 +263,18 @@ class Publication
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

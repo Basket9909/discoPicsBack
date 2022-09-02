@@ -82,6 +82,7 @@ class AppFixtures extends Fixture
             $publication->setName($name)
                         ->setCity($city)
                         ->setCountry($country)
+                        ->setImage('https://picsum.photos/500/500')
                         ->setAdress($faker->streetName().' '.rand(1,99).','.$faker->postcode().' '.$city.' '.$country)
                         ->setdetails('<p>'.join('</p><p>',$faker->paragraphs(3)).'</p>')
                         ->setTips('<p>'.join('</p><p>',$faker->paragraphs(2)).'</p>')
