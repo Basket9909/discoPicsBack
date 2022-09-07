@@ -1,0 +1,61 @@
+.container_page{
+    width: 100%;
+    min-height: 50vh;
+}
+
+.big_img_show{
+    width: auto;
+    height: 500px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.meta_photo{
+    text-align: center;
+}
+
+.title_photo{
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.rating_2x i{
+    font-size: 2em;
+    color: gold;
+}
+
+.margin_button{
+    margin-top: 20px;
+}
+
+.container_comment{
+    background-color: #7BA05B;
+    width: 100%;
+    height: fit-content;
+    margin: 20px 0;
+    display: flex;
+}
+.container_comment img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin: 25px;
+}
+.container_content_comment{
+    margin: 25px;
+    text-align: left;
+}
+
+.container_content_comment .name_and_date{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.container_content_comment .name_and_date h4{
+    margin-left: 20px;
+}
+

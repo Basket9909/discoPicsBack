@@ -51,6 +51,18 @@ class PublicationRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function getPublicationForUserWithMaxResult(int $id): array
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p as publication, u as user')
+            ->join('p.user', 'u')
+            ->andWhere('u.id = :id')
+            ->setParameter(':id', $id)
+            ->setMaxResults(9)
+            ->getQuery()
+            ->getResult();
+    }
 //    /**
 //     * @return Publication[] Returns an array of Publication objects
 //     */

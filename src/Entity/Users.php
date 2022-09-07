@@ -64,6 +64,12 @@ class Users implements PasswordAuthenticatedUserInterface
         $this->ratings = new ArrayCollection();
     }
 
+     # Permet d'obtenir le nom complet de l'utilisateur
+    # @return Response
+    public function getFullName(){
+        return "{$this->firstName} {$this->lastName}";
+    }
+
     public function getId(): ?int
     {
         return $this->id;

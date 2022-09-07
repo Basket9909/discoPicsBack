@@ -76,6 +76,12 @@ class Publication
         return 0;
     }
 
+    # Permet d'avoir le la ville et le pays en une fois
+    # return Response
+    public function getPlace(){
+        return "{$this->city}, {$this->country}";
+    }
+
     public function getId(): ?int
     {
         return $this->id;

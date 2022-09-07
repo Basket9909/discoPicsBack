@@ -24,9 +24,6 @@ class PublicationController extends AbstractController
     public function show($slug, Publication $publication)
     {
 
-        // $repo = $this->getDoctrine()->getRepository(Festival::class);
-        // $festival = $repo->findBy($slug);
-
         return $this->render('publication/show.html.twig',[
             'publication' => $publication
         ]);

@@ -1,1 +1,67 @@
-<h1>{{publication.city}}</h1>
+{% extends 'base.html.twig' %}
+
+{% block title %}Discopics
+{% endblock %}
+
+{% block body %}
+{% set url = path('show_user', {'slug': publication.user.slug}) %}
+	<div class="container_page">
+		<div class="def_size">
+			<img src="{{publication.image}}" alt="{{publication.name}}" class="big_img_show">
+		</div>
+        <div class="meta_photo wrapper">
+            <h2 class="text_green title_photo">Nom de la photo</h2>
+            <h4 class="text_black">{{publication.name}}</h4>
+            <h2 class="text_green title_photo">Location</h2>
+            <h4 class="text_black">{{publication.place}}</h4>
+            <h2 class="text_green title_photo">Photographe</h2>
+            <h4 class="text_black">{{publication.user.fullName}}</h4>
+            <a href="{{url}}">
+                <div class="button margin_button">
+                <p>Voir le profil</p>
+            </div>
+            </a>
+            <h2 class="text_green title_photo">détails de la photo</h2>
+            <h4 class="text_black">{{publication.details | raw | nl2br}}</h4>
+            <h2 class="text_green title_photo">Tips</h2>
+            <h4 class="text_black">{{publication.tips | raw | nl2br}}</h4>
+            <h2 class="text_green title_photo">Note(s) ({{publication.ratings | length}})</h2>
+            {% if publication.ratings | length > 0 %}
+                {% include "partials/big_rating.html.twig" with {'rating' : publication.avgRatings} %}
+                {% else %}
+                    <small>Pas encore noté</small>
+            {% endif %}
+            <a href="#">
+            <div class="button margin_button">
+                <p>Noter ce spot</p>
+            </div>
+            </a>
+            <h2 class="text_green title_photo">Commentaire(s) ({{publication.coments | length}})</h2>
+            {% if publication.coments | length > 0 %}
+                {% for comment in publication.coments %}
+                    <div class="container_comment">
+                    
+                        <img src="{{comment.user.picture}}" alt="Avatar de {{comment.user.fullName}}">
+                   
+                        <div class="container_content_comment">
+                            <div class="name_and_date">
+                            
+                                <h2 class="text_white">{{comment.user.fullName}}</h2>
+                            
+                                <h4 class="text_white">{{comment.date | date('m/d/Y')}}</h4>
+                            </div>
+                            <p class="text_white">{{comment.comment}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <small>Pas encore de commentaire</small>
+            {% endif %}
+            <a href="#">
+            <div class="button margin_button">
+                <p>Ajouter un commentaire</p>
+            </div>
+            </a>
+        </div>
+	</div>
+{% endblock %}

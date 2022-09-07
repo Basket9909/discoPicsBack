@@ -4,7 +4,7 @@
     <img src="{{publication.image}}" alt="{{publication.name}}">
     <div class="hover_infos">
         <div class="container_infos">
-            <h3 class="infos">{{publication.country}}, {{publication.city}}</h3>
+            <h3 class="infos">{{publication.place}}</h3>
             {% if publication.ratings | length > 0 %}
                 {% include "partials/rating.html.twig" with {'rating' : publication.avgRatings} %} ({{publication.ratings | length }} avis)
                 {% else %}

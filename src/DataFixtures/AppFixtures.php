@@ -28,7 +28,7 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('fr_FR');
         $slugify = new Slugify();
-        $picture = 'https://randomuser.me/api/portraits/';
+        $picture = 'https://xsgames.co/randomusers/avatar.php?g=pixel';
         $boites = ['gmail','hotmail','yahoo'];
         $mailExt = ['.be','.com','.fr','.org'];
 
@@ -65,7 +65,7 @@ class AppFixtures extends Fixture
                   ->setPassword($hash)
                   ->setBird($faker->dateTime())
                   ->setInstaLink('https://www.instagram.com/romeoo09/')
-                  ->setPicture($picture)
+                  ->setPicture('https://xsgames.co/randomusers/avatar.php?g=pixel')
                   ->setSlug($slugify->slugify($firstName.$lastName.rand(1,1000)))
                   ->setRole(['ROLE_USER']);
 

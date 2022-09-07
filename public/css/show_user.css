@@ -1,0 +1,20 @@
+.container_user_show{
+    width: 100%;
+}
+.container_user_show img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    margin-top: 50px;
+}
+.container_user_show h1,.container_user_show h2{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container_user_show i{
+    margin-left: 10px;
+}
