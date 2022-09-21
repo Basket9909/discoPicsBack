@@ -10,8 +10,13 @@
 		<li class="anim_underline"><a href="#">Découvrir</a></li>
 	</ul>
     <ul class="connexionZone">
-        <li class="anim_underline"><a href="#">Connexion</a></li>
+	{% if app.user and is_granted('ROLE_USER') %}
+        <li class="anim_underline"><a href="{{ path('account_logout') }}">Déconnexion</a></li>
+		<li class="anim_underline"><a href="#">{{app.user.fullName}}</a></li>
+	{% else %}
+		<li class="anim_underline"><a href="{{ path('account_login') }}">Connexion</a></li>
 		<li class="anim_underline"><a href="#">Inscription</a></li>
+	{% endif %}
     </ul>
 </nav>
 <div id="burger">

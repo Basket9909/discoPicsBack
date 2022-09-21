@@ -31,6 +31,7 @@ class AppFixtures extends Fixture
         $picture = 'https://xsgames.co/randomusers/avatar.php?g=pixel';
         $boites = ['gmail','hotmail','yahoo'];
         $mailExt = ['.be','.com','.fr','.org'];
+        $picsum = 'https://picsum.photos/500/500';
 
         //gestion de l'admin
 
@@ -44,7 +45,7 @@ class AppFixtures extends Fixture
               ->setInstaLink('https://www.instagram.com/romeoo09/')
               ->setPicture($picture)
               ->setslug('romeow'.(001))
-              ->setRole(['ROLE_ADMIN']);
+              ->setRoles(['ROLE_ADMIN']);
         
               $manager->persist($admin);
 
@@ -67,7 +68,7 @@ class AppFixtures extends Fixture
                   ->setInstaLink('https://www.instagram.com/romeoo09/')
                   ->setPicture('https://xsgames.co/randomusers/avatar.php?g=pixel')
                   ->setSlug($slugify->slugify($firstName.$lastName.rand(1,1000)))
-                  ->setRole(['ROLE_USER']);
+                  ->setRoles(['ROLE_USER']);
 
             $manager->persist($user);
             $users[] = $user;
@@ -82,7 +83,7 @@ class AppFixtures extends Fixture
             $publication->setName($name)
                         ->setCity($city)
                         ->setCountry($country)
-                        ->setImage('https://picsum.photos/500/500')
+                        ->setImage('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg')
                         ->setAdress($faker->streetName().' '.rand(1,99).','.$faker->postcode().' '.$city.' '.$country)
                         ->setdetails('<p>'.join('</p><p>',$faker->paragraphs(3)).'</p>')
                         ->setTips('<p>'.join('</p><p>',$faker->paragraphs(2)).'</p>')

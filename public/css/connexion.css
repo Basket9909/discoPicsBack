@@ -1,0 +1,37 @@
+.container_connexion{
+    min-height: 75vh;
+}
+
+.container_connexion .container{
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+} 
+
+.container_connexion .container .connexion_line input{
+    width: 50vw;
+    height: 30px;
+    margin: 15px 0;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-bottom: 2px solid #7B5644;
+} 
+
+.container_connexion .container .connexion_line .button_connexion{
+    width: fit-content;
+    background-color: #7BA05B;
+    font-size: 1em;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.5s ease-in-out;
+    margin-top: 25px;
+} 
+.container_connexion .container .connexion_line .button_connexion:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+} 

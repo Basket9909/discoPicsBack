@@ -1,6 +1,6 @@
 {% set url = path('publication_show', {'slug': publication.slug}) %}
 <a href="{{url}}">
-<div class="rect">
+<div class="rect_whith_hover">
     <img src="{{publication.image}}" alt="{{publication.name}}">
     <div class="hover_infos">
         <div class="container_infos">
@@ -12,5 +12,16 @@
             {% endif %}
         </div>
     </div>
+</div>
+<div class="rect_whithout_hover">
+    <h3 class="infos">{{publication.place}}</h3>
+    <img src="{{publication.image}}" alt="{{publication.name}}">
+    <div class="rating_container">
+        {% if publication.ratings | length > 0 %}
+            {% include "partials/rating.html.twig" with {'rating' : publication.avgRatings} %} ({{publication.ratings | length }} avis)
+            {% else %}
+                <small>Pas encore noté</small>
+        {% endif %}
+        </div>
 </div>
 </a>
