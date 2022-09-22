@@ -9,6 +9,9 @@
     position: absolute;
     transform: translate(-50%,-50%);
 } 
+.container_connexion .container .danger_red{
+    color: red;
+} 
 
 .container_connexion .container .connexion_line input{
     width: 50vw;
@@ -19,8 +22,17 @@
     border: none;
     border-bottom: 2px solid #7B5644;
 } 
+.container_connexion .container .connexion_line input:focus{
+    outline: none;
+} 
 
-.container_connexion .container .connexion_line .button_connexion{
+@media all and (max-width: 700px){
+    .container_connexion .container .connexion_line input{
+        width: 75vw;
+    } 
+}
+
+.button_connexion{
     width: fit-content;
     background-color: #7BA05B;
     font-size: 1em;
@@ -31,7 +43,7 @@
     transition: all 0.5s ease-in-out;
     margin-top: 25px;
 } 
-.container_connexion .container .connexion_line .button_connexion:hover{
+.button_connexion:hover{
     cursor: pointer;
     transform: scale(1.1);
 } 

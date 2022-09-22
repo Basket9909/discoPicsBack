@@ -1,0 +1,50 @@
+.container_global_input h1{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.container_global_input label{
+    margin-top: 25px;
+}
+
+.global_input{
+    width: 50vw;
+    height: 30px;
+    margin: 15px 0;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-bottom: 2px solid #7B5644;
+    display: block;
+}
+
+@media all and (max-width: 500px){
+    .global_input{
+        width: 75vw;
+    }
+}
+
+.global_input:focus{
+    outline: none;
+}
+
+.center_input{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#registration_bird{
+    border: none;
+}
+
+.global_input #registration_bird_year,.global_input #registration_bird_day,.global_input #registration_bird_month{
+    width: auto;
+    background: transparent;
+    border: none;
+    border-bottom: solid 2px #7B5644;
+    margin-right: 15px;
+}
+.global_input #registration_bird_year:focus,.global_input #registration_bird_day:focus,.global_input #registration_bird_month:focus{
+    outline: none;
+}
+

@@ -1,0 +1,38 @@
+.container_profile{
+    min-height: 75vh;
+}
+.container_profile h1{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.personal_infos_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+}
+.personal_infos_container img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media all and (max-width: 500px){
+    .personal_infos_container img{
+        width: 150px;
+        height: 150px;
+        text-align: center;
+    }
+}
+.personal_infos_container .personal_infos{
+    color: black;
+}
+.personal_infos_container .personal_infos h3, .personal_infos_container .personal_infos h2{
+    margin: 10px 0;
+    text-align: center;
+}

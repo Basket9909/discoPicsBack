@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Cocur\Slugify\Slugify;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UsersRepository;
@@ -35,6 +36,11 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $password = null;
 
+    # Permet de confirmer le mot de passe avec les Assert
+    #[Assert\EqualTo(propertyPath : "password", message : "Vous n'avez pas correctement confirmé votre mot de passe")]
+    # @var string
+    public $passwordConfirm;
+
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $bird = null;
 
@@ -64,6 +70,17 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         $this->publications = new ArrayCollection();
         $this->coments = new ArrayCollection();
         $this->ratings = new ArrayCollection();
+    }
+
+    #Permet d'initialiser le slug automatiquement
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    #return void
+    public function initializeSlug(){
+        if(empty($this->slug)){
+            $slugify = new Slugify();
+            $this->slug = $slugify->slugify($this->firstName.$this->lastName.rand(1,10000));
+        }
     }
 
      # Permet d'obtenir le nom complet de l'utilisateur
