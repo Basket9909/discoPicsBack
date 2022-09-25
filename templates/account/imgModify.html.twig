@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier votre avatar{% endblock %}
+{% block body %}
+    <div class="container_global_input wrapper">
+        <h1 class="hight_title text_black">Modification de l'avatar de {{app.user.fullName}}</h1>
+        <div class="center_input">
+        {% if app.user.picture %}
+                <img class="size_img_profile" src="/uploads/{{ app.user.picture }}" alt="Avatar de {{app.user.fullName}}">
+                {% else %}
+                <img class="size_img_profile anonyme_profile" src="/images/anonyme_profile.svg" alt="Avatar de {{app.user.fullName}}">
+                {% endif %}
+        {{form_start(myForm)}}
+
+        {{form_widget(myForm)}}
+            <button type="submit" class="button_connexion">Confirmez la modification de l'avatar</button>
+        {{form_end(myForm)}}
+    </div>
+    </div>
+{% endblock %}

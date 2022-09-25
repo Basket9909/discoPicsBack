@@ -2,13 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\PublicationRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use Cocur\Slugify\Slugify;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PublicationRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: PublicationRepository::class)]
+#[ORM\HasLifecycleCallbacks()]
 class Publication
 {
     #[ORM\Id]
@@ -75,6 +77,17 @@ class Publication
 
         return 0;
     }
+
+     #Permet d'initialiser le slug automatiquement
+     #[ORM\PrePersist]
+     #[ORM\PreUpdate]
+     #return void
+     public function initializeSlug(){
+         if(empty($this->slug)){
+             $slugify = new Slugify();
+             $this->slug = $slugify->slugify($this->name.rand(1,10000));
+         }
+     }
 
     # Permet d'avoir le la ville et le pays en une fois
     # return Response

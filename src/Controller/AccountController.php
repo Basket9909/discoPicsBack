@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Entity\Users;
 use App\Form\AccountType;
 use App\Form\ImgModifyType;
+use App\Form\ModificationAccountType;
 use App\Entity\UserImgModify;
 use App\Entity\PasswordUpdate;
 use App\Form\RegistrationType;
@@ -90,50 +91,49 @@ class AccountController extends AbstractController
      }
 
 
-    //  # Permet de modifier son profil 
-    // #[Route("/account/profile/modify", name : "account_profile_modify")]
-    // #[Security("( is_granted('ROLE_ORGA') or is_granted('ROLE_USER'))")]
-    // # @param Request $request
-    // # @param EntityManagerInterface $manager
-    // # @return Response
-    // public function profile(Request $request, EntityManagerInterface $manager)
-    // {
-    //     $user = $this->getUser(); // récup l'utilisateur connecté
+    # Permet de modifier son profil 
+    #[Route("/account/profile/modify", name : "profile_modify")]
+    # @param Request $request
+    # @param EntityManagerInterface $manager
+    # @return Response
+    public function profile(Request $request, EntityManagerInterface $manager)
+    {
+        $user = $this->getUser(); // récup l'utilisateur connecté
         
-    //     // pour la validation des images
-    //     $fileName = $user->getPicture();
-    //     if(!empty($fileName)){
-    //         $user->setPicture(
-    //             new File($this->getParameter('uploads_directory').'/'.$user->getPicture())
-    //         );
-    //     }
+        // pour la validation des images
+        $fileName = $user->getPicture();
+        if(!empty($fileName)){
+            $user->setPicture(
+                new File($this->getParameter('uploads_directory').'/'.$user->getPicture())
+            );
+        }
         
-    //     $form = $this->createForm(AccountType::class, $user);
-    //     $form->handleRequest($request);
-    //     if($form->isSubmitted() && $form->isValid())
-    //     {
-    //         //gestion image 
-    //         $user->setSlug('')
-    //         ->setPicture($fileName);
+        $form = $this->createForm(ModificationAccountType::class, $user);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+            //gestion image 
+            $user->setSlug('')
+            ->setPicture($fileName);
 
-    //         $manager->persist($user);
-    //         $manager->flush();
+            $manager->persist($user);
+            $manager->flush();
 
-    //         $this->addFlash(
-    //             'success',
-    //             "Les données ont été enregistrées avec succès"
-    //         );
+            $this->addFlash(
+                'success',
+                "Les données ont été enregistrées avec succès"
+            );
 
-    //        return $this->redirectToRoute('account_index');
+           return $this->redirectToRoute('account_index');
 
-    //     }
+        }
 
-    //     return $this->render("account/infosModify.html.twig",[
-    //         'myForm' => $form->createView()
-    //     ]);
+        return $this->render("account/infosModify.html.twig",[
+            'myForm' => $form->createView()
+        ]);
 
 
-    // }
+    }
 
     # Permet de modifier le mot de passe
     #[Route("/account/password/modify", name : "password_modify")]
@@ -178,6 +178,83 @@ class AccountController extends AbstractController
             'myForm'=>$form->createView()
         ]);
 
+
+    }
+
+    # Permet de modifier l'avatar de l'utilisateur
+    #[Route("/account/img/modify", name : "profile_img_modify")]
+    # param Request $request
+    # @param EntityManagerInterface $manager
+    # @return Response
+    public function imgModify(Request $request, EntityManagerInterface $manager)
+    {
+        $imgModify = new UserImgModify();
+        $user = $this->getUser();
+        $form = $this->createForm(ImgModifyType::class, $imgModify);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            // Permet de supprimer l'image dans le dossier 
+            if(!empty($user->getPicture()))
+            {
+                unlink($this->getParameter('uploads_directory').'/'.$user->getPicture());
+            }
+
+            $file = $form['newPicture']->getData();
+            if(!empty($file))
+            {
+                $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()',$originalFilename);
+                $newFilename = $safeFilename."-".uniqid().".".$file->guessExtension();
+                try{
+                    $file->move(
+                        $this->getParameter('uploads_directory'),
+                        $newFilename
+                    );
+                }catch(FileException $e){
+                    return $e->getMessage();
+                }
+                $user->setPicture($newFilename);
+            }
+
+            $manager->persist($user);
+            $manager->flush();
+
+            $this->addFlash(
+                'success',
+                'Votre avatar a bien été modifié'
+            );
+
+            return $this->redirectToRoute('account_index');
+        }
+
+        return $this->render("account/imgModify.html.twig",[
+            'myForm' => $form->createView()
+        ]);
+
+    }
+
+    # Permet de supprimer l'image de l'utilisateur
+    #[Route("/account/img/delete", name : "profile_img_delete")]
+    # @param EntityManagerInterface $manager
+    # @return Response
+    public function removeImg(EntityManagerInterface $manager)
+    {
+        $user = $this->getUser();
+        if(!empty($user->getPicture()))
+        {
+            unlink($this->getParameter('uploads_directory').'/'.$user->getPicture());
+            $user->setPicture('');
+            $manager->persist($user);
+            $manager->flush();
+            $this->addFlash(
+                'success',
+                'Votre avatar a bien été supprimé'
+            );
+        }
+
+        return $this->redirectToRoute('account_index');
 
     }
 

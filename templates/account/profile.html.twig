@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="container_profile wrapper">
-        <a href="#">
+        <a href="{{ path("new_publication") }}">
             <div class="button margin_button">
                 <p>Ajouter un spot</p>
             </div>
@@ -14,24 +14,33 @@
 
         <div class="personal_infos_container">
             <div class="picture_container">
-                <img src="/uploads/{{ user.picture }}" alt="{{user.fullName}}">
-                <a href="#">
+                {% if user.picture %}
+                <img src="/uploads/{{ user.picture }}" alt="Avatar de {{user.fullName}}">
+                {% else %}
+                <img class="anonyme_profile" src="/images/anonyme_profile.svg" alt="Avatar de {{user.fullName}}">
+                {% endif %}
+                
+                <a href="{{ path('profile_img_modify') }}">
                     <div class="button margin_button">
                         <p>Modifier votre photo de profil</p>
                     </div>
                 </a>
-                <a href="#">
+
+                 {% if user.picture %}
+                <a href="{{ path('profile_img_delete') }}">
                     <div class="button margin_button">
                         <p>Supprimer votre photo de profil</p>
                     </div>
                 </a>
+                {% endif %}
+                
             </div>
             <div class="personal_infos">
                 <h2>{{user.firstName|capitalize}} {{user.lastName|capitalize}}</h2>
                 <h3>{{user.bird | date("d / m / Y") }}</h3>
                 <h3>{{user.mail}}</h3>
                 <h3>{{user.instalink}}</h3>
-                <a href="#">
+                <a href="{{ path('profile_modify') }}">
                     <div class="button margin_button">
                         <p>Modifier vos informations</p>
                     </div>

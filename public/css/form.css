@@ -33,18 +33,18 @@
     margin: 0 auto;
 }
 
-#registration_bird{
+#registration_bird, #modification_account_bird{
     border: none;
 }
 
-.global_input #registration_bird_year,.global_input #registration_bird_day,.global_input #registration_bird_month{
+.global_input #registration_bird_year,.global_input #registration_bird_day,.global_input #registration_bird_month,.global_input #modification_account_bird_year,.global_input #modification_account_bird_day,.global_input #modification_account_bird_month{
     width: auto;
     background: transparent;
     border: none;
     border-bottom: solid 2px #7B5644;
     margin-right: 15px;
 }
-.global_input #registration_bird_year:focus,.global_input #registration_bird_day:focus,.global_input #registration_bird_month:focus{
+.global_input #registration_bird_year:focus,.global_input #registration_bird_day:focus,.global_input #registration_bird_month:focus,.global_input #modification_account_bird_year:focus,.global_input #modification_account_bird_day:focus,.global_input #modification_account_bird_month:focus{
     outline: none;
 }
 
