@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% block title %}Modification de votre commentaire pour la publication :{{comment.publication.name}}{% endblock %}
+{% block body %}
+    <div class="container_global_input wrapper">
+        <h1 class="hight_title text_black">Modification du commentaire pour la publication : {{comment.publication.name}}</strong></h1>
+        <div class="center_input">
+        {{form_start(myForm)}}
+            {{form_widget(myForm)}}
+            <button type="submit" class="button_connexion"> Modifier le commentaire</button>
+        {{form_end(myForm)}}
+    </div>
+    </div>
+{% endblock %}

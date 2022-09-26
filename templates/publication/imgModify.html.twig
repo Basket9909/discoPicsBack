@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier la photo{% endblock %}
+{% block body %}
+    <div class="container_global_input wrapper">
+        <h1 class="hight_title text_black">Modifier la photo de {{publication.name}}</h1>
+        <div class="center_input">
+            <img class="size_img_profile" src="/uploads/{{ publication.image }}" alt="photo de {{publication.name}}">                
+        {{form_start(myForm)}}
+
+        {{form_widget(myForm)}}
+            <button type="submit" class="button_connexion">Confirmez la modification de la photo</button>
+        {{form_end(myForm)}}
+    </div>
+    </div>
+{% endblock %}

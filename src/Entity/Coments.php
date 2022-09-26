@@ -7,6 +7,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ComentsRepository::class)]
+#[ORM\HasLifecycleCallbacks()]
 class Coments
 {
     #[ORM\Id]
@@ -27,6 +28,15 @@ class Coments
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $comment = null;
+
+    # Permet de mettre en place la date de création
+    #[ORM\PrePersist]
+    public function prePersist()
+    {
+        if(empty($this->date)){
+            $this->date = new \Datetime();
+        }
+    }
 
     public function getId(): ?int
     {

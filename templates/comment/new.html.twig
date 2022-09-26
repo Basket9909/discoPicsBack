@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un commentaire{% endblock %}
+
+{% block body %}
+    <div class="container_global_input wrapper">
+        <h1 class="hight_title text_black">Ajouter un commentaire</h1>
+        <div class="center_input">
+        {{ form_start(myForm) }}
+            {{form_widget(myForm)}}
+            <button type="submit" class="button_connexion">Ajouter</button>
+        {{ form_end(myForm) }}
+    </div>
+    </div>
+{% endblock %}

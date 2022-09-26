@@ -1,3 +1,6 @@
+.container_global_input{
+    min-height: 75vh;
+}
 .container_global_input h1{
     text-align: center;
     margin-top: 25px;

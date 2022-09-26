@@ -363,3 +363,10 @@ nav ul li a{
     position: relative;
     margin-top: 20px;
 }
+.button_bruin{
+    background-color: #7B5644;
+}
+
+textarea{
+    resize: none;
+}

@@ -9,6 +9,12 @@
 		<div class="def_size">
 			<img src="{{publication.image}}" alt="{{publication.name}}" class="big_img_show">
 		</div>
+        {% if ((app.user and app.user == publication.user))%}
+        <a href="{{path('publication_edit_img',{'slug' : publication.slug})}}">
+                <div class="button margin_button">
+                <p>Modifier la photo</p>
+        </div>
+        {% endif %}
         <div class="meta_photo wrapper">
             <h2 class="text_green title_photo">Nom de la photo</h2>
             <h4 class="text_black">{{publication.name}}</h4>
@@ -16,26 +22,44 @@
             <h4 class="text_black">{{publication.place}}</h4>
             <h2 class="text_green title_photo">Photographe</h2>
             <h4 class="text_black">{{publication.user.fullName}}</h4>
-            <a href="{{url}}">
+            {% if ((app.user and app.user == publication.user))%}
+            {% else %}
+             <a href="{{url}}">
                 <div class="button margin_button">
                 <p>Voir le profil</p>
             </div>
             </a>
+            {% endif %}
             <h2 class="text_green title_photo">détails de la photo</h2>
             <h4 class="text_black">{{publication.details | raw | nl2br}}</h4>
             <h2 class="text_green title_photo">Tips</h2>
             <h4 class="text_black">{{publication.tips | raw | nl2br}}</h4>
+            {% if ((app.user and app.user == publication.user))%}
+            <a href="{{path('publication_edit',{'slug' : publication.slug})}}">
+                <div class="button margin_button">
+                <p>Modifier les informations</p>
+            </div>
+            </a>
+        {% endif %}
             <h2 class="text_green title_photo">Note(s) ({{publication.ratings | length}})</h2>
             {% if publication.ratings | length > 0 %}
                 {% include "partials/big_rating.html.twig" with {'rating' : publication.avgRatings} %}
                 {% else %}
                     <small>Pas encore noté</small>
             {% endif %}
-            <a href="#">
+            {% if app.user and app.user == rating.user %}
+            <a href="{{path('rate_edit',{'id':rating.id})}}">
+            <div class="button margin_button">
+                <p>Modifier ma note</p>
+            </div>
+            </a>
+            {% else %}
+            <a href="{{path('new_rate',{'slug':publication.slug})}}">
             <div class="button margin_button">
                 <p>Noter ce spot</p>
             </div>
             </a>
+            {% endif %}
             <h2 class="text_green title_photo">Commentaire(s) ({{publication.coments | length}})</h2>
             {% if publication.coments | length > 0 %}
                 {% for comment in publication.coments %}
@@ -48,16 +72,28 @@
                             
                                 <h2 class="text_white">{{comment.user.fullName}}</h2>
                             
-                                <h4 class="text_white">{{comment.date | date('m/d/Y')}}</h4>
+                                <h4 class="text_white">{{comment.date | date('d/m/Y')}}</h4>
                             </div>
                             <p class="text_white">{{comment.comment}}</p>
+                            {% if app.user and app.user == comment.user %}
+                            <a href="{{path('comment_edit',{'id' : comment.id})}}">
+                            <div class="button margin_button button_bruin">
+                                <p>Modifier mon commentaire</p>
+                            </div>
+                            </a>
+                            <a href="{{path('comment_delete',{'id' : comment.id})}}">
+                            <div class="button margin_button button_bruin">
+                                <p>Supprimer mon commentaire</p>
+                            </div>
+                            </a>
+                            {% endif %}
                         </div>
                     </div>
                 {% endfor %}
             {% else %}
                 <small>Pas encore de commentaire</small>
             {% endif %}
-            <a href="#">
+            <a href="{{path('new_comment',{'slug':publication.slug})}}">
             <div class="button margin_button">
                 <p>Ajouter un commentaire</p>
             </div>
