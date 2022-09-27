@@ -1,12 +1,23 @@
 .container_global_input{
     min-height: 75vh;
 }
+.container_global_input_search{
+    min-height: 50vh;
+}
 .container_global_input h1{
     text-align: center;
     margin-top: 25px;
     margin-bottom: 25px;
 }
+.container_global_input_search h1{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
 .container_global_input label{
+    margin-top: 25px;
+}
+.container_global_input_search label{
     margin-top: 25px;
 }
 
@@ -50,4 +61,5 @@
 .global_input #registration_bird_year:focus,.global_input #registration_bird_day:focus,.global_input #registration_bird_month:focus,.global_input #modification_account_bird_year:focus,.global_input #modification_account_bird_day:focus,.global_input #modification_account_bird_month:focus{
     outline: none;
 }
+
 

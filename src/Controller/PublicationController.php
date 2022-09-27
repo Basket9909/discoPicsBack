@@ -6,7 +6,6 @@ use App\Entity\Publication;
 use App\Form\PublicationType;
 use App\Form\PublicationModifyType;
 use App\Entity\PublicationImgModify;
-use App\Entity\Rating;
 use App\Form\ImgPublicationModifyType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -182,12 +181,11 @@ class PublicationController extends AbstractController
     #[Route('/publication/{slug}', name: 'publication_show')]
     # @return Response
     
-    public function show($slug, Publication $publication, Rating $rating)
+    public function show($slug, Publication $publication)
     {
 
         return $this->render('publication/show.html.twig',[
-            'publication' => $publication,
-            'rating' => $rating
+            'publication' => $publication
         ]);
     }
 }

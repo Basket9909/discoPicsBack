@@ -19,7 +19,7 @@
             <h2 class="text_green title_photo">Nom de la photo</h2>
             <h4 class="text_black">{{publication.name}}</h4>
             <h2 class="text_green title_photo">Location</h2>
-            <h4 class="text_black">{{publication.place}}</h4>
+            <h4 class="text_black">{{publication.fullPlace}}</h4>
             <h2 class="text_green title_photo">Photographe</h2>
             <h4 class="text_black">{{publication.user.fullName}}</h4>
             {% if ((app.user and app.user == publication.user))%}
@@ -31,9 +31,19 @@
             </a>
             {% endif %}
             <h2 class="text_green title_photo">détails de la photo</h2>
+            {% if publication.details %}
             <h4 class="text_black">{{publication.details | raw | nl2br}}</h4>
+            {% else %}
+            <h4 class="text_black">Pas de détails renseignés</h4>
+            {% endif %}
+
             <h2 class="text_green title_photo">Tips</h2>
+            {% if publication.tips %}
             <h4 class="text_black">{{publication.tips | raw | nl2br}}</h4>
+            {% else %}
+            <h4 class="text_black">Pas de tips renseignés</h4>
+            {% endif %}
+                
             {% if ((app.user and app.user == publication.user))%}
             <a href="{{path('publication_edit',{'slug' : publication.slug})}}">
                 <div class="button margin_button">
@@ -47,19 +57,25 @@
                 {% else %}
                     <small>Pas encore noté</small>
             {% endif %}
+
+
+            {# {% for rating in publication.ratings %}
             {% if app.user and app.user == rating.user %}
             <a href="{{path('rate_edit',{'id':rating.id})}}">
             <div class="button margin_button">
                 <p>Modifier ma note</p>
             </div>
             </a>
-            {% else %}
+            {% else %} #}
             <a href="{{path('new_rate',{'slug':publication.slug})}}">
             <div class="button margin_button">
                 <p>Noter ce spot</p>
             </div>
             </a>
-            {% endif %}
+            {# {% endif %}
+            {% endfor %} #}
+
+
             <h2 class="text_green title_photo">Commentaire(s) ({{publication.coments | length}})</h2>
             {% if publication.coments | length > 0 %}
                 {% for comment in publication.coments %}

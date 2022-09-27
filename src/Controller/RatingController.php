@@ -2,14 +2,15 @@
 
 namespace App\Controller;
 
-use App\Entity\Publication;
 use App\Entity\Rating;
 use App\Form\RatingType;
+use App\Entity\Publication;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class RatingController extends AbstractController
 {
@@ -51,6 +52,7 @@ class RatingController extends AbstractController
 
    # Permet de modifier une note 
    #[Route("/publication/{id}/rate/edit", name : "rate_edit")]
+//    #[ParamConverter("id", class : "Rating", options : ["id"=> "id"])]
    # @param Rating $rating
    # @param Request $request
    # @param EntityManagerInterface $manager

@@ -59,9 +59,19 @@ class PublicationRepository extends ServiceEntityRepository
             ->join('p.user', 'u')
             ->andWhere('u.id = :id')
             ->setParameter(':id', $id)
-            ->setMaxResults(9)
+            ->setMaxResults(3)
             ->getQuery()
             ->getResult();
+    }
+
+    public function search($words){
+        $query = $this->createQueryBuilder('p');
+        if($words != null){
+            $query->andWhere('MATCH_AGAINST(p.name, p.city, p.country, p.adress) AGAINST(:words boolean)>0')
+                  ->setParameter(':words', $words);
+        }
+        return $query->getQuery()
+                    ->getResult();
     }
 //    /**
 //     * @return Publication[] Returns an array of Publication objects

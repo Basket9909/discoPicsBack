@@ -61,6 +61,11 @@ html, body{
     }
 }
 
+.title_in_middle{
+    margin-top: 50px;
+    text-align: center;
+}
+
 .button{
     transform-origin: 0 0;
     width: fit-content;
@@ -292,9 +297,7 @@ nav ul li a{
     text-align: center;
     margin-bottom: 75px;
 }
-.container_img .rect_whithout_hover h3{
-    height: 75px;
-}
+
 .container_img .rect_whith_hover img:hover{
     cursor: pointer;
 }

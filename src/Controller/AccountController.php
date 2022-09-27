@@ -2,17 +2,16 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
 use App\Entity\Users;
-use App\Form\AccountType;
 use App\Form\ImgModifyType;
-use App\Form\ModificationAccountType;
 use App\Entity\UserImgModify;
 use App\Entity\PasswordUpdate;
 use App\Form\RegistrationType;
 use App\Form\PasswordUpdateType;
+use App\Form\ModificationAccountType;
 use Symfony\Component\Form\FormError;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\PublicationRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\File;
@@ -81,12 +80,13 @@ class AccountController extends AbstractController
     }
 
      # Permet d'afficher le profil de l'utilisateur connecté
-     #[Route("/account", name : "account_index")]
+     #[Route("/account/{id}", name : "account_index")]
      # @return Response
-     public function myAccount()
+     public function myAccount(PublicationRepository $publicationRepo,$id )
      {
          return $this->render('account/profile.html.twig',[
-             'user' => $this->getUser()
+            'publications'=> $publicationRepo->getPublicationForUserWithMaxResult($id),
+            'user' => $this->getUser()
          ]);
      }
 

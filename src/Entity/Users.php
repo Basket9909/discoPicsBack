@@ -24,16 +24,20 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank(message : "Veuillez renseignez votre Prénom")]
     private ?string $firstName = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank(message : "Veuillez renseignez votre Nom")]
     private ?string $lastName = null;
 
     #[ORM\Column(length: 100)]
+    #[Assert\Email(message : 'Veuillez donner un e-mail valide')]
     private ?string $mail = null;
 
-    #[Assert\NotBlank(message : "Le mot de passe est obligatoire")]
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message : "Le mot de passe est obligatoire")]
+    #[Assert\Length(min : 8, minMessage : "Votre mot de passe doit faire au moins 8 caractéres")]
     private ?string $password = null;
 
     # Permet de confirmer le mot de passe avec les Assert
@@ -45,9 +49,12 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeInterface $bird = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Url(message : "Veuillez renseigner une url valable")]
     private ?string $instaLink = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Image(mimeTypes : ["image/png","image/jpeg","image/jpg","image/gif"], mimeTypesMessage : "Vous devez upload un fichier jpg, jpeg, png ou gif")]
+    #[Assert\File(maxSize : "1024k", maxSizeMessage : "La taille du fichier est trop grande")]
     private ?string $Picture = null;
 
     #[ORM\Column(length: 255)]

@@ -18,9 +18,13 @@ class PublicationType extends ApplicationType
             ->add('name',TextType::class, $this->getConfiguration("global_input","Nom de la photo","Donnez un nom à votre photo"))
             ->add('country',TextType::class, $this->getConfiguration("global_input","Pays","Entrez le nom du pays d'oû la photo à été prise"))
             ->add('city',TextType::class, $this->getConfiguration("global_input","Ville","Entrez le nom de la ville d'oû la photo à été prise"))
-            ->add('adress',TextType::class, $this->getConfiguration("global_input","Adresse","Entrez le reste de l'adresse (rue,n°,..."))
-            ->add('details',TextType::class, $this->getConfiguration("global_input","Détails","Donnez des détails supplémentaire sur le photo"))
-            ->add('tips',TextType::class, $this->getConfiguration("global_input","Tips","Donnez vos tips sur cette photo"))
+            ->add('adress',TextType::class, $this->getConfiguration("global_input","Adresse","Entrez le reste de l'adresse (rue,n°,...)"))
+            ->add('details',TextType::class, $this->getConfiguration("global_input","Détails ( Pas obligatoire )","Donnez des détails supplémentaire sur le photo",[
+                "required" => false
+            ]))
+            ->add('tips',TextType::class, $this->getConfiguration("global_input","Tips ( Pas obligatoire )","Donnez vos tips sur cette photo",[
+                "required" => false
+            ]))
             ->add('image',FileType::class, [
                 "label" => "Ajoutez votre photo (jpg , png , gif)",
                 "required"=> true,

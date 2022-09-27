@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rechercher un spot{% endblock %}
+
+{% block body %}
+    <div class="container_global_input_search wrapper">
+        <h1 class="hight_title text_black" id="marginBottomSearch">Trouvez votre spot idéal</h1>
+        <div class="center_input">
+        {{form(myForm)}}
+    </div>
+    </div>
+    <div class="container_img">
+        {% if publications %}
+            {% for publication in publications %}
+                {% include 'publication/_publication.html.twig'%}
+            {% endfor %}
+        {% else %}
+                <h3 class="hight_title text_black">Aucun spot ne correspond à votre recherche</h3>
+        {% endif %}
+    </div>
+        
+{% endblock %}

@@ -5,12 +5,16 @@ namespace App\Entity;
 use Cocur\Slugify\Slugify;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\PublicationRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use ORM\Index;
 
 #[ORM\Entity(repositoryClass: PublicationRepository::class)]
 #[ORM\HasLifecycleCallbacks()]
+#[ORM\Index(columns : ["city","country","adress","name"], flags : ["fulltext"])]
+
 class Publication
 {
     #[ORM\Id]
@@ -19,15 +23,20 @@ class Publication
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message : "Veuillez renseignez le nom de la photo")]
+    #[Assert\Length(min : 5, minMessage : "Le nom de la photo doit faire au moins 5 caractére")]
     private ?string $name = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+    #[Assert\NotBlank(message : "Veuillez renseignez la ville")]
     private ?string $city = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+    #[Assert\NotBlank(message : "Veuillez renseignez le nom de le pays")]
     private ?string $country = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank(message : "Veuillez renseignez le nom de la rue")]
     private ?string $adress = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
@@ -53,6 +62,8 @@ class Publication
     private ?string $slug = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Image(mimeTypes : ["image/png","image/jpeg","image/jpg","image/gif"], mimeTypesMessage : "Vous devez upload un fichier jpg, jpeg, png ou gif")]
+    #[Assert\File(maxSize : "1024k", maxSizeMessage : "La taille du fichier est trop grande")]
     private ?string $image = null;
 
     public function __construct()
@@ -92,6 +103,11 @@ class Publication
     # Permet d'avoir le la ville et le pays en une fois
     # return Response
     public function getPlace(){
+        return "{$this->city}, {$this->country}";
+    }
+    # Permet d'avoir le la ville et le pays en une fois
+    # return Response
+    public function getFullPlace(){
         return "{$this->adress}, {$this->city}, {$this->country}";
     }
 

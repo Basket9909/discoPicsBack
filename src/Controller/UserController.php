@@ -10,7 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UserController extends AbstractController
 {
-    #[Route('/user/{slug}', name: 'show_user')]
+    #permet d'afficher un user
+    #[Route('/user/{slug}/', name: 'show_user')]
     public function index(Users $user): Response
     {
         return $this->render('user/show.html.twig', [

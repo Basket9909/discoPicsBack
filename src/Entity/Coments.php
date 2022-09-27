@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ComentsRepository;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ComentsRepository::class)]
@@ -27,6 +28,7 @@ class Coments
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message : "Veuillez écrire un commentaire")]
     private ?string $comment = null;
 
     # Permet de mettre en place la date de création

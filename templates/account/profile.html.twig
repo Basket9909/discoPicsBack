@@ -53,5 +53,15 @@
             </div>
         </div>
         <h1>Vos spots</h1>
-    </div>
+        {% if publications %}
+       <div class="container_img">
+            {% for data in publications %}
+            {% include 'publication/_publication.html.twig' with {'publication': data.publication} %}
+            {% endfor %}
+        </div>
+        {% else %}
+            <h3 class="little_title title_in_middle">Vous n'avez pas encore publier de spots</h3>
+        {% endif %}
+        </div>
+        </div>
 {% endblock %}
