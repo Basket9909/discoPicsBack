@@ -13,17 +13,17 @@ class SearchPublicationController extends AbstractController
 {
     # permet de rechercher des festivals
     #[Route('/search', name: 'search_posts')]
-    public function index(PublicationRepository $publicationRepository, Request $request): Response
+    public function index(PublicationRepository $publication, Request $request): Response
     {
 
-        $publication = $publicationRepository->findAll();
+        
         $form = $this->createForm(SearchPublicationType::class);
 
         $search = $form->handleRequest($request);
         
         if($form->isSubmitted() && $form->isValid())
         {
-            $publication = $publicationRepository->search($search->get('words')->getData());
+            $publication = $publication->search($search->get('words')->getData());
         }
         return $this->render('search/index.html.twig', [
             'publications'=> $publication,

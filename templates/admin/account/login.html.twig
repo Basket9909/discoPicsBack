@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion au site{% endblock %}
+{% block title %}Connexion a l'administration{% endblock %}
 
 {% block body %}
    <div class="container_connexion wrapper">
     <div class="container">
-                <h1 class="text_black hight_title">Connexion</h1>
+                <h1 class="text_black hight_title">Connexion à l'administration</h1>
                 {# gestion des erreurs #}
                 {% if hasError %}
                     <div class="danger_red">
                         Une erreur est survenue, le nom d'utilisateur ou le mot de passe est invalide
                     </div>
                 {% endif %}
-                <form action="{{ path('account_login')}}" method="POST">
+                <form action="{{ path('admin_account_login')}}" method="POST">
                     <div class="connexion_line">
                         {# symfony veut un nome précis pour le login: _username #}
                         

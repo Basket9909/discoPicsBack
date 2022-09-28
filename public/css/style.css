@@ -34,6 +34,8 @@ html, body{
 .hight_title{
     font-size: 2.5rem;
     font-weight: 900;
+    margin: 15px 0;
+
 }
 @media all and (max-width: 700px){
     .hight_title{
@@ -43,6 +45,7 @@ html, body{
 
 .middle_title{
     font-size: 1.5rem;
+    margin: 15px 0;
 }
 @media all and (max-width: 700px){
     .middle_title{
@@ -53,6 +56,8 @@ html, body{
 
 .little_title{
     font-size: 1.2rem;
+    margin: 15px 0;
+
 }
 @media all and (max-width: 700px){
     .little_title{
@@ -97,14 +102,6 @@ html, body{
 }
 
 
-nav{
-    width: 100%;
-    height: 100px;
-    background-color: #7B5644;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 #logoImage{
     width: 100px;
@@ -112,68 +109,6 @@ nav{
 @media all and (max-width: 1200px){
     #logoImage{
         display: block;
-    }
-}
-
-.margin_nav{
-    margin-left: 50px;
-}
-
-nav ul{
-    display: flex;
-    justify-content: left;
-    width: fit-content;
-}
-@media all and (max-width: 1200px){
-    nav ul{
-        display: none;
-    }
-}
-
-nav .connexionZone{
-    justify-content: right;
-}
-
-nav ul li{
-    width: 150px;
-    list-style: none;
-    text-align: center;
-    display: flex;
-    align-items: center;
-}
-
-nav ul li a{
-    color: #F9F1E0;
-    text-decoration: none;
-}
-
-#burger{
-    display: block;
-    width: 50px;
-    height: 35px;
-    margin-left: 90%; 
-    margin-top: -45vh;
-    position: absolute;
-    cursor: pointer;
-    z-index: 1000000;
-}
-
-#burger .bar{
-    width: 100%;
-    height: 5px;
-    border-radius: 20px;
-    background-color: wheat;
-    margin: 5px 0;
-}
-
-#burger, .menuBurger{
-    display: none;
-}
-
-@media all and (max-width: 1200px){
-    #burger, .menuBurger{
-        display: block;
-       
     }
 }
 
@@ -307,7 +242,7 @@ nav ul li a{
     height: 300px;
     background-color: #7ba05baa;
     position: absolute;
-    margin-top: -306px;
+    margin-top: -300px;
     transition: all 0.5s ease-in-out;
     opacity: 0;
 }
@@ -372,4 +307,8 @@ nav ul li a{
 
 textarea{
     resize: none;
+}
+
+.bg-dark{
+    background-color: #7B5644!important;
 }

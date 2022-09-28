@@ -36,10 +36,10 @@
                 
             </div>
             <div class="personal_infos">
-                <h2>{{user.firstName|capitalize}} {{user.lastName|capitalize}}</h2>
-                <h3>{{user.bird | date("d / m / Y") }}</h3>
-                <h3>{{user.mail}}</h3>
-                <h3>{{user.instalink}}</h3>
+                <h2 class="hight_title">{{user.firstName|capitalize}} {{user.lastName|capitalize}}</h2>
+                <h3 class="middle_title">{{user.bird | date("d / m / Y") }}</h3>
+                <h3 class="middle_title">{{user.mail}}</h3>
+                <h3 class="middle_title">{{user.instalink}}</h3>
                 <a href="{{ path('profile_modify') }}">
                     <div class="button margin_button">
                         <p>Modifier vos informations</p>
@@ -52,7 +52,7 @@
                 </a>
             </div>
         </div>
-        <h1>Vos spots</h1>
+        <h1 class="hight_title text_black">Vos spots</h1>
         {% if publications %}
        <div class="container_img">
             {% for data in publications %}

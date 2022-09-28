@@ -1,0 +1,38 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Administration des publications{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="hight_title text_black">Gestion des publications ({{stats.publications}})</h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="text_black">Id</th>
+                    <th class="text_black">Nom</th>
+                    <th class="text_black">Pays</th>
+                    <th class="text_black">Ville</th>
+                    <th class="text_black">Utilisateur</th>
+                    <th class="text-center text_black">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for publication in pagination.data %}
+                    <tr>
+                        <td class="text_black">{{publication.id}}</td>
+                        <td class="text_black">{{publication.name}}</td>
+                        <td class="text_black">{{publication.country}}</td>
+                        <td class="text_black">{{publication.city}}</td>
+                        <td class="text_black">{{publication.user.fullName}}</td>
+                        <td class="text-center text_black ">
+                            <a href="{{path('admin_publication_delete',{'id' : publication.id})}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {# pagination #}
+        {{pagination.display()}}
+
+    </div>
+{% endblock %}
