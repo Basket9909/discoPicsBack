@@ -63,13 +63,13 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private array $roles = [];
 
-    #[ORM\OneToMany(mappedBy: 'userId', targetEntity: Publication::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Publication::class, orphanRemoval: true)]
     private Collection $publications;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Coments::class, orphanRemoval: true)]
     private Collection $coments;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Rating::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Rating::class, orphanRemoval: true)]
     private Collection $ratings;
 
     public function __construct()

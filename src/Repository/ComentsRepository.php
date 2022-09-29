@@ -39,6 +39,17 @@ class ComentsRepository extends ServiceEntityRepository
         }
     }
 
+    public function getCommentsForPublication(int $id): array
+    {
+        return $this->createQueryBuilder('c')
+            ->select('c as comment, p as publication')
+            ->join('c.publication', 'p')
+            ->andWhere('p.id = :id')
+            ->setParameter(':id', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Coments[] Returns an array of Coments objects
 //     */

@@ -1,39 +1,6 @@
-{# <nav>
-	<ul class="margin_nav">
-		<li>
-		<div id="logoMenu">
-			<img id="logoImage" src="../../../images/discopicslogo_white.svg" alt="logo_Menu">
-		</div>
-		</li>
-		<li class="anim_underline"><a href="{{ path('homepage') }}">Home</a></li>
-		<li class="anim_underline"><a href="{{ path('search_posts') }}">Recherche</a></li>
-		<li class="anim_underline"><a href="#">Découvrir</a></li>
-	</ul>
-    <ul class="connexionZone">
-	{% if app.user and is_granted('ROLE_USER') %}
-        <li class="anim_underline"><a href="{{ path('account_logout') }}">Déconnexion</a></li>
-		<li class="anim_underline"><a href="{{ path('account_index',{'id':app.user.id}) }}">{{app.user.fullName}}</a></li>
-	{% else %}
-		<li class="anim_underline"><a href="{{ path('account_login') }}">Connexion</a></li>
-		<li class="anim_underline"><a href="{{ path('account_register') }}">Inscription</a></li>
-	{% endif %}
-    </ul>
-</nav>
-<div id="burger">
-	<div class="bar ligneH"></div>
-	<div class="bar ligneM"></div>
-	<div class="bar ligneB"></div>
-</div>
-<div class="menuBurger">
-	<div class="containerMenuBurger">
-		<a href="#" class="lienMenuBurger">Home</a>
-		<a href="#" class="lienMenuBurger">Recherche</a>
-		<a href="#" class="lienMenuBurger">Découvrir</a>
-	</div>
-</div> #}
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
+  <div class="container-fluid wrapper_nav">
     <a class="navbar-brand" href="#"><img id="logoImage" src="../../../images/discopicslogo_white.svg" alt="logo_Menu"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -50,24 +17,24 @@
         <a href="{{ path('search_posts') }}" class="nav-link">Recherche</a>
         </li>
         <li class="nav-item">
-        <a href="#" class="nav-link">Découvrir</a>
+        <a href="" class="nav-link">Découvrir</a>
         </li>
       </ul>
 
        <ul class="navbar-nav ms-auto me-5">
     	{% if app.user and is_granted('ROLE_USER') %}
         <li class="nav-item">
-          <a href="#" class="nav-link">Ajouter un spot</a>
+          <a href="{{ path("new_publication") }}" class="nav-link">Ajouter un spot</a>
         </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="accoundDropdownLink">
             {{ app.user.fullName }}
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accoundDropdownLink">
-            <a href="{{ path('account_index',{'id':app.user.id}) }}">Mon compte</a>
+            <a href="{{ path('account_index',{'id':app.user.id}) }}" class="nav-link">Mon compte</a>
             {# <a href="{{path('favoris_show',{'id' : app.user.id})}}" class="dropdown-item">Mes favoris</a> #}
             <div class="dropdown-divider"></div>
-            <a href="{{ path('account_register') }}" class="nav-link">Déconnexion</a>
+            <a href="{{ path('account_logout') }}" class="nav-link">Déconnexion</a>
         </li>
         {% elseif app.user and is_granted('ROLE_ADMIN') %}
           <li class="nav-item dropdown">
@@ -77,7 +44,7 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accoundDropdownLink">
               <a href="#" class="dropdown-item">Aller à l'administration</a>
               <div class="dropdown-divider"></div>
-              <a href="{{ path('account_register') }}" class="nav-link">Déconnexion</a>
+              <a href="{{ path('account_logout') }}" class="nav-link">Déconnexion</a>
         {% else %}
             <li class="nav-item">
               <a href="{{ path('account_register') }}" class="nav-link">Inscription</a>

@@ -16,6 +16,10 @@ html, body{
     width: 85%;
     margin: 0 auto;
 }
+.wrapper_nav{
+    width: 90%;
+    margin: 0 auto;
+}
 
 .text_white{
     color: #F9F1E0;

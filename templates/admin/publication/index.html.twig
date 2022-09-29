@@ -3,8 +3,8 @@
 {% block title %}Administration des publications{% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
-        <h1 class="hight_title text_black">Gestion des publications ({{stats.publications}})</h1>
+    <div class="container-fluid wrapper">
+        <h1 class="hight_title text_black text-center mt-3 mb-3">Gestion des publications ({{stats.publications}})</h1>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -12,6 +12,7 @@
                     <th class="text_black">Nom</th>
                     <th class="text_black">Pays</th>
                     <th class="text_black">Ville</th>
+                    <th class="text_black">Note</th>
                     <th class="text_black">Utilisateur</th>
                     <th class="text-center text_black">Action</th>
                 </tr>
@@ -23,9 +24,13 @@
                         <td class="text_black">{{publication.name}}</td>
                         <td class="text_black">{{publication.country}}</td>
                         <td class="text_black">{{publication.city}}</td>
+                        <td class="text_black">{{publication.avgRatings}} / 5</td>
                         <td class="text_black">{{publication.user.fullName}}</td>
                         <td class="text-center text_black ">
                             <a href="{{path('admin_publication_delete',{'id' : publication.id})}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                            {% if publication.coments | length > 0 %}
+                            <a href="{{path('admin_comments_index',{'id' : publication.id})}}" class="btn btn-primary">Commentaires</a>
+                            {% endif %}
                         </td>
                     </tr>
                 {% endfor %}

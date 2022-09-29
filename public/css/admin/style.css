@@ -11,8 +11,10 @@ html, body{
     margin-top: 25px;
     background-color: #7B5644;
     min-height: 20vh;
-    width: 100%;
+    width: 100%!important;
 }
+
+
 
 .container-fluid-special{
     padding: 0;
@@ -24,10 +26,12 @@ html, body{
 
 .bg-dark, .btn-dark{
     background-color: #7B5644!important;
+    border-color: #7B5644!important;
 }
 
 .bg-primary, .btn-primary{
     background-color: #7BA05B!important;
+    border-color: #7BA05B!important;
 }
 .hight_title{
     font-size: 2.5rem;
@@ -44,3 +48,28 @@ html, body{
     color: black;
     font-weight: 900;
 }
+
+.table{
+    --bs-table-hover-color: #7B5644;
+}
+
+.table-hover{
+    color:#7B5644;
+}
+
+.pagination .active{
+    background-color: #7B5644!important;
+    color: #7B5644!important;
+}
+
+.wrapper{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.wrapper_nav{
+    width: 90%;
+    margin: 0 auto;
+}
+
+

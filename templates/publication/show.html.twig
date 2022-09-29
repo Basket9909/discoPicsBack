@@ -16,12 +16,12 @@
         </div>
         {% endif %}
         <div class="meta_photo wrapper">
-            <h2 class="text_green title_photo">Nom de la photo</h2>
-            <h4 class="text_black">{{publication.name}}</h4>
-            <h2 class="text_green title_photo">Location</h2>
-            <h4 class="text_black">{{publication.fullPlace}}</h4>
-            <h2 class="text_green title_photo">Photographe</h2>
-            <h4 class="text_black">{{publication.user.fullName}}</h4>
+            <h2 class="text_green title_photo middle_title">Nom de la photo</h2>
+            <h4 class="text_black little_title">{{publication.name}}</h4>
+            <h2 class="text_green title_photo middle_title">Location</h2>
+            <h4 class="text_black little_title">{{publication.fullPlace}}</h4>
+            <h2 class="text_green title_photo middle_title">Photographe</h2>
+            <h4 class="text_black little_title">{{publication.user.fullName}}</h4>
             {% if ((app.user and app.user == publication.user))%}
             {% else %}
              <a href="{{url}}">
@@ -30,18 +30,18 @@
             </div>
             </a>
             {% endif %}
-            <h2 class="text_green title_photo">détails de la photo</h2>
+            <h2 class="text_green title_photo middle_title">Détails de la photo</h2>
             {% if publication.details %}
-            <h4 class="text_black">{{publication.details | raw | nl2br}}</h4>
+            <h4 class="text_black little_title">{{publication.details | raw | nl2br}}</h4>
             {% else %}
-            <h4 class="text_black">Pas de détails renseignés</h4>
+            <h4 class="text_black little_title">Pas de détails renseignés</h4>
             {% endif %}
 
-            <h2 class="text_green title_photo">Tips</h2>
+            <h2 class="text_green title_photo middle_title">Tips</h2>
             {% if publication.tips %}
-            <h4 class="text_black">{{publication.tips | raw | nl2br}}</h4>
+            <h4 class="text_black little_title">{{publication.tips | raw | nl2br}}</h4>
             {% else %}
-            <h4 class="text_black">Pas de tips renseignés</h4>
+            <h4 class="text_black little_title">Pas de tips renseignés</h4>
             {% endif %}
                 
             {% if ((app.user and app.user == publication.user))%}
@@ -51,11 +51,11 @@
             </div>
             </a>
         {% endif %}
-            <h2 class="text_green title_photo">Note(s) ({{publication.ratings | length}})</h2>
+            <h2 class="text_green title_photo middle_title">Note(s) ({{publication.ratings | length}})</h2>
             {% if publication.ratings | length > 0 %}
                 {% include "partials/big_rating.html.twig" with {'rating' : publication.avgRatings} %}
                 {% else %}
-                    <small>Pas encore noté</small>
+                    <small class="text_black">Pas encore noté</small>
             {% endif %}
 
 
@@ -76,7 +76,7 @@
             {% endfor %} #}
 
 
-            <h2 class="text_green title_photo">Commentaire(s) ({{publication.coments | length}})</h2>
+            <h2 class="text_green title_photo middle_title">Commentaire(s) ({{publication.coments | length}})</h2>
             {% if publication.coments | length > 0 %}
                 {% for comment in publication.coments %}
                     <div class="container_comment">
@@ -86,11 +86,11 @@
                         <div class="container_content_comment">
                             <div class="name_and_date">
                             
-                                <h2 class="text_white">{{comment.user.fullName}}</h2>
+                                <h2 class="text_white middle_title" >{{comment.user.fullName}}</h2>
                             
-                                <h4 class="text_white">{{comment.date | date('d/m/Y')}}</h4>
+                                <h4 class="text_white little_title">{{comment.date | date('d/m/Y')}}</h4>
                             </div>
-                            <p class="text_white">{{comment.comment}}</p>
+                            <p class="text_white little_title">{{comment.comment}}</p>
                             {% if app.user and app.user == comment.user %}
                             <a href="{{path('comment_edit',{'id' : comment.id})}}">
                             <div class="button margin_button button_bruin">
@@ -107,7 +107,7 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <small>Pas encore de commentaire</small>
+                <small class="text_black">Pas encore de commentaire</small>
             {% endif %}
             <a href="{{path('new_comment',{'slug':publication.slug})}}">
             <div class="button margin_button">

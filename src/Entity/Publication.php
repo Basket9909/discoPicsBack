@@ -45,7 +45,7 @@ class Publication
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $tips = null;
 
-    #[ORM\ManyToOne(inversedBy: 'publications')]
+    #[ORM\ManyToOne(targetEntity: Users::class, inversedBy: 'publications')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Users $user = null;
 
