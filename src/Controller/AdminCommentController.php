@@ -26,9 +26,9 @@ class AdminCommentController extends AbstractController
     }
 
     # Permet de supprimer une publication
-    #[Route("/admin/comment/{id}/delete", name : "admin_comment_delete")]
+    #[Route("/admin/comment/{id}/{idp}/delete", name : "admin_comment_delete")]
     #[IsGranted('ROLE_ADMIN')]
-    public function delete(Coments $comment, EntityManagerInterface $manager)
+    public function delete(Coments $comment, EntityManagerInterface $manager,$idp)
     {
         $this->addFlash(
             'success',
@@ -38,6 +38,6 @@ class AdminCommentController extends AbstractController
         $manager->remove($comment);
         $manager->flush();
 
-        return $this->redirectToRoute('admin_comments_index');
+        return $this->redirectToRoute('admin_comments_index', ['id' => $idp, 'withAlert' => true]);
     }
 }

@@ -5,6 +5,7 @@
 {% block body %}
     <div class="container-fluid wrapper">
         <h1 class="hight_title text_black text-center mt-3 mb-3">Gestion des commentaire pour la publication</h1>
+        <a href="{{path('admin_publications_index')}}"  class="btn btn-dark">Retour aux publications</a>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -21,7 +22,7 @@
                         <td class="text_black">{{comment.comment.user.fullName}}</td>
                         <td class="text_black">{{comment.comment.comment}}</td>
                         <td class="text-center text_black ">
-                            <a href="{{path('admin_comment_delete',{'id' : comment.comment.id})}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                            <a href="{{path('admin_comment_delete',{'id' : comment.comment.id, 'idp' : comment.comment.publication.id})}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                 {% endfor %}

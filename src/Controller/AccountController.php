@@ -124,7 +124,7 @@ class AccountController extends AbstractController
                 "Les données ont été enregistrées avec succès"
             );
 
-           return $this->redirectToRoute('account_index');
+           return $this->redirectToRoute('account_index',['id' => $user->getId(), 'withAlert' => true]);
 
         }
 
@@ -169,7 +169,7 @@ class AccountController extends AbstractController
                     'Votre mot de passe a bien été modifié'
                 );
 
-                return $this->redirectToRoute('account_index');
+                return $this->redirectToRoute('account_index',['id' => $user->getId(), 'withAlert' => true]);
 
             }
         }
@@ -226,7 +226,7 @@ class AccountController extends AbstractController
                 'Votre avatar a bien été modifié'
             );
 
-            return $this->redirectToRoute('account_index');
+            return $this->redirectToRoute('account_index', ['id' => $user->getId(), 'withAlert' => true]);
         }
 
         return $this->render("account/imgModify.html.twig",[
@@ -254,7 +254,7 @@ class AccountController extends AbstractController
             );
         }
 
-        return $this->redirectToRoute('account_index');
+        return $this->redirectToRoute('account_index', ['id' => $user->getId(), 'withAlert' => true]);
 
     }
 

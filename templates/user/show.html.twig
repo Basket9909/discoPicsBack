@@ -5,21 +5,23 @@
 {% block body %}
     <div class="container_user_show">
         <img src="{{user.picture}}" alt="Avatar de {{user.fullName}}">
-        <h1 class="text_black">{{user.fullName}}</h1>
-        <h2 class="text_black">{{user.mail}}</h2>
+        <h1 class="text_black hight_title">{{user.fullName}}</h1>
+        <h2 class="text_black little_title">{{user.mail}}</h2>
         <a href="{{user.instaLink}}" target="_BLANK">
             <div class="button margin_button">
                 <p>Voir le compte instagram <i class="fa-brands fa-instagram"></i></p>
             </div>
         </a>
     </div>
-        {# {% if publications %}
-            {% for publication in publications %}
-               {% include 'publication/_publication.html.twig' with {'publication': publication.publication} %}
-            {% endfor %}
-        
-        {% else %}
-            <h3 class="text_black">L'utilisateur n'a pas de publication</h3>
-        {% endif %} #}
+    <h1 class="hight_title text_black text_center">Autres spots publié pour cet utilisateur</h1>
     
+        {% if publications %}
+        <div class="container_img">
+            {% for data in publications %}
+               {% include 'publication/_publication.html.twig' with {'publication': data.publication} %}
+            {% endfor %}
+        </div>
+        {% else %}
+            <h3 class="little_title title_in_middle text_black">L'utilisateur n'a pas de publication</h3>
+        {% endif %}
 {% endblock %}

@@ -4,16 +4,22 @@
 {% endblock %}
 
 {% block body %}
-{% set url = path('show_user', {'slug': publication.user.slug}) %}
+{% set url = path('show_user', {'slug': publication.user.slug, 'id' : publication.user.id}) %}
 	<div class="container_page">
 		<div class="def_size">
 			<img src="{{publication.image}}" alt="{{publication.name}}" class="big_img_show">
 		</div>
         {% if ((app.user and app.user == publication.user))%}
+        <a href="{{path('publication_delete',{'slug' : publication.slug})}}">
+                <div class="button margin_button delete_publication">
+                <p>Supprimer la publication</p>
+                </div>
+        </a>
         <a href="{{path('publication_edit_img',{'slug' : publication.slug})}}">
                 <div class="button margin_button">
                 <p>Modifier la photo</p>
-        </div>
+                </div>
+        </a>
         {% endif %}
         <div class="meta_photo wrapper">
             <h2 class="text_green title_photo middle_title">Nom de la photo</h2>

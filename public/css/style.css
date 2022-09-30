@@ -256,7 +256,7 @@ html, body{
     cursor: pointer;
 }
 
-.container_img .container_infos{
+.container_infos{
     width: 90%;
     text-align: center;
     color: white;
@@ -316,3 +316,9 @@ textarea{
 .bg-dark{
     background-color: #7B5644!important;
 }
+
+.text_center{
+    text-align: center;
+    margin-top: 50px;
+}
+

@@ -11,12 +11,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class UserController extends AbstractController
 {
     #permet d'afficher un user
-    #[Route('/user/{slug}/', name: 'show_user')]
-    public function index(Users $user): Response
+    #[Route('/user/{slug}/{id}', name: 'show_user')]
+    public function index(Users $user, PublicationRepository $publicationRepo, $id): Response
     {
         return $this->render('user/show.html.twig', [
             'user' => $user,
-            
+            'publications'=> $publicationRepo->getPublicationForUserWithMaxResult($id),
         ]);
     }
 }

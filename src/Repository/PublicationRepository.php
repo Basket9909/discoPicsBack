@@ -59,7 +59,7 @@ class PublicationRepository extends ServiceEntityRepository
             ->join('p.user', 'u')
             ->andWhere('u.id = :id')
             ->setParameter(':id', $id)
-            ->setMaxResults(3)
+            ->setMaxResults(6)
             ->getQuery()
             ->getResult();
     }

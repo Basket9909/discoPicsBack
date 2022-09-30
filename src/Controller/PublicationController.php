@@ -123,6 +123,24 @@ class PublicationController extends AbstractController
 
     }
 
+    # Permet de supprimer une publication
+    #[Route("/publication/{slug}/delete", name : "publication_delete")]
+    # @param Request $request
+    # @param EntityManagerInterface $manager
+    # @return Response
+    public function delete(Publication $publication, EntityManagerInterface $manager)
+    {
+        $this->addFlash(
+            'success',
+            "La publication <strong>{$publication->getName()}</strong> a bien été supprimée"
+        );
+
+        $manager->remove($publication);
+        $manager->flush();
+
+        return $this->redirectToRoute('homepage');
+    }
+
     # Permet de modifier l'image d'une publication
     #[Route("/publication/{slug}/edit/img", name : "publication_edit_img")]
     # param Request $request

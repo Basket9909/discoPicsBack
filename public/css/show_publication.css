@@ -80,3 +80,7 @@
         margin-bottom: 0;
     }
 }
+
+.delete_publication{
+    background-color: #d9534f;
+}
