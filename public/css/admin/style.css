@@ -72,4 +72,23 @@ html, body{
     margin: 0 auto;
 }
 
+.container_special{
+    min-height: 75vh;
+}
+.table{
+    margin-top: 25px;
+}
+.container_flash .alert{
+    border-radius: 10px;
+    transition: all 1s ease-in-out;
+    position: fixed;
+    z-index: 1000;
+}
+.container_flash p{
+    margin: 0;
+}
+
+.alert-success{
+    background-color: #7BA05B;
+}
 

@@ -1,35 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}profil de {{user.fullName}}{% endblock %}
+{% block title %}{% trans %}Profile of{% endtrans %} {{user.fullName}}{% endblock %}
 
 {% block body %}
     <div class="container_profile wrapper">
         <a href="{{ path("new_publication") }}">
             <div class="button margin_button">
-                <p>Ajouter un spot</p>
+                <p>{% trans %}Add spot{% endtrans %}</p>
             </div>
         </a>
 
-        <h1 class="hight_title text_black">Vos informations personelles</h1>
+        <h1 class="hight_title text_black">{% trans %}Your personal informations{% endtrans %}</h1>
 
         <div class="personal_infos_container">
             <div class="picture_container">
                 {% if user.picture %}
-                <img src="/uploads/{{ user.picture }}" alt="Avatar de {{user.fullName}}">
+                <img src="/uploads/{{ user.picture }}" alt="{% trans %}Avatar of{% endtrans %} {{user.fullName}}">
                 {% else %}
-                <img class="anonyme_profile" src="/images/anonyme_profile.svg" alt="Avatar de {{user.fullName}}">
+                <img class="anonyme_profile" src="/images/anonyme_profile.svg" alt="{% trans %}Avatar of{% endtrans %} {{user.fullName}}">
                 {% endif %}
                 
                 <a href="{{ path('profile_img_modify') }}">
                     <div class="button margin_button">
-                        <p>Modifier votre photo de profil</p>
+                        <p>{% trans %}Change your profile picture{% endtrans %}</p>
                     </div>
                 </a>
 
                  {% if user.picture %}
                 <a href="{{ path('profile_img_delete') }}">
                     <div class="button margin_button">
-                        <p>Supprimer votre photo de profil</p>
+                        <p>{% trans %}Delete your profile picture{% endtrans %}</p>
                     </div>
                 </a>
                 {% endif %}
@@ -39,20 +39,20 @@
                 <h2 class="hight_title">{{user.firstName|capitalize}} {{user.lastName|capitalize}}</h2>
                 <h3 class="middle_title">{{user.bird | date("d / m / Y") }}</h3>
                 <h3 class="middle_title">{{user.mail}}</h3>
-                <h3 class="middle_title">{{user.instalink}}</h3>
+                <h3 class="middle_title">https://www.instagram.com/{{user.instalink}}</h3>
                 <a href="{{ path('profile_modify') }}">
                     <div class="button margin_button">
-                        <p>Modifier vos informations</p>
+                        <p>{% trans %}Modify your informations{% endtrans %}</p>
                     </div>
                 </a>
                 <a href="{{ path('password_modify')}}">
                     <div class="button margin_button">
-                        <p>Modifier votre mot de passe</p>
+                        <p>{% trans %}Change your password{% endtrans %}</p>
                     </div>
                 </a>
             </div>
         </div>
-        <h1 class="hight_title text_black">Vos spots</h1>
+        <h1 class="hight_title text_black">{% trans %}Your spots{% endtrans %}</h1>
         {% if publications %}
        <div class="container_img">
             {% for data in publications %}
@@ -60,7 +60,7 @@
             {% endfor %}
         </div>
         {% else %}
-            <h3 class="little_title title_in_middle text_black">Vous n'avez pas encore publier de spots</h3>
+            <h3 class="little_title title_in_middle text_black">{% trans %}You haven't published any spots yet{% endtrans %}</h3>
         {% endif %}
         </div>
         </div>

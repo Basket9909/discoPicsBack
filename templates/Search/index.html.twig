@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Rechercher un spot{% endblock %}
+{% block title %}{% trans %}Find a spot{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="container_global_input_search wrapper">
-        <h1 class="hight_title text_black" id="marginBottomSearch">Trouvez votre spot idéal</h1>
+        <h1 class="hight_title text_black" id="marginBottomSearch">{% trans %}Find your ideal spot{% endtrans %}</h1>
         <div class="center_input">
         {{form(myForm)}}
     </div>
@@ -15,7 +15,7 @@
                 {% include 'publication/_publication.html.twig'%}
             {% endfor %}
         {% else %}
-                <h3 class="middle_title text_black">Aucun spot ne correspond à votre recherche</h3>
+                <h3 class="middle_title text_black">{% trans %}No spots match your search{% endtrans %}</h3>
         {% endif %}
     </div>
         

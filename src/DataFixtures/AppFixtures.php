@@ -42,7 +42,7 @@ class AppFixtures extends Fixture
               ->setMail('romeo.wilmart@hotmail.fr')
               ->setPassword($this->passwordHasher->hashPassword($admin,'passwordAdmin'))
               ->setBird($faker->dateTime())
-              ->setInstaLink('https://www.instagram.com/romeoo09/')
+              ->setInstaLink('romeoo09')
               ->setPicture($picture)
               ->setslug('romeow'.(001))
               ->setRoles(['ROLE_ADMIN']);
@@ -65,7 +65,7 @@ class AppFixtures extends Fixture
                   ->setMail($firstName.'.'.$lastName.'@'.$faker->randomElement($boites).$faker->randomElement($mailExt))
                   ->setPassword($hash)
                   ->setBird($faker->dateTime())
-                  ->setInstaLink('https://www.instagram.com/romeoo09/')
+                  ->setInstaLink('romeoo09')
                   ->setPicture('https://xsgames.co/randomusers/avatar.php?g=pixel')
                   ->setSlug($slugify->slugify($firstName.$lastName.rand(1,1000)))
                   ->setRoles(['ROLE_USER']);

@@ -6,9 +6,9 @@
         <div class="container_infos">
             <h3 class="infos little_title">{{publication.place}}</h3>
             {% if publication.ratings | length > 0 %}
-                {% include "partials/rating.html.twig" with {'rating' : publication.avgRatings} %} ({{publication.ratings | length }} avis)
+                {% include "partials/rating.html.twig" with {'rating' : publication.avgRatings} %} ({{publication.ratings | length }} {% trans %}reviews{% endtrans %})
                 {% else %}
-                    <small>Pas encore noté</small>
+                    <small>{% trans %}Not rated yet{% endtrans %}</small>
             {% endif %}
         </div>
     </div>
@@ -18,9 +18,9 @@
     <img src="{{publication.image}}" alt="{{publication.name}}">
     <div class="rating_container">
         {% if publication.ratings | length > 0 %}
-            {% include "partials/rating.html.twig" with {'rating' : publication.avgRatings} %} ({{publication.ratings | length }} avis)
+            {% include "partials/rating.html.twig" with {'rating' : publication.avgRatings} %} ({{publication.ratings | length }} {% trans %}reviews{% endtrans %})
             {% else %}
-                <small>Pas encore noté</small>
+                <small>{% trans %}Not rated yet{% endtrans %}</small>
         {% endif %}
         </div>
 </div>

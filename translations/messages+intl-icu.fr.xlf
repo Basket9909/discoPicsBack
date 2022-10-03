@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="4WQOY0T" resname="Welcome to Discopics">
+        <source>Welcome to Discopics</source>
+        <target>Bienvenue sur Discopics</target>
+      </trans-unit>
+      <trans-unit id="fxu4XtE" resname="Discopics will help you find beautiful places for your photoshoot or take beautiful photos in beautiful landscapes.">
+        <source>Discopics will help you find beautiful places for your photoshoot or take beautiful photos in beautiful landscapes.</source>
+        <target>Discopics va vous aider à trouver de beaux endroits pour vos photoshoot ou réaliser de magnifiques photo dans de beau paysages.</target>
+      </trans-unit>
+      <trans-unit id="is9k6l." resname="Want to find spots in a specific location ?">
+        <source>Want to find spots in a specific location ?</source>
+        <target>Vous voulez trouver des spots dans un endroit en particulier ?</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Recherche</target>
+      </trans-unit>
+      <trans-unit id="TqQitsP" resname="Want to find spots near you ?">
+        <source>Want to find spots near you ?</source>
+        <target>Vous voulez trouver des spots près de chez vous ?</target>
+      </trans-unit>
+      <trans-unit id="1KM9W3i" resname="Discover">
+        <source>Discover</source>
+        <target>Découvrir</target>
+      </trans-unit>
+      <trans-unit id="MgY3zbx" resname="Discover the best spots">
+        <source>Discover the best spots</source>
+        <target>Découvrez les meilleurs spots</target>
+      </trans-unit>
+      <trans-unit id="VGQQUSA" resname="reviews">
+        <source>reviews</source>
+        <target>avis</target>
+      </trans-unit>
+      <trans-unit id="O3in78f" resname="Not rated yet">
+        <source>Not rated yet</source>
+        <target>Pas encore noté</target>
+      </trans-unit>
+      <trans-unit id="d0ivpeX" resname="The comment has been added">
+        <source>The comment has been added</source>
+        <target>Le commentaire à bien été rajouté</target>
+      </trans-unit>
+      <trans-unit id="m6Diu4n" resname="Add spot">
+        <source>Add spot</source>
+        <target>Ajouter un spot</target>
+      </trans-unit>
+      <trans-unit id="tTGBpNh" resname="My account">
+        <source>My account</source>
+        <target>Mon compte</target>
+      </trans-unit>
+      <trans-unit id="DuuhkAx" resname="Lougout">
+        <source>Lougout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="ZY3ndpU" resname="Go to administration">
+        <source>Go to administration</source>
+        <target>Aller à l'administration</target>
+      </trans-unit>
+      <trans-unit id="x5Pg2aH" resname="Registration">
+        <source>Registration</source>
+        <target>Inscription</target>
+      </trans-unit>
+      <trans-unit id="Y5pA6Cu" resname="Connection">
+        <source>Connection</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="vBy12.J" resname="Find your ideal spot">
+        <source>Find your ideal spot</source>
+        <target>Trouvez votre spot idéal</target>
+      </trans-unit>
+      <trans-unit id="92cT3Dx" resname="No spots match your search">
+        <source>No spots match your search</source>
+        <target>Aucun spot ne correspond à votre recherche</target>
+      </trans-unit>
+      <trans-unit id="ukRc.zi" resname="Privacy policy">
+        <source>Privacy policy</source>
+        <target>Politique de confidentialité</target>
+      </trans-unit>
+      <trans-unit id="jEWkhuS" resname="Terms of use">
+        <source>Terms of use</source>
+        <target>Condition d'utilisation</target>
+      </trans-unit>
+      <trans-unit id="MZ4tDTS" resname="Find a spot">
+        <source>Find a spot</source>
+        <target>Rechercher un spot</target>
+      </trans-unit>
+      <trans-unit id="glguEgZ" resname="Profile of">
+        <source>Profile of</source>
+        <target>Profil de</target>
+      </trans-unit>
+      <trans-unit id="RjJ8gcY" resname="Your personal informations">
+        <source>Your personal informations</source>
+        <target>Vos informations personelles</target>
+      </trans-unit>
+      <trans-unit id="VNESBAp" resname="Avatar of">
+        <source>Avatar of</source>
+        <target>Avatar de</target>
+      </trans-unit>
+      <trans-unit id="KmaHAM7" resname="Change your profile picture">
+        <source>Change your profile picture</source>
+        <target>Modifier votre photo de profil</target>
+      </trans-unit>
+      <trans-unit id="q6E1On_" resname="Delete your profile picture">
+        <source>Delete your profile picture</source>
+        <target>Supprimer votre photo de profil</target>
+      </trans-unit>
+      <trans-unit id="lY3BxAq" resname="Modify your informations">
+        <source>Modify your informations</source>
+        <target>Modifier vos informations</target>
+      </trans-unit>
+      <trans-unit id="imodqOy" resname="Change your password">
+        <source>Change your password</source>
+        <target>Modifier votre mot de passe</target>
+      </trans-unit>
+      <trans-unit id="2IP6b3O" resname="Your spots">
+        <source>Your spots</source>
+        <target>Vos spots</target>
+      </trans-unit>
+      <trans-unit id="qbu46VH" resname="You haven't published any spots yet">
+        <source>You haven't published any spots yet</source>
+        <target>Vous n'avez pas encore publier de spots</target>
+      </trans-unit>
+      <trans-unit id="n9coxmy" resname="Add">
+        <source>Add</source>
+        <target>Ajouter</target>
+      </trans-unit>
+      <trans-unit id="n7coxmy" resname="Add">
+        <source>Spot name</source>
+        <target>Nom du spot</target>
+      </trans-unit>
+      <trans-unit id="Please enter an author name." resname="Please enter an author name.">
+        <source>Please enter an author name.</source>
+        <target>test</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

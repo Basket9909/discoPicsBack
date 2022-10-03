@@ -15,7 +15,7 @@ class PublicationType extends ApplicationType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name',TextType::class, $this->getConfiguration("global_input","Nom de la photo","Donnez un nom à votre photo"))
+            ->add('name',TextType::class, $this->getConfiguration("global_input","Spot name","Donnez un nom à votre photo"))
             ->add('country',TextType::class, $this->getConfiguration("global_input","Pays","Entrez le nom du pays d'oû la photo à été prise"))
             ->add('city',TextType::class, $this->getConfiguration("global_input","Ville","Entrez le nom de la ville d'oû la photo à été prise"))
             ->add('adress',TextType::class, $this->getConfiguration("global_input","Adresse","Entrez le reste de l'adresse (rue,n°,...)"))

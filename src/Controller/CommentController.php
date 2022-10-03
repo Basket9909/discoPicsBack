@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class CommentController extends AbstractController
 {
@@ -18,7 +19,7 @@ class CommentController extends AbstractController
     # param Request $request
     # param EntityManagerInterface $manager
     # return Response
-    public function newComment(Publication $publication, Request $request,EntityManagerInterface $manager)
+    public function newComment(Publication $publication, Request $request,EntityManagerInterface $manager, TranslatorInterface $translator)
     {
     $comment = new Coments();
     $form = $this->createForm(CommentType::class, $comment);
@@ -34,9 +35,11 @@ class CommentController extends AbstractController
     $manager->persist($comment);
     $manager->flush();
 
+    $message = $translator->trans(('The comment has been added'));
+
     $this->addFlash(
         'success',
-        "Le commentaire à bien été rajouté"
+        $message
     );
 
     return $this->redirectToRoute('publication_show', ['slug' => $publication->getSlug(), 'withAlert' => true]);

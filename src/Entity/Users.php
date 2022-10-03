@@ -49,7 +49,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeInterface $bird = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Assert\Url(message : "Veuillez renseigner une url valable")]
+    #[Assert\NotBlank(message : "Vous devez remplir ce champ")]
     private ?string $instaLink = null;
 
     #[ORM\Column(length: 255)]

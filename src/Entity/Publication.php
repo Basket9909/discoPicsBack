@@ -24,7 +24,7 @@ class Publication
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message : "Veuillez renseignez le nom de la photo")]
-    #[Assert\Length(min : 5, minMessage : "Le nom de la photo doit faire au moins 5 caractére")]
+    #[Assert\Length(min : 5, minMessage : "publication.name.min")]
     private ?string $name = null;
 
     #[ORM\Column(length: 50, nullable: true)]
@@ -99,6 +99,8 @@ class Publication
              $this->slug = $slugify->slugify($this->name.rand(1,10000));
          }
      }
+
+    
 
     # Permet d'avoir le la ville et le pays en une fois
     # return Response

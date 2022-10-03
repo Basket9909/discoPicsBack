@@ -5,7 +5,6 @@ namespace App\Form;
 use App\Entity\Users;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -18,8 +17,13 @@ class ModificationAccountType extends ApplicationType
             ->add('firstName', TextType::class, $this->getConfiguration("global_input","Prénom","Votre prénom..."))
             ->add('lastName', TextType::class, $this->getConfiguration("global_input","Nom", "Votre nom de famille..."))
             ->add('mail', EmailType::class, $this->getConfiguration("global_input","Email", "Votre adresse e-mail..."))
-            ->add('bird', DateType::class, $this->getConfiguration("global_input","Date de naissance", "Entrez votre date de naissance"))
-            ->add('instaLink', UrlType::class, $this->getConfiguration("global_input","Instagram","Entrez votre lien instagram"))
+            ->add('bird', DateType::class, [
+                'widget' => 'single_text',
+                "label" => "Date de naissance",
+                "attr" =>[
+                    "class" => "global_input"
+                ]])
+            ->add('instaLink', TextType::class, $this->getConfiguration("global_input","Pseudo instagram","Entrez votre pseudo instagram"))
         ;
     }
 

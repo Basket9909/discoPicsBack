@@ -43,14 +43,18 @@
   </div>
 </nav>
   {# dump(app.flashes) #}
-    {% for label, messages in app.flashes %}
-        <div class="container">
+   {% for label, messages in app.flashes %} 
+        <div class="container container_flash">
             <div class="alert alert-{{label}}">
                 {% for message in messages %}
                     <p>{{ message | raw }}</p>
                 {% endfor %}
             </div>
+
+            {# <div class="alert alert-success">
+                <p>le commentaire <strong>5</strong> à bien été supprimé</p> 
+            </div> #}
         </div>
-    {% endfor %}
+    {% endfor %} 
 
     

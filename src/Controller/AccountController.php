@@ -84,9 +84,12 @@ class AccountController extends AbstractController
      # @return Response
      public function myAccount(PublicationRepository $publicationRepo,$id )
      {
+        
          return $this->render('account/profile.html.twig',[
             'publications'=> $publicationRepo->getPublicationForUserWithMaxResult($id),
-            'user' => $this->getUser()
+            'user' => $this->getUser(),
+            
+            
          ]);
      }
 
@@ -269,7 +272,8 @@ class AccountController extends AbstractController
 
         return $this->render('account/index.html.twig', [
             'hasError' => $error !== null,
-            'username' => $username
+            'username' => $username,
+           
         ]);
     }
 
