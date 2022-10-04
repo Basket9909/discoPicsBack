@@ -80,9 +80,18 @@ html, body{
 }
 .container_flash .alert{
     border-radius: 10px;
-    transition: all 1s ease-in-out;
+    transition: all .5s ease-in-out;
     position: fixed;
     z-index: 1000;
+    overflow: hidden;
+}
+.container_flash .bar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #7B5644;
 }
 .container_flash p{
     margin: 0;

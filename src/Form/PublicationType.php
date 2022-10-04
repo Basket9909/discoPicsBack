@@ -7,26 +7,35 @@ use App\Form\ApplicationType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class PublicationType extends ApplicationType
 {
+
+    public $translator;
+
+    public function __construct(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name',TextType::class, $this->getConfiguration("global_input","Spot name","Donnez un nom à votre photo"))
-            ->add('country',TextType::class, $this->getConfiguration("global_input","Pays","Entrez le nom du pays d'oû la photo à été prise"))
-            ->add('city',TextType::class, $this->getConfiguration("global_input","Ville","Entrez le nom de la ville d'oû la photo à été prise"))
-            ->add('adress',TextType::class, $this->getConfiguration("global_input","Adresse","Entrez le reste de l'adresse (rue,n°,...)"))
-            ->add('details',TextType::class, $this->getConfiguration("global_input","Détails ( Pas obligatoire )","Donnez des détails supplémentaire sur le photo",[
+            ->add('name',TextType::class, $this->getConfiguration("global_input",$this->translator->trans('Post name'),$this->translator->trans('Name your post')))
+            ->add('country',TextType::class, $this->getConfiguration("global_input",$this->translator->trans('Country'),$this->translator->trans('Enter the name of the country where the photo was taken')))
+            ->add('city',TextType::class, $this->getConfiguration("global_input",$this->translator->trans('City'),$this->translator->trans('Enter the name of the city where the photo was taken')))
+            ->add('adress',TextType::class, $this->getConfiguration("global_input",$this->translator->trans('Adress'),$this->translator->trans('Enter the rest of the address (street, number,...)')))
+            ->add('details',TextType::class, $this->getConfiguration("global_input",$this->translator->trans('Details ( not mandatory )'),$this->translator->trans('Give additional details on the photo'),[
                 "required" => false
             ]))
-            ->add('tips',TextType::class, $this->getConfiguration("global_input","Tips ( Pas obligatoire )","Donnez vos tips sur cette photo",[
+            ->add('tips',TextType::class, $this->getConfiguration("global_input",$this->translator->trans('Tips ( not mandatory )'),$this->translator->trans('Give your tips on this photo'),[
                 "required" => false
             ]))
             ->add('image',FileType::class, [
-                "label" => "Ajoutez votre photo (jpg , png , gif)",
+                "label" => $this->translator->trans('Your photo'),
                 "required"=> true,
                 "attr" =>[
                     "class" => "global_input"

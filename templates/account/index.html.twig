@@ -1,30 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion au site{% endblock %}
+{% block title %}{% trans %}Connection{% endtrans %}{% endblock %}
 
 {% block body %}
    <div class="container_connexion wrapper">
     <div class="container">
-                <h1 class="text_black hight_title">Connexion</h1>
+                <h1 class="text_black hight_title">{% trans %}Connection{% endtrans %}</h1>
                 {# gestion des erreurs #}
                 {% if hasError %}
                     <div class="danger_red">
-                        Une erreur est survenue, le nom d'utilisateur ou le mot de passe est invalide
+                        {% trans %}An error has occurred, username or password is invalid{% endtrans %}
                     </div>
                 {% endif %}
                 <form action="{{ path('account_login')}}" method="POST">
                     <div class="connexion_line">
                         {# symfony veut un nome précis pour le login: _username #}
                         
-                        <input type="text" name="_username" id="email" class="" placeholder="Votre adresse mail" required value="{{ username }}">
+                        <input type="text" name="_username" id="email" class="" placeholder="{% trans %}Your email{% endtrans %}" required value="{{ username }}">
                     </div>
                     <div class="connexion_line">
                         {# symfony veut un nome précis pour le password: _password #}
                         
-                        <input type="password" name="_password" id="password" class="" placeholder="Votre mot de passe" required>
+                        <input type="password" name="_password" id="password" class="" placeholder="{% trans %}Your password{% endtrans %}" required>
                     </div>
                    <div class="connexion_line">
-                        <button type="submit" class="button_connexion">Connexion</button>
+                        <button type="submit" class="button_connexion">{% trans %}Login{% endtrans %}</button>
                     </div>
                 </form>
                 </div>

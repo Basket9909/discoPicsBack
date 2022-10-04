@@ -8,6 +8,7 @@ use App\Service\PaginationService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -32,11 +33,14 @@ class AdminPublicationController extends AbstractController
     # Permet de supprimer une publication
     #[Route("/admin/publication/{id}/delete", name : "admin_publication_delete")]
     #[IsGranted('ROLE_ADMIN')]
-    public function delete(Publication $publication, EntityManagerInterface $manager)
+    public function delete(Publication $publication, EntityManagerInterface $manager, TranslatorInterface $translator)
     {
+
+        $message = $translator->trans(('The publication has been deleted'));
+
         $this->addFlash(
             'success',
-            "La publication <strong>{$publication->getName()}</strong> a bien été supprimée"
+            $message
         );
 
         $manager->remove($publication);

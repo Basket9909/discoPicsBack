@@ -22,6 +22,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class AccountController extends AbstractController
 {
@@ -31,7 +32,7 @@ class AccountController extends AbstractController
     # param EntityManagerInterface $manager
     # param UserPasswordHasherInterface $hasher
     # return Response
-    public function register(Request $request,EntityManagerInterface $manager,UserPasswordHasherInterface $hasher)
+    public function register(Request $request,EntityManagerInterface $manager,UserPasswordHasherInterface $hasher, TranslatorInterface $translator)
     {
         $user = new Users();
         $form = $this->createForm(RegistrationType::class, $user);
@@ -65,9 +66,11 @@ class AccountController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
+            $message = $translator->trans(('You have been successfully registered'));
+
             $this->addFlash(
                 'success',
-                "Vous avez bien été enregistrer"
+                $message
             );
 
             return $this->redirectToRoute('account_login');
@@ -79,8 +82,9 @@ class AccountController extends AbstractController
         ]);
     }
 
-     # Permet d'afficher le profil de l'utilisateur connecté
-     #[Route("/account/{id}", name : "account_index")]
+    # Permet d'afficher le profil de l'utilisateur connecté
+    #[Route("/account/{id}", name : "account_index")]
+    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
      # @return Response
      public function myAccount(PublicationRepository $publicationRepo,$id )
      {
@@ -96,10 +100,11 @@ class AccountController extends AbstractController
 
     # Permet de modifier son profil 
     #[Route("/account/profile/modify", name : "profile_modify")]
+    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
     # @param Request $request
     # @param EntityManagerInterface $manager
     # @return Response
-    public function profile(Request $request, EntityManagerInterface $manager)
+    public function profile(Request $request, EntityManagerInterface $manager, TranslatorInterface $translator)
     {
         $user = $this->getUser(); // récup l'utilisateur connecté
         
@@ -122,9 +127,11 @@ class AccountController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
+            $message = $translator->trans(('Data saved successfully'));
+
             $this->addFlash(
                 'success',
-                "Les données ont été enregistrées avec succès"
+                $message
             );
 
            return $this->redirectToRoute('account_index',['id' => $user->getId(), 'withAlert' => true]);
@@ -140,11 +147,12 @@ class AccountController extends AbstractController
 
     # Permet de modifier le mot de passe
     #[Route("/account/password/modify", name : "password_modify")]
+    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
     # @param Request $request
     # @param EntityManagerInterface $manager
     # @param UserPasswordHasherInterface $hasher
     # @return Response
-    public function updatePassword(Request $request,EntityManagerInterface $manager,UserPasswordHasherInterface $hasher)
+    public function updatePassword(Request $request,EntityManagerInterface $manager,UserPasswordHasherInterface $hasher, TranslatorInterface $translator)
     {
         $passwordUpdate = new PasswordUpdate();
         $user = $this->getUser();
@@ -167,9 +175,11 @@ class AccountController extends AbstractController
                 $manager->persist($user);
                 $manager->flush();
 
+                $message = $translator->trans(('Your password has been changed'));
+
                 $this->addFlash(
                     'success',
-                    'Votre mot de passe a bien été modifié'
+                    $message
                 );
 
                 return $this->redirectToRoute('account_index',['id' => $user->getId(), 'withAlert' => true]);
@@ -186,10 +196,11 @@ class AccountController extends AbstractController
 
     # Permet de modifier l'avatar de l'utilisateur
     #[Route("/account/img/modify", name : "profile_img_modify")]
+    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
     # param Request $request
     # @param EntityManagerInterface $manager
     # @return Response
-    public function imgModify(Request $request, EntityManagerInterface $manager)
+    public function imgModify(Request $request, EntityManagerInterface $manager, TranslatorInterface $translator)
     {
         $imgModify = new UserImgModify();
         $user = $this->getUser();
@@ -224,9 +235,11 @@ class AccountController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
+            $message = $translator->trans(('Your avatar has been changed'));
+
             $this->addFlash(
                 'success',
-                'Votre avatar a bien été modifié'
+                $message
             );
 
             return $this->redirectToRoute('account_index', ['id' => $user->getId(), 'withAlert' => true]);
@@ -240,9 +253,10 @@ class AccountController extends AbstractController
 
     # Permet de supprimer l'image de l'utilisateur
     #[Route("/account/img/delete", name : "profile_img_delete")]
+    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
     # @param EntityManagerInterface $manager
     # @return Response
-    public function removeImg(EntityManagerInterface $manager)
+    public function removeImg(EntityManagerInterface $manager, TranslatorInterface $translator)
     {
         $user = $this->getUser();
         if(!empty($user->getPicture()))
@@ -251,9 +265,12 @@ class AccountController extends AbstractController
             $user->setPicture('');
             $manager->persist($user);
             $manager->flush();
+
+            $message = $translator->trans(('Your avatar has been successfully deleted'));
+
             $this->addFlash(
                 'success',
-                'Votre avatar a bien été supprimé'
+                $message
             );
         }
 

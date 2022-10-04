@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Discopics
-{% endblock %}
+{% block title %}Discopics - {{publication.name}}{% endblock %}
 
 {% block body %}
 {% set url = path('show_user', {'slug': publication.user.slug, 'id' : publication.user.id}) %}
@@ -12,56 +11,56 @@
         {% if ((app.user and app.user == publication.user))%}
         <a href="{{path('publication_delete',{'slug' : publication.slug})}}">
                 <div class="button margin_button delete_publication">
-                <p>Supprimer la publication</p>
+                <p>{% trans %}Delete Post{% endtrans %}</p>
                 </div>
         </a>
         <a href="{{path('publication_edit_img',{'slug' : publication.slug})}}">
                 <div class="button margin_button">
-                <p>Modifier la photo</p>
+                <p>{% trans %}Edit photo{% endtrans %}</p>
                 </div>
         </a>
         {% endif %}
         <div class="meta_photo wrapper">
-            <h2 class="text_green title_photo middle_title">Nom de la photo</h2>
+            <h2 class="text_green title_photo middle_title">{% trans %}Name of the photo{% endtrans %}</h2>
             <h4 class="text_black little_title">{{publication.name}}</h4>
-            <h2 class="text_green title_photo middle_title">Location</h2>
+            <h2 class="text_green title_photo middle_title">{% trans %}Location{% endtrans %}</h2>
             <h4 class="text_black little_title">{{publication.fullPlace}}</h4>
-            <h2 class="text_green title_photo middle_title">Photographe</h2>
+            <h2 class="text_green title_photo middle_title">{% trans %}photographer{% endtrans %}</h2>
             <h4 class="text_black little_title">{{publication.user.fullName}}</h4>
             {% if ((app.user and app.user == publication.user))%}
             {% else %}
              <a href="{{url}}">
                 <div class="button margin_button">
-                <p>Voir le profil</p>
+                <p>{% trans %}See profile{% endtrans %}</p>
             </div>
             </a>
             {% endif %}
-            <h2 class="text_green title_photo middle_title">Détails de la photo</h2>
+            <h2 class="text_green title_photo middle_title">{% trans %}Photo details{% endtrans %}</h2>
             {% if publication.details %}
             <h4 class="text_black little_title">{{publication.details | raw | nl2br}}</h4>
             {% else %}
-            <h4 class="text_black little_title">Pas de détails renseignés</h4>
+            <h4 class="text_black little_title">{% trans %}No details provided{% endtrans %}</h4>
             {% endif %}
 
-            <h2 class="text_green title_photo middle_title">Tips</h2>
+            <h2 class="text_green title_photo middle_title">{% trans %}Tips{% endtrans %}</h2>
             {% if publication.tips %}
             <h4 class="text_black little_title">{{publication.tips | raw | nl2br}}</h4>
             {% else %}
-            <h4 class="text_black little_title">Pas de tips renseignés</h4>
+            <h4 class="text_black little_title">{% trans %}No tips provided{% endtrans %}</h4>
             {% endif %}
                 
             {% if ((app.user and app.user == publication.user))%}
             <a href="{{path('publication_edit',{'slug' : publication.slug})}}">
                 <div class="button margin_button">
-                <p>Modifier les informations</p>
+                <p>{% trans %}Edit information{% endtrans %}</p>
             </div>
             </a>
         {% endif %}
-            <h2 class="text_green title_photo middle_title">Note(s) ({{publication.ratings | length}})</h2>
+            <h2 class="text_green title_photo middle_title">{% trans %}Review(s){% endtrans %} ({{publication.ratings | length}})</h2>
             {% if publication.ratings | length > 0 %}
                 {% include "partials/big_rating.html.twig" with {'rating' : publication.avgRatings} %}
                 {% else %}
-                    <small class="text_black">Pas encore noté</small>
+                    <small class="text_black">{% trans %}Not rated yet{% endtrans %}</small>
             {% endif %}
 
 
@@ -75,20 +74,22 @@
             {% else %} #}
             <a href="{{path('new_rate',{'slug':publication.slug})}}">
             <div class="button margin_button">
-                <p>Noter ce spot</p>
+                <p>{% trans %}Rate this spot{% endtrans %}</p>
             </div>
             </a>
             {# {% endif %}
             {% endfor %} #}
 
 
-            <h2 class="text_green title_photo middle_title">Commentaire(s) ({{publication.coments | length}})</h2>
+            <h2 class="text_green title_photo middle_title">{% trans %}Comment(s){% endtrans %} ({{publication.coments | length}})</h2>
             {% if publication.coments | length > 0 %}
                 {% for comment in publication.coments %}
                     <div class="container_comment">
-                    
-                        <img src="{{comment.user.picture}}" alt="Avatar de {{comment.user.fullName}}">
-                   
+                        {% if comment.user.picture %}
+                        <img src="/uploads/{{comment.user.picture}}" alt="{% trans %}Avatar of{% endtrans %} {{comment.user.fullName}}">
+                        {% else %}
+                        <img class="anonyme_profile" src="/images/anonyme_profile.svg" alt="{% trans %}Avatar of{% endtrans %} {{comment.user.fullName}}">
+                        {% endif %}
                         <div class="container_content_comment">
                             <div class="name_and_date">
                             
@@ -100,12 +101,12 @@
                             {% if app.user and app.user == comment.user %}
                             <a href="{{path('comment_edit',{'id' : comment.id})}}">
                             <div class="button margin_button button_bruin">
-                                <p>Modifier mon commentaire</p>
+                                <p>{% trans %}Edit my comment{% endtrans %}</p>
                             </div>
                             </a>
                             <a href="{{path('comment_delete',{'id' : comment.id})}}">
                             <div class="button margin_button button_bruin">
-                                <p>Supprimer mon commentaire</p>
+                                <p>{% trans %}Delete my comment{% endtrans %}</p>
                             </div>
                             </a>
                             {% endif %}
@@ -113,11 +114,11 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <small class="text_black">Pas encore de commentaire</small>
+                <small class="text_black">{% trans %}No comments yet{% endtrans %}</small>
             {% endif %}
             <a href="{{path('new_comment',{'slug':publication.slug})}}">
             <div class="button margin_button">
-                <p>Ajouter un commentaire</p>
+                <p>{% trans %}Add a comment{% endtrans %}</p>
             </div>
             </a>
         </div>

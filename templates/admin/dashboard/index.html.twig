@@ -13,7 +13,7 @@
                                 <i class="fas fa-users fa-3x"></i>
                             </div>
                             <div class="col-8">
-                                <div class="card-title">Vous avez {{stats.users}} Utilisateurs inscrits</div>
+                                <div class="card-title">{% trans %}You have{% endtrans %} {{stats.users}} {% trans %}registered users{% endtrans %}</div>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                                 <i class="fas fa-hotel fa-3x"></i>
                             </div>
                             <div class="col-8">
-                                <div class="card-title">Vous avez {{stats.publications}} posts</div>
+                                <div class="card-title">{% trans %}You have{% endtrans %} {{stats.publications}} publications</div>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
             </div>
     </div>
     <div class="text-center space-admin">
-        <a href="{{path('admin_users_index')}}" class="mt-3 mb-3 btn btn-primary text-center">Voir tout les users</a>
-        <a href="{{path('admin_publications_index')}}" class="mt-3 mb-3 btn btn-dark text-center">Voir tout les posts</a>
+        <a href="{{path('admin_users_index')}}" class="mt-3 mb-3 btn btn-primary text-center">{% trans %}See all users{% endtrans %}</a>
+        <a href="{{path('admin_publications_index')}}" class="mt-3 mb-3 btn btn-dark text-center"> {% trans %}See all posts{% endtrans %}</a>
     </div>
 {% endblock %}

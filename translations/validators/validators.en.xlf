@@ -2,9 +2,77 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="publication.name.Min">
+            <trans-unit id="publication.name.min">
                 <source>publication.name.min</source>
                 <target>Please enter at least 5 characters</target>
+            </trans-unit>
+            <trans-unit id="publication.name.notBlank">
+                <source>publication.name.notBlank</source>
+                <target>Please fill in the name of the photo</target>
+            </trans-unit>
+            <trans-unit id="publication.city.notBlank">
+                <source>publication.city.notBlank</source>
+                <target>Please enter a city</target>
+            </trans-unit>
+            <trans-unit id="publication.country.notBlank">
+                <source>publication.country.notBlank</source>
+                <target>Please fill in the name of a country</target>
+            </trans-unit>
+            <trans-unit id="publication.adress.notBlank">
+                <source>publication.adress.notBlank</source>
+                <target>Please enter an address</target>
+            </trans-unit>
+            <trans-unit id="publication.image.notBlank">
+                <source>publication.image.notBlank</source>
+                <target>You must upload a jpg, jpeg, png or gif file</target>
+            </trans-unit>
+            <trans-unit id="publication.image.big">
+                <source>publication.image.big</source>
+                <target>The file size is too large</target>
+            </trans-unit>
+            <trans-unit id="comment.noBlank">
+                <source>comment.noBlank</source>
+                <target>Please write a comment</target>
+            </trans-unit>
+            <trans-unit id="passwordUpdate.old.password">
+                <source>passwordUpdate.old.password</source>
+                <target>You must enter your old password</target>
+            </trans-unit>
+            <trans-unit id="passwordUpdate.new.min">
+                <source>passwordUpdate.new.min</source>
+                <target>Your password must be at least 8 characters</target>
+            </trans-unit>
+            <trans-unit id="passwordUpdate.new.confirm">
+                <source>passwordUpdate.new.confirm</source>
+                <target>You have not correctly confirmed your new password</target>
+            </trans-unit>
+            <trans-unit id="publication.modify.notBlank">
+                <source>publication.modify.notBlank</source>
+                <target>Please add an image</target>
+            </trans-unit>
+            <trans-unit id="user.unique.entity">
+                <source>user.unique.entity</source>
+                <target>A user with this email address already exists</target>
+            </trans-unit>
+            <trans-unit id="user.firstName.notBlank">
+                <source>user.firstName.notBlank</source>
+                <target>Please enter your first name</target>
+            </trans-unit>
+            <trans-unit id="user.lastName.notBlank">
+                <source>user.lastName.notBlank</source>
+                <target>Please enter your last name</target>
+            </trans-unit>
+            <trans-unit id="user.email.notBlank">
+                <source>user.email.notBlank</source>
+                <target>Please give a valid email</target>
+            </trans-unit>
+            <trans-unit id="user.password.notBlank">
+                <source>user.password.notBlank</source>
+                <target>Password is required</target>
+            </trans-unit>
+            <trans-unit id="user.insta.notBlank">
+                <source>user.insta.notBlank</source>
+                <target>Please give your instagram username</target>
             </trans-unit>
         </body>
     </file>

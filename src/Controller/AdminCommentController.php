@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class AdminCommentController extends AbstractController
 {
@@ -28,11 +29,14 @@ class AdminCommentController extends AbstractController
     # Permet de supprimer une publication
     #[Route("/admin/comment/{id}/{idp}/delete", name : "admin_comment_delete")]
     #[IsGranted('ROLE_ADMIN')]
-    public function delete(Coments $comment, EntityManagerInterface $manager,$idp)
+    public function delete(Coments $comment, EntityManagerInterface $manager,$idp, TranslatorInterface $translator)
     {
+
+        $message = $translator->trans(('The comment has been deleted'));
+
         $this->addFlash(
             'success',
-            "Le commentaire n° <strong>{$comment->getId()}</strong> a bien été supprimé"
+            $message
         );
 
         $manager->remove($comment);

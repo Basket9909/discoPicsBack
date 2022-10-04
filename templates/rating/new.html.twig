@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Noter ce spot{% endblock %}
+{% block title %}{% trans %}Rate this spot{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="container_global_input wrapper">
-        <h1 class="hight_title text_black">Noter ce spot</h1>
+        <h1 class="hight_title text_black">{% trans %}Rate this spot{% endtrans %}</h1>
         <div class="center_input">
         {{ form_start(myForm) }}
             {{form_widget(myForm)}}
-            <button type="submit" class="button_connexion">Noter</button>
+            <button type="submit" class="button_connexion">{% trans %}Rate{% endtrans %}</button>
         {{ form_end(myForm) }}
     </div>
     </div>

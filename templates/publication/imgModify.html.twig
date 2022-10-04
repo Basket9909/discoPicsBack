@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modifier la photo{% endblock %}
+{% block title %}{% trans %}Edit photo{% endtrans %}{% endblock %}
 {% block body %}
     <div class="container_global_input wrapper">
-        <h1 class="hight_title text_black">Modifier la photo de {{publication.name}}</h1>
+        <h1 class="hight_title text_black">{% trans %}Change photo of{% endtrans %} {{publication.name}}</h1>
         <div class="center_input">
-            <img class="size_img_profile" src="/uploads/{{ publication.image }}" alt="photo de {{publication.name}}">                
+            <img class="size_img_profile" src="/uploads/{{ publication.image }}" alt="{% trans %}photo of{% endtrans %} {{publication.name}}">                
         {{form_start(myForm)}}
 
         {{form_widget(myForm)}}
-            <button type="submit" class="button_connexion">Confirmez la modification de la photo</button>
+            <button type="submit" class="button_connexion">{% trans %}Confirm photo edit{% endtrans %}</button>
         {{form_end(myForm)}}
     </div>
     </div>

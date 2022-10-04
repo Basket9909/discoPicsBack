@@ -1,17 +1,17 @@
 {% extends 'admin/base.html.twig' %}
 
-{% block title %}Administration commentaires{% endblock %}
+{% block title %}{% trans %}Comments administration{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="container-fluid wrapper container_special">
-        <h1 class="hight_title text_black text-center mt-3 mb-3">Gestion des commentaire pour la publication</h1>
-        <a href="{{path('admin_publications_index')}}"  class="btn btn-dark">Retour aux publications</a>
+        <h1 class="hight_title text_black text-center mt-3 mb-3">{% trans %}Management of comments for the publication{% endtrans %}</h1>
+        <a href="{{path('admin_publications_index')}}"  class="btn btn-dark">{% trans %}Back to{% endtrans %} publications</a>
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th class="text_black">Id</th>
-                    <th class="text_black">Utilisateur</th>
-                    <th class="text_black">commentaire</th>
+                    <th class="text_black">{% trans %}User{% endtrans %}</th>
+                    <th class="text_black">{% trans %}Comment{% endtrans %}</th>
                     <th class="text-center text_black">Action</th>
                 </tr>
             </thead>

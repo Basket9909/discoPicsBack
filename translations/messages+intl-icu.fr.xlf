@@ -127,15 +127,467 @@
       </trans-unit>
       <trans-unit id="n9coxmy" resname="Add">
         <source>Add</source>
-        <target>Ajouter</target>
-      </trans-unit>
-      <trans-unit id="n7coxmy" resname="Add">
-        <source>Spot name</source>
         <target>Nom du spot</target>
       </trans-unit>
-      <trans-unit id="Please enter an author name." resname="Please enter an author name.">
-        <source>Please enter an author name.</source>
+      <trans-unit id="X.A0SqM" resname="Editing the profile">
+        <source>Editing the profile</source>
+        <target>Modification du profil</target>
+      </trans-unit>
+      <trans-unit id="0seC8wS" resname="Editing your profile">
+        <source>Editing your profile</source>
+        <target>Modification de votre profil</target>
+      </trans-unit>
+      <trans-unit id="NTIrW7W" resname="Save Changes">
+        <source>Save Changes</source>
+        <target>Enregistrer les modifications</target>
+      </trans-unit>
+      <trans-unit id="P5yZH2O" resname="Change password">
+        <source>Change password</source>
+        <target>Modification du mot de passe</target>
+      </trans-unit>
+      <trans-unit id="fQSowp8" resname="Confirm password change">
+        <source>Confirm password change</source>
+        <target>Confirmez la modification du mot de passe</target>
+      </trans-unit>
+      <trans-unit id="u4OLKPc" resname="Edit your avatar">
+        <source>Edit your avatar</source>
+        <target>Modifier votre avatar</target>
+      </trans-unit>
+      <trans-unit id="sLTSD71" resname="Changing the avatar of">
+        <source>Changing the avatar of</source>
+        <target>Modification de l'avatar de</target>
+      </trans-unit>
+      <trans-unit id="Vig4cP7" resname="Confirm avatar change">
+        <source>Confirm avatar change</source>
+        <target>Confirmez la modification de l'avatar</target>
+      </trans-unit>
+      <trans-unit id="4TklHk9" resname="Delete Post">
+        <source>Delete Post</source>
+        <target>Supprimer la publication</target>
+      </trans-unit>
+      <trans-unit id="yAyeCVh" resname="Edit photo">
+        <source>Edit photo</source>
+        <target>Modifier la photo</target>
+      </trans-unit>
+      <trans-unit id="OqLj7mr" resname="Name of the photo">
+        <source>Name of the photo</source>
+        <target>Nom de la photo</target>
+      </trans-unit>
+      <trans-unit id="FbYZdLJ" resname="Location">
+        <source>Location</source>
+        <target>Emplacement</target>
+      </trans-unit>
+      <trans-unit id="_d1RG9E" resname="photographer">
+        <source>photographer</source>
+        <target>Photographe</target>
+      </trans-unit>
+      <trans-unit id="2.uzgnk" resname="See profile">
+        <source>See profile</source>
+        <target>Voir le profil</target>
+      </trans-unit>
+      <trans-unit id="zmc1DEY" resname="Photo details">
+        <source>Photo details</source>
+        <target>Détails de la photo</target>
+      </trans-unit>
+      <trans-unit id="U8bdFOs" resname="No details provided">
+        <source>No details provided</source>
+        <target>Pas de détails renseignés</target>
+      </trans-unit>
+      <trans-unit id="ODik2Mu" resname="Tips">
+        <source>Tips</source>
+        <target>Astuces</target>
+      </trans-unit>
+      <trans-unit id="3pef748" resname="No tips provided">
+        <source>No tips provided</source>
+        <target>Pas d'astuces renseignées</target>
+      </trans-unit>
+      <trans-unit id="cIe0wJY" resname="Edit information">
+        <source>Edit information</source>
+        <target>Modifier les informations</target>
+      </trans-unit>
+      <trans-unit id="WhXnhET" resname="Review(s)">
+        <source>Review(s)</source>
+        <target>Note(s)</target>
+      </trans-unit>
+      <trans-unit id="Ew3ynx1" resname="Rate this spot">
+        <source>Rate this spot</source>
+        <target>Noter ce spot</target>
+      </trans-unit>
+      <trans-unit id="TlnSCQJ" resname="Comment(s)">
+        <source>Comment(s)</source>
+        <target>Commentaire(s)</target>
+      </trans-unit>
+      <trans-unit id="at.hhR3" resname="Edit my comment">
+        <source>Edit my comment</source>
+        <target>Modifier mon commentaire</target>
+      </trans-unit>
+      <trans-unit id="kamIAFa" resname="Delete my comment">
+        <source>Delete my comment</source>
+        <target>Supprimer mon commentaire</target>
+      </trans-unit>
+      <trans-unit id="ayWAg2V" resname="No comments yet">
+        <source>No comments yet</source>
+        <target>Pas encore de commentaire</target>
+      </trans-unit>
+      <trans-unit id="ZqryVx2" resname="Add a comment">
+        <source>Add a comment</source>
+        <target>Ajouter un commentaire</target>
+      </trans-unit>
+      <trans-unit id="TbESPve" resname="See instagram account">
+        <source>See instagram account</source>
+        <target>Voir le compte instagram</target>
+      </trans-unit>
+      <trans-unit id="fWPcglB" resname="Other spots published for this user">
+        <source>Other spots published for this user</source>
+        <target>Autres spots publié pour cet utilisateur</target>
+      </trans-unit>
+      <trans-unit id="cPpl2ek" resname="User has no post">
+        <source>User has no post</source>
+        <target>L'utilisateur n'a pas de publication</target>
+      </trans-unit>
+      <trans-unit id="RbY..QG" resname="Rate">
+        <source>Rate</source>
+        <target>Noter</target>
+      </trans-unit>
+      <trans-unit id="S65X6ix" resname="Change photo of">
+        <source>Change photo of</source>
+        <target>Modifier la photo de</target>
+      </trans-unit>
+      <trans-unit id="VSQ7cOX" resname="photo of">
+        <source>photo of</source>
+        <target>photo de</target>
+      </trans-unit>
+      <trans-unit id="r0pXn70" resname="Confirm photo edit">
+        <source>Confirm photo edit</source>
+        <target>Confirmez la modification de la photo</target>
+      </trans-unit>
+      <trans-unit id="H2341Bh" resname="Edit spot">
+        <source>Edit spot</source>
+        <target>Modifier le spot</target>
+      </trans-unit>
+      <trans-unit id="RkxP.QG" resname="Edit">
+        <source>Edit</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit id="bl3ouLu" resname="Site registration">
+        <source>Site registration</source>
+        <target>Inscription au site</target>
+      </trans-unit>
+      <trans-unit id="zq6YNht" resname="Register on the site">
+        <source>Register on the site</source>
+        <target>S'inscrire sur le site</target>
+      </trans-unit>
+      <trans-unit id="UK49N8m" resname="Confirm Registration">
+        <source>Confirm Registration</source>
+        <target>Confirmez l'Inscription</target>
+      </trans-unit>
+      <trans-unit id="c3XcNH1" resname="An error has occurred, username or password is invalid">
+        <source>An error has occurred, username or password is invalid</source>
+        <target>Une erreur est survenue, le nom d'utilisateur ou le mot de passe est invalide</target>
+      </trans-unit>
+      <trans-unit id="M.6VzgI" resname="Your email">
+        <source>Your email</source>
+        <target>Votre adresse mail</target>
+      </trans-unit>
+      <trans-unit id="u9pwK0s" resname="Your password">
+        <source>Your password</source>
+        <target>Votre mot de passe</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="Pgbs.jD" resname="Login to administration">
+        <source>Login to administration</source>
+        <target>Connexion à l'administration</target>
+      </trans-unit>
+      <trans-unit id="rz8S4WH" resname="You have">
+        <source>You have</source>
+        <target>Vous avez</target>
+      </trans-unit>
+      <trans-unit id="GKRcQmA" resname="registered users">
+        <source>registered users</source>
+        <target>utilisateurs inscrits</target>
+      </trans-unit>
+      <trans-unit id="GMNxLzl" resname="See all users">
+        <source>See all users</source>
+        <target>Voir tout les users</target>
+      </trans-unit>
+      <trans-unit id="pnqCs3a" resname="See all posts">
+        <source>See all posts</source>
+        <target>Voir tout les posts</target>
+      </trans-unit>
+      <trans-unit id="awzJBNC" resname="Users">
+        <source>Users</source>
+        <target>Utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="QUPAfKv" resname="See website">
+        <source>See website</source>
+        <target>Voir le site</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="DyKOcXz" resname="Publication Administration">
+        <source>Publication Administration</source>
+        <target>Administration des publications</target>
+      </trans-unit>
+      <trans-unit id="H_rzzix" resname="Publication management">
+        <source>Publication management</source>
+        <target>Gestion des publications</target>
+      </trans-unit>
+      <trans-unit id="zZGCzqs" resname="Back to">
+        <source>Back to</source>
+        <target>Retour au</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="cB0CHQj" resname="Country">
+        <source>Country</source>
+        <target>Pays</target>
+      </trans-unit>
+      <trans-unit id=".DP3Mkb" resname="City">
+        <source>City</source>
+        <target>Ville</target>
+      </trans-unit>
+      <trans-unit id="tRLZfny" resname="User">
+        <source>User</source>
+        <target>Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="NV958p1" resname="Comments">
+        <source>Comments</source>
+        <target>Commentaires</target>
+      </trans-unit>
+      <trans-unit id="iiX9qIh" resname="Users administration">
+        <source>Users administration</source>
+        <target>Administration des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="jcOyUrI" resname="Users management">
+        <source>Users management</source>
+        <target>Gestion des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="8Tpkui." resname="Full name">
+        <source>Full name</source>
+        <target>Nom complet</target>
+      </trans-unit>
+      <trans-unit id="B_1sz2v" resname="Mail">
+        <source>Mail</source>
+        <target>Adresse e-mail</target>
+      </trans-unit>
+      <trans-unit id="FHNqLrn" resname="Role">
+        <source>Role</source>
+        <target>Rôle</target>
+      </trans-unit>
+      <trans-unit id="ZgJfNK8" resname="Comments administration">
+        <source>Comments administration</source>
+        <target>Administration des commentaires</target>
+      </trans-unit>
+      <trans-unit id="YWodz2g" resname="Management of comments for the publication">
+        <source>Management of comments for the publication</source>
+        <target>Gestion des commentaire pour la publication</target>
+      </trans-unit>
+      <trans-unit id="RPXj__x" resname="Comment">
+        <source>Comment</source>
+        <target>Commentaire</target>
+      </trans-unit>
+      <trans-unit id="a0MUKpj" resname="You have been successfully registered">
+        <source>You have been successfully registered</source>
+        <target>Vous avez bien été enregistré</target>
+      </trans-unit>
+      <trans-unit id="j3OL8eO" resname="Data saved successfully">
+        <source>Data saved successfully</source>
+        <target>Les données ont été enregistrées avec succès</target>
+      </trans-unit>
+      <trans-unit id="00fBBoR" resname="Your password has been changed">
+        <source>Your password has been changed</source>
+        <target>Votre mot de passe a bien été modifié</target>
+      </trans-unit>
+      <trans-unit id="aS.DiOa" resname="Your avatar has been changed">
+        <source>Your avatar has been changed</source>
+        <target>Votre avatar a bien été modifié</target>
+      </trans-unit>
+      <trans-unit id="5t3DObd" resname="Your avatar has been successfully deleted">
+        <source>Your avatar has been successfully deleted</source>
+        <target>Votre avatar a bien été supprimé</target>
+      </trans-unit>
+      <trans-unit id="SsPvrZ0" resname="The comment has been deleted">
+        <source>The comment has been deleted</source>
+        <target>Le commentaire a bien été supprimé</target>
+      </trans-unit>
+      <trans-unit id="ihM8xda" resname="The publication has been deleted">
+        <source>The publication has been deleted</source>
+        <target>La publication a bien été supprimée</target>
+      </trans-unit>
+      <trans-unit id="aXm_vMc" resname="The user has been deleted">
+        <source>The user has been deleted</source>
+        <target>L'utilisateur a bien été supprimé</target>
+      </trans-unit>
+      <trans-unit id="2ggTkbL" resname="The comment has been edited">
+        <source>The comment has been edited</source>
+        <target>Le commentaire à bien été modifié</target>
+      </trans-unit>
+      <trans-unit id="bg5nM37" resname="The post has been successfully added">
+        <source>The post has been successfully added</source>
+        <target>Le post a bien été rajouté</target>
+      </trans-unit>
+      <trans-unit id="o3hLf3V" resname="The information of the publication has been modified">
+        <source>The information of the publication has been modified</source>
+        <target>Les informations de la publication a bien été modifiée</target>
+      </trans-unit>
+      <trans-unit id="285TgRN" resname="The image of the post has been successfully modified">
+        <source>The image of the post has been successfully modified</source>
+        <target>L'image de la publication à bien été modifiée</target>
+      </trans-unit>
+      <trans-unit id="0ETDmBI" resname="The note has been added">
+        <source>The note has been added</source>
+        <target>La note à bien été ajoutée</target>
+      </trans-unit>
+      <trans-unit id="NpY2TDN" resname="The note has been modified">
+        <source>The note has been modified</source>
+        <target>La note à bien été modifiée</target>
+      </trans-unit>
+      <trans-unit id="oUDAwe2" resname="test5">
+        <source>test5</source>
         <target>test</target>
+      </trans-unit>
+      <trans-unit id="5FtgyHO" resname="Post name">
+        <source>Post name</source>
+        <target>Nom du post</target>
+      </trans-unit>
+      <trans-unit id="8tbo0Sn" resname="Name your post">
+        <source>Name your post</source>
+        <target>Donnez un nom à votre post</target>
+      </trans-unit>
+      <trans-unit id="35lax6J" resname="Enter the name of the country where the photo was taken">
+        <source>Enter the name of the country where the photo was taken</source>
+        <target>Entrez le nom du pays d'oû la photo à été prise</target>
+      </trans-unit>
+      <trans-unit id="_LmGFQU" resname="Enter the name of the city where the photo was taken">
+        <source>Enter the name of the city where the photo was taken</source>
+        <target>Entrez le nom de la ville d'oû la photo à été prise</target>
+      </trans-unit>
+      <trans-unit id="PN..9Ga" resname="Adress">
+        <source>Adress</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="dgErqsv" resname="Enter the rest of the address (street, number,...)">
+        <source>Enter the rest of the address (street, number,...)</source>
+        <target>Entrez le reste de l'adresse (rue,n°,...)</target>
+      </trans-unit>
+      <trans-unit id="VMfOA0Y" resname="Details ( not mandatory )">
+        <source>Details ( not mandatory )</source>
+        <target>Détails ( pas obligatoire )</target>
+      </trans-unit>
+      <trans-unit id="rgjMD3O" resname="Give additional details on the photo">
+        <source>Give additional details on the photo</source>
+        <target>Donnez des détails supplémentaire sur la photo</target>
+      </trans-unit>
+      <trans-unit id="oBC12tu" resname="Tips ( not mandatory )">
+        <source>Tips ( not mandatory )</source>
+        <target>Tips ( pas obligatoire )</target>
+      </trans-unit>
+      <trans-unit id="S2St3Ot" resname="Give your tips on this photo">
+        <source>Give your tips on this photo</source>
+        <target>Donnez vos tips sur cette photo</target>
+      </trans-unit>
+      <trans-unit id="cPWXtz6" resname="Your photo">
+        <source>Your photo</source>
+        <target>Votre photo</target>
+      </trans-unit>
+      <trans-unit id="6zaT6Ls" resname="Your photo (jpg , png  ,gif)">
+        <source>Your photo (jpg , png  ,gif)</source>
+        <target>Votre photo</target>
+      </trans-unit>
+      <trans-unit id="tES143b" resname="Rating out of 5">
+        <source>Rating out of 5</source>
+        <target>Note sur 5</target>
+      </trans-unit>
+      <trans-unit id=".MAPR1B" resname="Please indicate your rating from 0 to 5">
+        <source>Please indicate your rating from 0 to 5</source>
+        <target>Veuillez indiquer votre note de 0 à 5</target>
+      </trans-unit>
+      <trans-unit id="tJQFi_R" resname="Add a comment to this post">
+        <source>Add a comment to this post</source>
+        <target>Ajouter un commentaire sur cette publication</target>
+      </trans-unit>
+      <trans-unit id="cC75Ie0" resname="First name">
+        <source>First name</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="3q4RV75" resname="Enter your first name">
+        <source>Enter your first name</source>
+        <target>Entrez votre prénom</target>
+      </trans-unit>
+      <trans-unit id="e0iIBJR" resname="Last name">
+        <source>Last name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="JbmZtZ0" resname="Enter your last name">
+        <source>Enter your last name</source>
+        <target>Entrez votre nom</target>
+      </trans-unit>
+      <trans-unit id="P_Qrgjq" resname="Enter your mail">
+        <source>Enter your mail</source>
+        <target>Entrez votre email</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="wGv5ZwF" resname="Enter your password">
+        <source>Enter your password</source>
+        <target>Entrez votre mot de passe</target>
+      </trans-unit>
+      <trans-unit id="8mmBIX4" resname="Password confirmation">
+        <source>Password confirmation</source>
+        <target>Confirmation du mot de passe</target>
+      </trans-unit>
+      <trans-unit id="nUKH11S" resname="Please confirm your password">
+        <source>Please confirm your password</source>
+        <target>Veuillez confimer votre mot de passe</target>
+      </trans-unit>
+      <trans-unit id=".cc59SZ" resname="Date of Birth">
+        <source>Date of Birth</source>
+        <target>Date de naissance</target>
+      </trans-unit>
+      <trans-unit id="8HR1mSC" resname="Instagram username">
+        <source>Instagram username</source>
+        <target>Pseudo instagram</target>
+      </trans-unit>
+      <trans-unit id="YijndiA" resname="Enter your instagram username">
+        <source>Enter your instagram username</source>
+        <target>Entrez votre pseudo instagram</target>
+      </trans-unit>
+      <trans-unit id="8RhOomP" resname="Old password">
+        <source>Old password</source>
+        <target>Ancien mot de passe</target>
+      </trans-unit>
+      <trans-unit id="VTSTayt" resname="Enter your old password">
+        <source>Enter your old password</source>
+        <target>Entrez votre ancien mot de passe</target>
+      </trans-unit>
+      <trans-unit id="PdnfREH" resname="New password">
+        <source>New password</source>
+        <target>Nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="YG48Hy2" resname="Enter your new password">
+        <source>Enter your new password</source>
+        <target>Entrez votre nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="6OQFcrp" resname="New password confirmation">
+        <source>New password confirmation</source>
+        <target>Confirmation du nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="bJUZXyP" resname="Confirm your new password">
+        <source>Confirm your new password</source>
+        <target>Veuillez confimer votre nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="6DnfUDY" resname="Search for a spot by name, city, country or street">
+        <source>Search for a spot by name, city, country or street</source>
+        <target>Chercher un spot par nom, ville, pays ou rue</target>
       </trans-unit>
     </body>
   </file>

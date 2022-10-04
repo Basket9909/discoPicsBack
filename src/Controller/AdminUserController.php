@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class AdminUserController extends AbstractController
 {
@@ -33,11 +34,14 @@ class AdminUserController extends AbstractController
      # Permet de supprimer un user
      #[Route("/admin/user/{id}/delete", name : "admin_user_delete")]
      #[IsGranted('ROLE_ADMIN')]
-     public function delete(Users $user, EntityManagerInterface $manager)
+     public function delete(Users $user, EntityManagerInterface $manager, TranslatorInterface $translator)
      {
+
+        $message = $translator->trans(('The user has been deleted'));
+        
          $this->addFlash(
              'success',
-             "Le user <strong>{$user->getFullName()}</strong> a bien été supprimé"
+             $message
          );
  
          $manager->remove($user);

@@ -1,20 +1,20 @@
 {% extends 'admin/base.html.twig' %}
 
-{% block title %}Administration des publications{% endblock %}
+{% block title %}{% trans %}Publication Administration{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="container-fluid wrapper">
-        <h1 class="hight_title text_black text-center mt-3 mb-3">Gestion des publications ({{stats.publications}})</h1>
-        <a href="{{path('admin_dashboard_index')}}"  class="btn btn-dark">Retour au dashboard</a>
+        <h1 class="hight_title text_black text-center mt-3 mb-3">{% trans %}Publication management{% endtrans %} ({{stats.publications}})</h1>
+        <a href="{{path('admin_dashboard_index')}}"  class="btn btn-dark">{% trans %}Back to{% endtrans %} dashboard</a>
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th class="text_black">Id</th>
-                    <th class="text_black">Nom</th>
-                    <th class="text_black">Pays</th>
-                    <th class="text_black">Ville</th>
-                    <th class="text_black">Note</th>
-                    <th class="text_black">Utilisateur</th>
+                    <th class="text_black">{% trans %}Name{% endtrans %}</th>
+                    <th class="text_black">{% trans %}Country{% endtrans %}</th>
+                    <th class="text_black">{% trans %}City{% endtrans %}</th>
+                    <th class="text_black">{% trans %}Rate{% endtrans %}</th>
+                    <th class="text_black">{% trans %}User{% endtrans %}</th>
                     <th class="text-center text_black">Action</th>
                 </tr>
             </thead>
@@ -30,7 +30,7 @@
                         <td class="text-center text_black ">
                             <a href="{{path('admin_publication_delete',{'id' : publication.id})}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                             {% if publication.coments | length > 0 %}
-                            <a href="{{path('admin_comments_index',{'id' : publication.id})}}" class="btn btn-primary">Commentaires</a>
+                            <a href="{{path('admin_comments_index',{'id' : publication.id})}}" class="btn btn-primary">{% trans %}Comments{% endtrans %}</a>
                             {% endif %}
                         </td>
                     </tr>

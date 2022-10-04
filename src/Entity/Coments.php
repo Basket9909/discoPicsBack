@@ -28,7 +28,7 @@ class Coments
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    #[Assert\NotBlank(message : "Veuillez écrire un commentaire")]
+    #[Assert\NotBlank(message : "comment.noBlank")]
     private ?string $comment = null;
 
     # Permet de mettre en place la date de création

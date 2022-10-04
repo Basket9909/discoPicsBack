@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
 #[ORM\HasLifecycleCallbacks()]
-#[UniqueEntity("mail", message : "Un utilisateur ayant cette adresse email existe déjà")]
+#[UniqueEntity("mail", message : "user.unique.entity")]
 class Users implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -24,24 +24,24 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 50)]
-    #[Assert\NotBlank(message : "Veuillez renseignez votre Prénom")]
+    #[Assert\NotBlank(message : "user.firstName.notBlank")]
     private ?string $firstName = null;
 
     #[ORM\Column(length: 50)]
-    #[Assert\NotBlank(message : "Veuillez renseignez votre Nom")]
+    #[Assert\NotBlank(message : "user.lastName.notBlank")]
     private ?string $lastName = null;
 
     #[ORM\Column(length: 100)]
-    #[Assert\Email(message : 'Veuillez donner un e-mail valide')]
+    #[Assert\Email(message : 'user.email.notBlank')]
     private ?string $mail = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message : "Le mot de passe est obligatoire")]
-    #[Assert\Length(min : 8, minMessage : "Votre mot de passe doit faire au moins 8 caractéres")]
+    #[Assert\NotBlank(message : "user.password.notBlank")]
+    #[Assert\Length(min : 8, minMessage : "passwordUpdate.new.min")]
     private ?string $password = null;
 
     # Permet de confirmer le mot de passe avec les Assert
-    #[Assert\EqualTo(propertyPath : "password", message : "Vous n'avez pas correctement confirmé votre mot de passe")]
+    #[Assert\EqualTo(propertyPath : "password", message : "passwordUpdate.new.confirm")]
     # @var string
     public $passwordConfirm;
 
@@ -49,12 +49,12 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeInterface $bird = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Assert\NotBlank(message : "Vous devez remplir ce champ")]
+    #[Assert\NotBlank(message : "user.insta.notBlank")]
     private ?string $instaLink = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\Image(mimeTypes : ["image/png","image/jpeg","image/jpg","image/gif"], mimeTypesMessage : "Vous devez upload un fichier jpg, jpeg, png ou gif")]
-    #[Assert\File(maxSize : "1024k", maxSizeMessage : "La taille du fichier est trop grande")]
+    #[Assert\Image(mimeTypes : ["image/png","image/jpeg","image/jpg","image/gif"], mimeTypesMessage : "publication.image.notBlank")]
+    #[Assert\File(maxSize : "1024k", maxSizeMessage : "publication.image.big")]
     private ?string $Picture = null;
 
     #[ORM\Column(length: 255)]

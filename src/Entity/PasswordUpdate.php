@@ -7,15 +7,15 @@ class PasswordUpdate
 {
 
     
-    #[Assert\NotBlank(message : "Vous devez renseigner votre ancien mot de passe")]
+    #[Assert\NotBlank(message : "passwordUpdate.old.password")]
     private $oldPassword;
 
     
-    #[Assert\Length(min : 8, minMessage : "Votre mot de passe doit faire au moins 8 caractères")]
+    #[Assert\Length(min : 8, minMessage : "passwordUpdate.new.min")]
     private $newPassword;
 
     
-    #[Assert\EqualTo(propertyPath : "newPassword", message : "Vous n'avez pas correctement confirmé votre nouveau mot de passe")] 
+    #[Assert\EqualTo(propertyPath : "newPassword", message : "passwordUpdate.new.confirm")] 
     private $confirmPassword;
 
    

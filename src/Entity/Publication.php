@@ -23,20 +23,20 @@ class Publication
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message : "Veuillez renseignez le nom de la photo")]
+    #[Assert\NotBlank(message : "publication.name.notBlank")]
     #[Assert\Length(min : 5, minMessage : "publication.name.min")]
     private ?string $name = null;
 
     #[ORM\Column(length: 50, nullable: true)]
-    #[Assert\NotBlank(message : "Veuillez renseignez la ville")]
+    #[Assert\NotBlank(message : "publication.city.notBlank")]
     private ?string $city = null;
 
     #[ORM\Column(length: 50, nullable: true)]
-    #[Assert\NotBlank(message : "Veuillez renseignez le nom de le pays")]
+    #[Assert\NotBlank(message : "publication.country.notBlank")]
     private ?string $country = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Assert\NotBlank(message : "Veuillez renseignez le nom de la rue")]
+    #[Assert\NotBlank(message : "publication.adress.notBlank")]
     private ?string $adress = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
@@ -62,8 +62,8 @@ class Publication
     private ?string $slug = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\Image(mimeTypes : ["image/png","image/jpeg","image/jpg","image/gif"], mimeTypesMessage : "Vous devez upload un fichier jpg, jpeg, png ou gif")]
-    #[Assert\File(maxSize : "1024k", maxSizeMessage : "La taille du fichier est trop grande")]
+    #[Assert\Image(mimeTypes : ["image/png","image/jpeg","image/jpg","image/gif"], mimeTypesMessage : "publication.image.notBlank")]
+    #[Assert\File(maxSize : "1024k", maxSizeMessage : "")]
     private ?string $image = null;
 
     public function __construct()

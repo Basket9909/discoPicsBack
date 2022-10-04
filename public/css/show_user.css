@@ -9,6 +9,7 @@
     transform: translateX(-50%);
     position: relative;
     margin-top: 50px;
+    object-fit: cover;
 }
 .container_user_show h1,.container_user_show h2{
     text-align: center;

@@ -537,6 +537,82 @@
         <source>Please enter a valid week.</source>
         <target>Veuillez entrer une semaine valide.</target>
       </trans-unit>
+      <trans-unit id="sx5t2T_" resname="publication.name.min">
+        <source>publication.name.min</source>
+        <target>Veuillez renseigner au moins 5 caractères</target>
+      </trans-unit>
+      <trans-unit id="Ja4.usM" resname="publication.name.notBlank">
+        <source>publication.name.notBlank</source>
+        <target>Veuillez renseignez le nom de la photo</target>
+      </trans-unit>
+      <trans-unit id="V0GoOw2" resname="publication.city.notBlank">
+        <source>publication.city.notBlank</source>
+        <target>Veuillez renseignez une ville</target>
+      </trans-unit>
+      <trans-unit id="lRU_uFx" resname="publication.country.notBlank">
+        <source>publication.country.notBlank</source>
+        <target>Veuillez renseignez le nom d'un pays</target>
+      </trans-unit>
+      <trans-unit id="N3_xW6g" resname="publication.adress.notBlank">
+        <source>publication.adress.notBlank</source>
+        <target>Veuillez renseignez une adresse</target>
+      </trans-unit>
+      <trans-unit id="e4TR57V" resname="publication.image.notBlank">
+        <source>publication.image.notBlank</source>
+        <target>Vous devez upload un fichier jpg, jpeg, png ou gif</target>
+      </trans-unit>
+      <trans-unit id="_MtHPU7" resname="publication.image.big">
+        <source>publication.image.big</source>
+        <target>La taille du fichier est trop grande</target>
+      </trans-unit>
+      <trans-unit id="l3g0pqI" resname="comment.noBlank">
+        <source>comment.noBlank</source>
+        <target>Veuillez écrire un commentaire</target>
+      </trans-unit>
+      <trans-unit id="ZnpPaK_" resname="passwordUpdate.old.password">
+        <source>passwordUpdate.old.password</source>
+        <target>Vous devez renseigner votre ancien mot de passe</target>
+      </trans-unit>
+      <trans-unit id="mORKS_2" resname="passwordUpdate.new.min">
+        <source>passwordUpdate.new.min</source>
+        <target>Votre mot de passe doit faire au moins 8 caractères</target>
+      </trans-unit>
+      <trans-unit id="ZQr5Ugp" resname="passwordUpdate.new.confirm">
+        <source>passwordUpdate.new.confirm</source>
+        <target>Vous n'avez pas correctement confirmé votre nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="EsDMTWR" resname="publication.modify.notBlank">
+        <source>publication.modify.notBlank</source>
+        <target>Veuillez ajouter une image</target>
+      </trans-unit>
+      <trans-unit id="MaHLKoE" resname="user.unique.entity">
+        <source>user.unique.entity</source>
+        <target>Un utilisateur ayant cette adresse email existe déjà</target>
+      </trans-unit>
+      <trans-unit id="aH5S8mZ" resname="user.firstName.notBlank">
+        <source>user.firstName.notBlank</source>
+        <target>Veuillez renseignez votre Prénom</target>
+      </trans-unit>
+      <trans-unit id="srKg9SI" resname="user.lastName.notBlank">
+        <source>user.lastName.notBlank</source>
+        <target>Veuillez renseignez votre Nom</target>
+      </trans-unit>
+      <trans-unit id="ExZ3IcR" resname="user.email.notBlank">
+        <source>user.email.notBlank</source>
+        <target>Veuillez donner un e-mail valide</target>
+      </trans-unit>
+      <trans-unit id="qhOvlwq" resname="user.password.notBlank">
+        <source>user.password.notBlank</source>
+        <target>Le mot de passe est obligatoire</target>
+      </trans-unit>
+      <trans-unit id="iJhbHvt" resname="user.insta.notBlank">
+        <source>user.insta.notBlank</source>
+        <target>Veuillez donner votre pseudo instagram</target>
+      </trans-unit>
+      <trans-unit id="U1PtBXj" resname="publication.image.label">
+        <source>publication.image.label</source>
+        <target>test</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

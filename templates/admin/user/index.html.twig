@@ -1,18 +1,18 @@
 {% extends 'admin/base.html.twig' %}
 
-{% block title %}Administration des utilisateurs{% endblock %}
+{% block title %}{% trans %}Users administration{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="container-fluid wrapper">
-        <h1 class="hight_title text_black text-center mt-3 mb-3">Gestion des utilisateurs ({{stats.users}})</h1>
-        <a href="{{path('admin_dashboard_index')}}"  class="btn btn-dark">Retour au dashboard</a>
+        <h1 class="hight_title text_black text-center mt-3 mb-3">{% trans %}Users management{% endtrans %} ({{stats.users}})</h1>
+        <a href="{{path('admin_dashboard_index')}}"  class="btn btn-dark">{% trans %}Back to{% endtrans %} dashboard</a>
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th class="text_black">Id</th>
-                    <th class="text_black">Nom complet</th>
-                    <th class="text_black">Adresse E-mail</th>
-                    <th class="text_black">Rôles</th>
+                    <th class="text_black">{% trans %}Full name{% endtrans %}</th>
+                    <th class="text_black">{% trans %}Mail{% endtrans %}</th>
+                    <th class="text_black">{% trans %}Role{% endtrans %}</th>
                     <th class="text-center text_black">Action</th>
                 </tr>
             </thead>
