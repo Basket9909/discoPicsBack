@@ -30,6 +30,14 @@
 		<link rel="apple-touch-icon" sizes="192x192" href="/images/discopicslogo_black.ico">
 
 		{% include "partials/header.html.twig" %}
+		{% if app.user and app.user.isVerified == false %}
+		<div class="alert alert-warning alert-dismissible" role="alert">
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<div class="alert-message">
+				<strong class="text_bruin">{% trans %}Your account is not activated,{% endtrans %} </strong> <a class="text_bruin" href="{{ path('resend_verif') }}"> {% trans %}resend activation link{% endtrans %}</a>
+			</div>
+		</div>
+		{% endif %}
 
 		{% block body %}{% endblock %}
 

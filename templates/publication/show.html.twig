@@ -63,23 +63,35 @@
                     <small class="text_black">{% trans %}Not rated yet{% endtrans %}</small>
             {% endif %}
 
-
             {# {% for rating in publication.ratings %}
             {% if app.user and app.user == rating.user %}
             <a href="{{path('rate_edit',{'id':rating.id})}}">
             <div class="button margin_button">
-                <p>Modifier ma note</p>
+                <p>{% trans %}Edit my rating{% endtrans %}</p>
             </div>
             </a>
-            {% else %} #}
+            {% else %}
             <a href="{{path('new_rate',{'slug':publication.slug})}}">
             <div class="button margin_button">
                 <p>{% trans %}Rate this spot{% endtrans %}</p>
             </div>
             </a>
-            {# {% endif %}
+            {% endif %}
+            
             {% endfor %} #}
+            {% for rating in app.user.ratings %}
+                {% if rating.publication.id == publication.id %}
+               
+                    <h2 class="text_black">ok</h2>
+                {% else %}
+                    
+                    
+                     <h2 class="text_black">pas ok</h2>
+                   
+                
+                {% endif %}
 
+            {% endfor %}
 
             <h2 class="text_green title_photo middle_title">{% trans %}Comment(s){% endtrans %} ({{publication.coments | length}})</h2>
             {% if publication.coments | length > 0 %}
@@ -98,18 +110,16 @@
                                 <h4 class="text_white little_title">{{comment.date | date('d/m/Y')}}</h4>
                             </div>
                             <p class="text_white little_title">{{comment.comment}}</p>
-                            {% if app.user and app.user == comment.user %}
-                            <a href="{{path('comment_edit',{'id' : comment.id})}}">
-                            <div class="button margin_button button_bruin">
-                                <p>{% trans %}Edit my comment{% endtrans %}</p>
+                            <div class="buttons_edit_delete_comment">
+                                {% if app.user and app.user == comment.user %}
+                                   <a id="edit_comment" href="{{path('comment_edit',{'id' : comment.id})}}">
+                                        <p>{% trans %}Edit my comment{% endtrans %}</p>
+                                    </a>
+                                    <a id="delete_comment" href="{{path('comment_delete',{'id' : comment.id})}}">
+                                        <p>{% trans %}Delete my comment{% endtrans %}</p>
+                                    </a>
+                                {% endif %}
                             </div>
-                            </a>
-                            <a href="{{path('comment_delete',{'id' : comment.id})}}">
-                            <div class="button margin_button button_bruin">
-                                <p>{% trans %}Delete my comment{% endtrans %}</p>
-                            </div>
-                            </a>
-                            {% endif %}
                         </div>
                     </div>
                 {% endfor %}

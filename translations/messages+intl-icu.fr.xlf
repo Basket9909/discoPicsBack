@@ -393,9 +393,9 @@
         <source>Comment</source>
         <target>Commentaire</target>
       </trans-unit>
-      <trans-unit id="a0MUKpj" resname="You have been successfully registered">
-        <source>You have been successfully registered</source>
-        <target>Vous avez bien été enregistré</target>
+      <trans-unit id="d5mSk96" resname="You have been successfully registered, An email has been sent to you to activate your account">
+        <source>You have been successfully registered, An email has been sent to you to activate your account</source>
+        <target>Vous avez bien été enregistré, Un email vous a été envoyer pour activer votre compte</target>
       </trans-unit>
       <trans-unit id="j3OL8eO" resname="Data saved successfully">
         <source>Data saved successfully</source>
@@ -588,6 +588,78 @@
       <trans-unit id="6DnfUDY" resname="Search for a spot by name, city, country or street">
         <source>Search for a spot by name, city, country or street</source>
         <target>Chercher un spot par nom, ville, pays ou rue</target>
+      </trans-unit>
+      <trans-unit id="T3g4QC8" resname="Verified">
+        <source>Verified</source>
+        <target>Verifié</target>
+      </trans-unit>
+      <trans-unit id="DWJ3h85" resname="Your account is not activated,">
+        <source>Your account is not activated,</source>
+        <target>Votre compte n'est pas activé,</target>
+      </trans-unit>
+      <trans-unit id="NSutZ3K" resname="resend activation link">
+        <source>resend activation link</source>
+        <target>renvoyer le lien d'activation</target>
+      </trans-unit>
+      <trans-unit id="za1u8TT" resname="Your account must be activated to take full advantage of the site :">
+        <source>Your account must be activated to take full advantage of the site :</source>
+        <target>Votre compte doit être activé pour profiter pleinement du site :</target>
+      </trans-unit>
+      <trans-unit id="_XjLSu_" resname="Activate your account">
+        <source>Activate your account</source>
+        <target>Activez votre compte</target>
+      </trans-unit>
+      <trans-unit id="GF_NsyJ" resname="Hello">
+        <source>Hello</source>
+        <target>Bonjour</target>
+      </trans-unit>
+      <trans-unit id="nZzX3uO" resname="Activate my account">
+        <source>Activate my account</source>
+        <target>Activer mon compte</target>
+      </trans-unit>
+      <trans-unit id="097D.7l" resname="This link will expire in 3 hours">
+        <source>This link will expire in 3 hours</source>
+        <target>Ce lien expirera dans 3 heures</target>
+      </trans-unit>
+      <trans-unit id="90ht_x1" resname="Activated account">
+        <source>Activated account</source>
+        <target>Compte activé</target>
+      </trans-unit>
+      <trans-unit id="nRTP.d9" resname="The token is invalid or has expired">
+        <source>The token is invalid or has expired</source>
+        <target>Le token est invalide ou a expiré</target>
+      </trans-unit>
+      <trans-unit id="E7FI9kn" resname="You must be logged in to access this page">
+        <source>You must be logged in to access this page</source>
+        <target>Vous devez être connecté pour acceder à cette page</target>
+      </trans-unit>
+      <trans-unit id="A9x5s2T" resname="This account is already activated">
+        <source>This account is already activated</source>
+        <target>Ce compte est déja activé</target>
+      </trans-unit>
+      <trans-unit id="NgG6w4a" resname="The validation email has been resent">
+        <source>The validation email has been resent</source>
+        <target>L'email de validation à été renvoyer</target>
+      </trans-unit>
+      <trans-unit id="ycIWSDi" resname="Choose your Avatar">
+        <source>Choose your Avatar</source>
+        <target>Choisissez votre avatar</target>
+      </trans-unit>
+      <trans-unit id="I75w2do" resname="No associated instagram account">
+        <source>No associated instagram account</source>
+        <target>Aucun compte instagram associé</target>
+      </trans-unit>
+      <trans-unit id="j9jIZtf" resname="Editing your comment for publication">
+        <source>Editing your comment for publication</source>
+        <target>Modification de votre commentaire pour la publication</target>
+      </trans-unit>
+      <trans-unit id="TzRvd3L" resname="Edit comment">
+        <source>Edit comment</source>
+        <target>Modifier le commentaire</target>
+      </trans-unit>
+      <trans-unit id="N8xXALN" resname="Edit rating">
+        <source>Edit my rating</source>
+        <target>Modifier ma note</target>
       </trans-unit>
     </body>
   </file>

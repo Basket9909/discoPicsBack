@@ -4,25 +4,29 @@ namespace App\Controller;
 
 use App\Entity\Users;
 use App\Form\ImgModifyType;
+use App\Service\JWTService;
 use App\Entity\UserImgModify;
 use App\Entity\PasswordUpdate;
 use App\Form\RegistrationType;
 use App\Form\PasswordUpdateType;
+use App\Service\SendMailService;
+use App\Repository\UsersRepository;
 use App\Form\ModificationAccountType;
 use Symfony\Component\Form\FormError;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\PublicationRepository;
+use Faker\Guesser\Name;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Contracts\Translation\TranslatorInterface;
 
 class AccountController extends AbstractController
 {
@@ -32,7 +36,7 @@ class AccountController extends AbstractController
     # param EntityManagerInterface $manager
     # param UserPasswordHasherInterface $hasher
     # return Response
-    public function register(Request $request,EntityManagerInterface $manager,UserPasswordHasherInterface $hasher, TranslatorInterface $translator)
+    public function register(Request $request,EntityManagerInterface $manager,UserPasswordHasherInterface $hasher, TranslatorInterface $translator, SendMailService $mail, JWTService $jwt)
     {
         $user = new Users();
         $form = $this->createForm(RegistrationType::class, $user);
@@ -66,20 +70,117 @@ class AccountController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
-            $message = $translator->trans(('You have been successfully registered'));
+            // On génère le JWT de l'utilisateur
+            // On crée le Header
+            $header = [
+                'typ' => 'JWT',
+                'alg' => 'HS256'
+            ];
+
+            // On crée le Payload
+            $payload = [
+                'user_id' => $user->getId()
+            ];
+
+            // On génère le token
+            $token = $jwt->generate($header, $payload, $this->getParameter('app.jwtsecret'));
+
+            // On envoie un mail
+            $mail->send(
+                'no-reply@discopics.net',
+                $user->getMail(),
+                $translator->trans(('Activate your account')),
+                'register',
+                compact('user', 'token')
+            );
+
+            $message = $translator->trans(("You have been successfully registered, An email has been sent to you to activate your account"));
 
             $this->addFlash(
                 'success',
                 $message
             );
 
-            return $this->redirectToRoute('account_login');
+            return $this->redirectToRoute('account_index',['id' => $user->getId(), 'withAlert' => true]);
         }
 
 
         return $this->render("account/new.html.twig",[
             'myForm' => $form->createView()
         ]);
+    }
+
+
+    
+    # Permet d'envoyer un mail de confirmation de compte
+    #[Route('/verif/{token}', name: 'verify_user')]
+    public function verifyUser($token, JWTService $jwt, UsersRepository $usersRepository, EntityManagerInterface $manager,TranslatorInterface $translator): Response
+    {
+        //On vérifie si le token est valide, n'a pas expiré et n'a pas été modifié
+        if($jwt->isValid($token) && !$jwt->isExpired($token) && $jwt->check($token, $this->getParameter('app.jwtsecret'))){
+            // On récupère le payload
+            $payload = $jwt->getPayload($token);
+
+            // On récupère le user du token
+            $user = $usersRepository->find($payload['user_id']);
+
+            //On vérifie que l'utilisateur existe et n'a pas encore activé son compte
+            if($user && !$user->getIsVerified()){
+                $user->setIsVerified(true);
+                $manager->flush($user);
+                $this->addFlash('success', $translator->trans(("Activated account")));
+                return $this->redirectToRoute('account_index',['id' => $user->getId(), 'withAlert' => true]);
+            }
+        }
+        // Ici un problème se pose dans le token
+        $this->addFlash('danger', $translator->trans(("The token is invalid or has expired")));
+        return $this->redirectToRoute('homepage');
+    }
+
+    # Permet de renvoyer un mail de confirmation de compte
+    #[Route("/resendverif", name:'resend_verif')]
+    public function resendVerif(JWTService $jwt, SendMailService $mail, UsersRepository $usersRepository, TranslatorInterface $translator)
+    {
+        $user = $this->getUser();
+
+        if(!$user){
+
+            $this->addFlash('danger', $translator->trans(("You must be logged in to access this page")));
+            return $this->redirectToRoute('account_login');
+        }
+
+        if($user->getIsVerified()){
+
+            $this->addFlash('warning',  $translator->trans(("This account is already activated")));
+            return $this->redirectToRoute('account_index',['id' => $user->getId(), 'withAlert' => true]);
+        }
+
+         // On génère le JWT de l'utilisateur
+            // On crée le Header
+            $header = [
+                'typ' => 'JWT',
+                'alg' => 'HS256'
+            ];
+
+            // On crée le Payload
+            $payload = [
+                'user_id' => $user->getId()
+            ];
+
+            // On génère le token
+            $token = $jwt->generate($header, $payload, $this->getParameter('app.jwtsecret'));
+
+            // On envoie un mail
+            $mail->send(
+                'no-reply@discopics.net',
+                $user->getMail(),
+                $translator->trans(('Activate your account')),
+                'register',
+                compact('user', 'token')
+            );
+
+            $this->addFlash('warning', $translator->trans(('The validation email has been resent')));
+            return $this->redirectToRoute('homepage');
     }
 
     # Permet d'afficher le profil de l'utilisateur connecté

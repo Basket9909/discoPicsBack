@@ -45,7 +45,8 @@ class AppFixtures extends Fixture
               ->setInstaLink('romeoo09')
               ->setPicture($picture)
               ->setslug('romeow'.(001))
-              ->setRoles(['ROLE_ADMIN']);
+              ->setRoles(['ROLE_ADMIN'])
+              ->setIsVerified(true);
         
               $manager->persist($admin);
 

@@ -19,7 +19,7 @@ class RatingController extends AbstractController
 {
    # Permet d'ajouter une note
    #[Route("/publication/{slug}/rate/new", name : "new_rate")]
-   #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+   #[Security("(is_granted('ROLE_USER') and user.getIsVerified() == true) or is_granted('ROLE_ADMIN')")]
    # param Request $request
    # param EntityManagerInterface $manager
    # return Response
@@ -60,7 +60,7 @@ class RatingController extends AbstractController
 
    # Permet de modifier une note 
    #[Route("/publication/{id}/rate/edit", name : "rate_edit")]
-   #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+   #[Security("(is_granted('ROLE_USER') and user === rate.getUser() ) or is_granted('ROLE_ADMIN')")]
 //    #[ParamConverter("id", class : "Rating", options : ["id"=> "id"])]
    # @param Rating $rating
    # @param Request $request

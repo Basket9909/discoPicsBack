@@ -34,6 +34,10 @@ html, body{
     color: #7BA05B;
     font-weight: 900;
 }
+.text_bruin{
+    color: #7B5644!important;
+    font-weight: 900;
+}
 
 .hight_title{
     font-size: 2.5rem;
@@ -165,6 +169,10 @@ html, body{
     }
 }
 
+nav{
+    z-index: 10000!important;
+}
+
 .title_img{
     width: 100%;
     height: 100%;
@@ -230,6 +238,7 @@ html, body{
     width: 100%;
     text-align: center;
     color: black;
+    margin-top: 10px;
 }
 .container_img .rect_whithout_hover{
     color: #7BA05B;
@@ -345,3 +354,14 @@ textarea{
     background-color: #7BA05B;
 }
 
+.alert-warning{
+    margin-bottom: 0;
+}
+
+.dropdown-menu{
+    background-color: #7BA05B;
+}
+
+.container_special{
+    min-height: 50vh;
+}

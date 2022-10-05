@@ -49,10 +49,9 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeInterface $bird = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Assert\NotBlank(message : "user.insta.notBlank")]
     private ?string $instaLink = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     #[Assert\Image(mimeTypes : ["image/png","image/jpeg","image/jpg","image/gif"], mimeTypesMessage : "publication.image.notBlank")]
     #[Assert\File(maxSize : "1024k", maxSizeMessage : "publication.image.big")]
     private ?string $Picture = null;
@@ -62,6 +61,9 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     private array $roles = [];
+
+    #[ORM\Column(type: 'boolean')]
+    private $is_verified = false;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Publication::class, orphanRemoval: true)]
     private Collection $publications;
@@ -239,6 +241,18 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
+
+        return $this;
+    }
+
+    public function getIsVerified(): ?bool
+    {
+        return $this->is_verified;
+    }
+
+    public function setIsVerified(bool $is_verified): self
+    {
+        $this->is_verified = $is_verified;
 
         return $this;
     }

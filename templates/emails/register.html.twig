@@ -1,0 +1,5 @@
+<h1>{% trans %}Activate your account{% endtrans %}</h1>
+<p>{% trans %}Hello{% endtrans %} {{ user.fullName }},</p>
+<p>{% trans %}Your account must be activated to take full advantage of the site :{% endtrans %}</p>
+<p><a href="{{ absolute_url(path('verify_user', {token: token})) }}">{% trans %}Activate my account{% endtrans %}</a></p>
+<p>{% trans %}This link will expire in 3 hours{% endtrans %}</p>

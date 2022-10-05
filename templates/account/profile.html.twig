@@ -39,7 +39,9 @@
                 <h2 class="hight_title">{{user.firstName|capitalize}} {{user.lastName|capitalize}}</h2>
                 <h3 class="middle_title">{{user.bird | date("d / m / Y") }}</h3>
                 <h3 class="middle_title">{{user.mail}}</h3>
+                {% if user.instalink %}
                 <h3 class="middle_title">https://www.instagram.com/{{user.instalink}}</h3>
+                {% endif %}
                 <a href="{{ path('profile_modify') }}">
                     <div class="button margin_button">
                         <p>{% trans %}Modify your informations{% endtrans %}</p>

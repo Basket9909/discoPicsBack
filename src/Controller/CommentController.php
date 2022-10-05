@@ -18,7 +18,7 @@ class CommentController extends AbstractController
 {
     # Permet d'ajouter un commentaire
     #[Route("/publication/{slug}/comment/new", name : "new_comment")]
-    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+    #[Security("(is_granted('ROLE_USER') and user.getIsVerified() == true ) or is_granted('ROLE_ADMIN')")]
     # param Request $request
     # param EntityManagerInterface $manager
     # return Response
@@ -57,7 +57,7 @@ class CommentController extends AbstractController
 
      # Permet de modifier un commentaire 
      #[Route("/publication/comment/{id}/edit", name : "comment_edit")]
-     #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+     #[Security("(is_granted('ROLE_USER') and user === comment.getUser() ) or is_granted('ROLE_ADMIN')")]
      # @param Festival $festival
      # @param Coments $comment
      # @param Request $request
@@ -92,7 +92,7 @@ class CommentController extends AbstractController
 
     # Permet de supprimer un commentaire
     #[Route("/publication/comment/{id}/delete", name : "comment_delete")]
-    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+    #[Security("(is_granted('ROLE_USER') and user === comment.getUser() ) or is_granted('ROLE_ADMIN')")]
     # @param Coments $comment
     # @param EntityManagerInterface $manager
     # @return Response

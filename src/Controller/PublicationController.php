@@ -30,7 +30,7 @@ class PublicationController extends AbstractController
 
      # Permet d'ajouter une publication
      #[Route("/publication/new", name : "new_publication")]
-     #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+     #[Security("(is_granted('ROLE_USER') and user.getIsVerified() == true) or is_granted('ROLE_ADMIN')")]
      # param Request $request
      # param EntityManagerInterface $manager
      # return Response
@@ -97,6 +97,7 @@ class PublicationController extends AbstractController
     # Permet de modifier une publication
     #[Route("/publication/{slug}/edit", name : "publication_edit")]
     #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+    #[Security("(is_granted('ROLE_USER') and user === publication.getUser() ) or is_granted('ROLE_ADMIN')")]
     # @param Request $request
     # @param EntityManagerInterface $manager
     # @param Ad $festival
@@ -143,7 +144,7 @@ class PublicationController extends AbstractController
 
     # Permet de supprimer une publication
     #[Route("/publication/{slug}/delete", name : "publication_delete")]
-    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+    #[Security("(is_granted('ROLE_USER') and user === publication.getUser() ) or is_granted('ROLE_ADMIN')")]
     # @param Request $request
     # @param EntityManagerInterface $manager
     # @return Response
@@ -166,7 +167,7 @@ class PublicationController extends AbstractController
 
     # Permet de modifier l'image d'une publication
     #[Route("/publication/{slug}/edit/img", name : "publication_edit_img")]
-    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+    #[Security("(is_granted('ROLE_USER') and user === publication.getUser() ) or is_granted('ROLE_ADMIN')")]
     # param Request $request
     # @param EntityManagerInterface $manager
     # @return Response

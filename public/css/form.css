@@ -63,8 +63,27 @@
     outline: none;
 }
 
-li{
+form ul{
+    padding: 0;
+}
+
+form ul li{
     color: #d9534f;
+    list-style: none;
+}
+
+.special_button_img{
+   display: none;
+}
+
+.avatar_label{
+    background-color: #7B5644;
+    color: white!important;
+    padding: 10px;
+    border-radius: 10px;
+}
+.avatar_label:hover{
+    cursor: pointer;
 }
 
 

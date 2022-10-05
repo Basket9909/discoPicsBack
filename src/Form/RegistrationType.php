@@ -27,23 +27,26 @@ class RegistrationType extends ApplicationType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('firstName',TextType::class, $this->getConfiguration("global_input",$this->translator->trans('First name'),$this->translator->trans('Enter your first name')))
-            ->add('lastName',TextType::class, $this->getConfiguration("global_input",$this->translator->trans('Last name'),$this->translator->trans('Enter your last name')))
-            ->add('mail', EmailType::class, $this->getConfiguration("global_input",$this->translator->trans('Mail'), $this->translator->trans('Enter your mail')))
-            ->add('password', PasswordType::class, $this->getConfiguration("global_input",$this->translator->trans('Password'), $this->translator->trans('Enter your password')))
-            ->add('passwordConfirm', PasswordType::class, $this->getConfiguration("global_input",$this->translator->trans('Password confirmation'), $this->translator->trans('Please confirm your password')))
+            ->add('firstName',TextType::class, $this->getConfiguration("global_input",$this->translator->trans('First name')." *",$this->translator->trans('Enter your first name')))
+            ->add('lastName',TextType::class, $this->getConfiguration("global_input",$this->translator->trans('Last name')." *",$this->translator->trans('Enter your last name')))
+            ->add('mail', EmailType::class, $this->getConfiguration("global_input",$this->translator->trans('Mail')." *", $this->translator->trans('Enter your mail')))
+            ->add('password', PasswordType::class, $this->getConfiguration("global_input",$this->translator->trans('Password')." *", $this->translator->trans('Enter your password')))
+            ->add('passwordConfirm', PasswordType::class, $this->getConfiguration("global_input",$this->translator->trans('Password confirmation')." *", $this->translator->trans('Please confirm your password')))
             ->add('bird', DateType::class,[
                 'widget' => 'single_text',
-                "label" => $this->translator->trans('Date of Birth'),
+                "label" => $this->translator->trans('Date of Birth')." *",
                 "attr" =>[
                     "class" => "global_input"
                 ]])
-            ->add('instaLink', TextType::class, $this->getConfiguration("global_input",$this->translator->trans('Instagram username'),$this->translator->trans('Enter your instagram username')))
+            ->add('instaLink', TextType::class, $this->getConfiguration("global_input",$this->translator->trans('Instagram username'),$this->translator->trans('Enter your instagram username'),[
+                "required" => false
+            ]))
             ->add('Picture',FileType::class, [
-                "label" => "Avatar (jpg , png , gif)",
-                "required"=> true,
+                "label" => $this->translator->trans("Choose your Avatar"),
+                "label_attr" => ['class' => 'avatar_label'],
+                "required"=> false,
                 "attr" =>[
-                    "class" => "global_input"
+                    "class" => "global_input special_button_img"
                 ]
             ])
         ;
