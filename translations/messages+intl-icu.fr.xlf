@@ -658,8 +658,36 @@
         <target>Modifier le commentaire</target>
       </trans-unit>
       <trans-unit id="N8xXALN" resname="Edit rating">
+        <source>Edit rating</source>
+        <target>Modifier ma note</target>
+      </trans-unit>
+      <trans-unit id="NKGP80e" resname="Discover all publications">
+        <source>Discover all publications</source>
+        <target>Découvrir toutes les publications</target>
+      </trans-unit>
+      <trans-unit id="jB05FJx" resname="Edit my rating">
         <source>Edit my rating</source>
         <target>Modifier ma note</target>
+      </trans-unit>
+      <trans-unit id="ViSS3n2" resname="The post has been added to your favorites">
+        <source>The post has been added to your favorites</source>
+        <target>La publication a bien été ajoutée à vos favoris</target>
+      </trans-unit>
+      <trans-unit id="ZCmq9qe" resname="The post has been removed from your favorites">
+        <source>The post has been removed from your favorites</source>
+        <target>La publication a bien été supprimée de vos favoris</target>
+      </trans-unit>
+      <trans-unit id="va02Mwn" resname="your favorites">
+        <source>your favorites</source>
+        <target>__your favorites</target>
+      </trans-unit>
+      <trans-unit id="EbdfGqh" resname="Your favorite posts">
+        <source>Your favorite posts</source>
+        <target>Vos post favoris</target>
+      </trans-unit>
+      <trans-unit id="fnFY2Lj" resname="You don't have any spots in your favorites yet">
+        <source>You don't have any spots in your favorites yet</source>
+        <target>Vous n'avez encore aucun spots dans vos favoris</target>
       </trans-unit>
     </body>
   </file>

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Discopics - {% trans %}your favorites{% endtrans %}{% endblock %}
+
+{% block body %}
+
+        <div class="text_zone wrapper">
+            <h1 class="text text_black hight_title">{% trans %}Your favorite posts{% endtrans %}</h1>
+            
+            <div class="container_img container_special">
+                {% if publications | length > 0  %}
+                 {% for publication in publications %}
+                    {% include 'publication/_publication.html.twig' %}
+                {% endfor %}
+                {% else %}
+                    <h3 class="little_title title_in_middle text_black">{% trans %}You don't have any spots in your favorites yet{% endtrans %}</h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

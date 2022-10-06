@@ -21,23 +21,17 @@ class FavoritePublicationRepository extends ServiceEntityRepository
         parent::__construct($registry, FavoritePublication::class);
     }
 
-    public function add(FavoritePublication $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
-    public function remove(FavoritePublication $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
+    // public function getPublicationForUserWithMaxResult(int $id): array
+    // {
+    //     return $this->createQueryBuilder('p')
+    //         ->select('p as publication, u as user')
+    //         ->join('p.user', 'u')
+    //         ->andWhere('u.id = :id')
+    //         ->setParameter(':id', $id)
+    //         ->setMaxResults(6)
+    //         ->getQuery()
+    //         ->getResult();
+    // }
 
 //    /**
 //     * @return FavoritePublication[] Returns an array of FavoritePublication objects

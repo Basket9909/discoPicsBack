@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Discopics - publications{% endblock %}
+
+{% block body %}
+
+        <div class="text_zone wrapper">
+            <h1 class="text text_black hight_title">{% trans %}Discover all publications{% endtrans %}</h1>
+            
+            <div class="container_img">
+                 {% for publication in pagination.data %}
+                    {% include 'publication/_publication.html.twig' %}
+                {% endfor %}
+            </div>
+        </div>
+        {{pagination.display()}}
+    </div>
+{% endblock %}

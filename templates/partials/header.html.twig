@@ -17,7 +17,7 @@
         <a href="{{ path('search_posts') }}" class="nav-link">{% trans %}Search{% endtrans %}</a>
         </li>
         <li class="nav-item">
-        <a href="" class="nav-link">{% trans %}Discover{% endtrans %}</a>
+        <a href="{{ path('publications_all') }}" class="nav-link">{% trans %}Discover{% endtrans %}</a>
         </li>
       </ul>
 
@@ -32,7 +32,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accoundDropdownLink">
             <a href="{{ path('account_index',{'id':app.user.id}) }}" class="nav-link">{% trans %}My account{% endtrans %}</a>
-            {# <a href="{{path('favoris_show',{'id' : app.user.id})}}" class="dropdown-item">Mes favoris</a> #}
+            <a href="{{path('show_favorite',{'id' : app.user.id})}}" class="nav-link">Mes favoris</a>
             <div class="dropdown-divider"></div>
             <a href="{{ path('account_logout') }}" class="nav-link"> {% trans %}Lougout{% endtrans %}</a>
         </li>

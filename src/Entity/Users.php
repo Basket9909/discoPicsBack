@@ -74,11 +74,15 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Rating::class, orphanRemoval: true)]
     private Collection $ratings;
 
+    #[ORM\ManyToMany(targetEntity: Publication::class, mappedBy: 'favorite')]
+    private Collection $favoris;
+
     public function __construct()
     {
         $this->publications = new ArrayCollection();
         $this->coments = new ArrayCollection();
         $this->ratings = new ArrayCollection();
+        $this->favoris = new ArrayCollection();
     }
 
     #Permet d'initialiser le slug automatiquement
@@ -342,6 +346,33 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
             if ($rating->getUser() === $this) {
                 $rating->setUser(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Publication>
+     */
+    public function getFavoris(): Collection
+    {
+        return $this->favoris;
+    }
+
+    public function addFavori(Publication $favori): self
+    {
+        if (!$this->favoris->contains($favori)) {
+            $this->favoris->add($favori);
+            $favori->addFavorite($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavori(Publication $favori): self
+    {
+        if ($this->favoris->removeElement($favori)) {
+            $favori->removeFavorite($this);
         }
 
         return $this;

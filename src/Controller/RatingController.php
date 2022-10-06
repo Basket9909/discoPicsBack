@@ -60,7 +60,7 @@ class RatingController extends AbstractController
 
    # Permet de modifier une note 
    #[Route("/publication/{id}/rate/edit", name : "rate_edit")]
-   #[Security("(is_granted('ROLE_USER') and user === rate.getUser() ) or is_granted('ROLE_ADMIN')")]
+   #[Security("(is_granted('ROLE_USER') and user === rating.getUser() ) or is_granted('ROLE_ADMIN')")]
 //    #[ParamConverter("id", class : "Rating", options : ["id"=> "id"])]
    # @param Rating $rating
    # @param Request $request

@@ -7,6 +7,8 @@ use App\Form\PublicationType;
 use App\Form\PublicationModifyType;
 use App\Entity\PublicationImgModify;
 use App\Form\ImgPublicationModifyType;
+use App\Repository\PublicationRepository;
+use App\Service\PaginationService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,13 +22,20 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class PublicationController extends AbstractController
 {
-    #[Route('/publications', name: 'all_publications')]
-    public function index(): Response
-    {
-        return $this->render('publication/index.html.twig', [
-            'controller_name' => 'SpotsController',
-        ]);
-    }
+
+     # Permet d'afficher l'ensemble des publications 
+     #[Route("/publications/{page<\d+>?1}", name: "publications_all")]
+     public function all(PaginationService $pagination, $page): Response
+     {
+  
+         $pagination->setEntityClass(Publication::class)
+                        ->setPage($page)
+                        ->setLimit(9);
+ 
+         return $this->render('publication/all.html.twig', [
+             'pagination' => $pagination
+         ]);
+     }
 
      # Permet d'ajouter une publication
      #[Route("/publication/new", name : "new_publication")]
@@ -221,6 +230,8 @@ class PublicationController extends AbstractController
         ]);
 
     }
+
+   
 
     # Permet d'afficher une seule publication
     #[Route('/publication/{slug}', name: 'publication_show')]

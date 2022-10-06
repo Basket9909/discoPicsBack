@@ -1,5 +1,6 @@
 {% set url = path('publication_show', {'slug': publication.slug}) %}
 <a href="{{url}}">
+
 <div class="rect_whith_hover">
     <img src="{{publication.image}}" alt="{{publication.name}}">
     <div class="hover_infos">
@@ -10,9 +11,12 @@
                 {% else %}
                     <small>{% trans %}Not rated yet{% endtrans %}</small>
             {% endif %}
+           
         </div>
     </div>
 </div>
+
+
 <div class="rect_whithout_hover">
     <h3 class="infos little_title">{{publication.place}}</h3>
     <img src="{{publication.image}}" alt="{{publication.name}}">

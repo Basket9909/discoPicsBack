@@ -365,3 +365,39 @@ textarea{
 .container_special{
     min-height: 50vh;
 }
+
+.container_pagination{
+    width: auto;
+    height: 50px;
+    margin-top: 50px;
+}
+.container_pagination ul{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+.container_pagination ul li{
+    list-style: none;
+    background-color: #7BA05B;
+}
+.container_pagination ul .disabled a{
+    pointer-events: none;
+    color: #f9f1e085;
+}
+.container_pagination ul .activeLink{
+    background-color: #7B5644;
+}
+.container_pagination ul li:hover{
+    background-color: #7B5644;
+}
+.container_pagination ul .arrow{
+    list-style: none;
+    background-color:#7B5644
+}
+.container_pagination ul li a{
+    padding: 0 20px;
+    color: #F9F1E0;
+    list-style: none;
+    text-decoration: none;
+    line-height: 50px;
+}

@@ -66,11 +66,15 @@ class Publication
     #[Assert\File(maxSize : "1024k", maxSizeMessage : "")]
     private ?string $image = null;
 
+    #[ORM\ManyToMany(targetEntity: Users::class, inversedBy: 'favoris')]
+    private Collection $favorite;
+
     public function __construct()
     {
         $this->coments = new ArrayCollection();
         $this->ratings = new ArrayCollection();
         $this->images = new ArrayCollection();
+        $this->favorite = new ArrayCollection();
     }
 
     # Permet de récupérer la note d'une publication
@@ -312,6 +316,30 @@ class Publication
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Users>
+     */
+    public function getFavorite(): Collection
+    {
+        return $this->favorite;
+    }
+
+    public function addFavorite(Users $favorite): self
+    {
+        if (!$this->favorite->contains($favorite)) {
+            $this->favorite->add($favorite);
+        }
+
+        return $this;
+    }
+
+    public function removeFavorite(Users $favorite): self
+    {
+        $this->favorite->removeElement($favorite);
 
         return $this;
     }
