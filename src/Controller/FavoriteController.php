@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class FavoriteController extends AbstractController
 {
+    # permet d'ajouter une publication a ses favoris
     #[Route('/favorite/add/{id}', name: 'add_favorite')]
     public function addFavorite(Publication $publication, EntityManagerInterface $manager, Request $request, TranslatorInterface $translator): Response
     {
@@ -35,6 +36,7 @@ class FavoriteController extends AbstractController
     }
 
 
+    # Permet de retirer une publication de ses favoris
     #[Route('/favorite/remove/{id}', name: 'remove_favorite')]
     public function removeFavorite(Publication $publication, EntityManagerInterface $manager, Request $request, TranslatorInterface $translator): Response
     {
@@ -56,13 +58,11 @@ class FavoriteController extends AbstractController
         return $this->redirect($request->headers->get('referer'));
     }
 
-
+    # Permet d'afficher les favoris de l'utilisateur
     #[Route('/favorite/show/{id}', name: 'show_favorite')]
     public function showFavorite(Users $users,$id): Response
     {
-
-
-
+        
         return $this->render('favorite/show.html.twig', [
             'publications'=> $users->getFavoris(),
         ]);

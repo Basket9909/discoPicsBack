@@ -48,3 +48,18 @@ input{
     color: black;
 }
 
+.arrow_right_link{
+    color: black;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.arrow_right_link i{
+    transition: all .3s ease-in-out;
+    transform: scale(1);
+}
+.arrow_right_link i:hover{
+    transform: scale(1.2);
+    color: black;
+    text-decoration: none;
+}
+

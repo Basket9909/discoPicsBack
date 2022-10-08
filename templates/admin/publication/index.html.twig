@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container-fluid wrapper container_special">
         <h1 class="hight_title text_black text-center mt-3 mb-3">{% trans %}Publication management{% endtrans %} ({{stats.publications}})</h1>
-        <a href="{{path('admin_dashboard_index')}}"  class="btn btn-dark">{% trans %}Back to{% endtrans %} dashboard</a>
+        <a href="{{path('admin_dashboard_index')}}"  class="btn btn-dark"><i class="fa-solid fa-arrow-left"></i> | {% trans %}Back to{% endtrans %} dashboard</a>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -30,7 +30,7 @@
                         <td class="text-center text_black ">
                             <a href="{{path('admin_publication_delete',{'id' : publication.id})}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                             {% if publication.coments | length > 0 %}
-                            <a href="{{path('admin_comments_index',{'id' : publication.id})}}" class="btn btn-primary">{% trans %}Comments{% endtrans %}</a>
+                            <a href="{{path('admin_comments_index',{'id' : publication.id})}}" class="btn btn-primary"><i class="fa-solid fa-comment"></i> | {% trans %}Comments{% endtrans %}</a>
                             {% endif %}
                         </td>
                     </tr>

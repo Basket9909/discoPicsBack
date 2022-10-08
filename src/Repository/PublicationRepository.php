@@ -66,6 +66,8 @@ class PublicationRepository extends ServiceEntityRepository
 
     public function search($words){
         $query = $this->createQueryBuilder('p');
+        // ->select('p as publication, u as user')
+        // ->join('p.user', 'u');
         if($words != null){
             $query->andWhere('MATCH_AGAINST(p.name, p.city, p.country, p.adress) AGAINST(:words boolean)>0')
                   ->setParameter(':words', $words);

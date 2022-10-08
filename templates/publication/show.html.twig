@@ -47,7 +47,7 @@
             {% else %}
              <a href="{{url}}">
                 <div class="button margin_button">
-                <p>{% trans %}See profile{% endtrans %}</p>
+                <p><i class="fa-solid fa-user"></i> | {% trans %}See profile{% endtrans %}</p>
             </div>
             </a>
             {% endif %}
@@ -93,14 +93,14 @@
 	{% if isRate %}
 		<a href="{{path('rate_edit',{'id':idRate})}}">
             <div class="button margin_button">
-                <p>{% trans %}Edit my rating{% endtrans %}</p>
+                <p><i class="fa-solid fa-star"></i> | {% trans %}Edit my rating{% endtrans %}</p>
             </div>
         </a>
 	{% else %}
   
 		<a href="{{path('new_rate',{'slug':publication.slug})}}">
             <div class="button margin_button">
-                <p>{% trans %}Rate this spot{% endtrans %}</p>
+                <p><i class="fa-solid fa-star"></i> | {% trans %}Rate this spot{% endtrans %}</p>
             </div>
         </a>
 	{% endif %}
@@ -161,7 +161,7 @@
             {% endif %}
             <a href="{{path('new_comment',{'slug':publication.slug})}}">
             <div class="button margin_button">
-                <p>{% trans %}Add a comment{% endtrans %}</p>
+                <p><i class="fa-solid fa-comment"></i> | {% trans %}Add a comment{% endtrans %}</p>
             </div>
             </a>
         </div>

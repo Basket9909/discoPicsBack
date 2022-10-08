@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-4">
-                                <i class="fas fa-hotel fa-3x"></i>
+                                <i class="fas fa-folder fa-3x"></i>
                             </div>
                             <div class="col-8">
                                 <div class="card-title">{% trans %}You have{% endtrans %} {{stats.publications}} publications</div>
@@ -35,7 +35,7 @@
             </div>
     </div>
     <div class="text-center space-admin">
-        <a href="{{path('admin_users_index')}}" class="mt-3 mb-3 btn btn-primary text-center">{% trans %}See all users{% endtrans %}</a>
-        <a href="{{path('admin_publications_index')}}" class="mt-3 mb-3 btn btn-dark text-center"> {% trans %}See all posts{% endtrans %}</a>
+        <a href="{{path('admin_users_index')}}" class="mt-3 mb-3 btn btn-primary text-center"><i class="fa-solid fa-user"></i> | {% trans %}See all users{% endtrans %}</a>
+        <a href="{{path('admin_publications_index')}}" class="mt-3 mb-3 btn btn-dark text-center"><i class="fas fa-folder"></i> | {% trans %}See all posts{% endtrans %}</a>
     </div>
 {% endblock %}

@@ -6,7 +6,7 @@
     <div class="container_profile wrapper">
         <a href="{{ path("new_publication") }}">
             <div class="button margin_button">
-                <p>{% trans %}Add spot{% endtrans %}</p>
+                <p><i class="fa-solid fa-plus"></i> | {% trans %}Add spot{% endtrans %}</p>
             </div>
         </a>
 
@@ -22,14 +22,14 @@
                 
                 <a href="{{ path('profile_img_modify') }}">
                     <div class="button margin_button">
-                        <p>{% trans %}Change your profile picture{% endtrans %}</p>
+                        <p><i class="fa-solid fa-user"></i> | {% trans %}Change your profile picture{% endtrans %}</p>
                     </div>
                 </a>
 
                  {% if user.picture %}
                 <a href="{{ path('profile_img_delete') }}">
                     <div class="button margin_button">
-                        <p>{% trans %}Delete your profile picture{% endtrans %}</p>
+                        <p><i class="fa-solid fa-user"></i> | {% trans %}Delete your profile picture{% endtrans %}</p>
                     </div>
                 </a>
                 {% endif %}
@@ -37,19 +37,19 @@
             </div>
             <div class="personal_infos">
                 <h2 class="hight_title">{{user.firstName|capitalize}} {{user.lastName|capitalize}}</h2>
-                <h3 class="middle_title">{{user.bird | date("d / m / Y") }}</h3>
-                <h3 class="middle_title">{{user.mail}}</h3>
+                <h3 class="middle_title"><i class="fa-solid fa-cake-candles"></i> : {{user.bird | date("d / m / Y") }}</h3>
+                <h3 class="middle_title"><i class="fa-solid fa-envelope"></i> : {{user.mail}}</h3>
                 {% if user.instalink %}
-                <h3 class="middle_title">https://www.instagram.com/{{user.instalink}}</h3>
+                <h3 class="middle_title"><i class="fa-brands fa-instagram"></i> : {{user.instalink}} <a class="arrow_right_link" href="https://www.instagram.com/{{user.instaLink}}" target="_BLANK"><i class="fa-solid fa-arrow-right"></i></a></h3>
                 {% endif %}
                 <a href="{{ path('profile_modify') }}">
                     <div class="button margin_button">
-                        <p>{% trans %}Modify your informations{% endtrans %}</p>
+                        <p><i class="fa-solid fa-info"></i> | {% trans %}Modify your informations{% endtrans %}</p>
                     </div>
                 </a>
                 <a href="{{ path('password_modify')}}">
                     <div class="button margin_button">
-                        <p>{% trans %}Change your password{% endtrans %}</p>
+                        <p><i class="fa-solid fa-lock"></i> | {% trans %}Change your password{% endtrans %}</p>
                     </div>
                 </a>
             </div>

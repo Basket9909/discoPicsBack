@@ -16,6 +16,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
 #[ORM\HasLifecycleCallbacks()]
 #[UniqueEntity("mail", message : "user.unique.entity")]
+#[ORM\Index(columns : ["first_name","last_name","insta_link"], flags : ["fulltext"])]
 class Users implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]

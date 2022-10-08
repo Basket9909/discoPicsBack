@@ -111,7 +111,7 @@ class Publication
     public function getPlace(){
         return "{$this->city}, {$this->country}";
     }
-    # Permet d'avoir le la ville et le pays en une fois
+    # Permet d'avoir le la ville, le pays et l'adresse en une fois
     # return Response
     public function getFullPlace(){
         return "{$this->adress}, {$this->city}, {$this->country}";
