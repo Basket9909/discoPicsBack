@@ -9,9 +9,9 @@
         <source>Welcome to Discopics</source>
         <target>Bienvenue sur Discopics</target>
       </trans-unit>
-      <trans-unit id="fxu4XtE" resname="Discopics will help you find beautiful places for your photoshoot or take beautiful photos in beautiful landscapes.">
-        <source>Discopics will help you find beautiful places for your photoshoot or take beautiful photos in beautiful landscapes.</source>
-        <target>Discopics va vous aider à trouver de beaux endroits pour vos photoshoot ou réaliser de magnifiques photo dans de beau paysages.</target>
+      <trans-unit id="fxu4XtE" resname="Discopics will help you find beautiful places for your photoshoots or for taking beautiful photos in awesome landscapes.">
+        <source>Discopics will help you find beautiful places for your photoshoots or for taking beautiful photos in awesome landscapes.</source>
+        <target>Discopics va vous aider à trouver de beaux endroits pour vos photoshoots ou réaliser de magnifiques photos dans de beaux paysages.</target>
       </trans-unit>
       <trans-unit id="is9k6l." resname="Want to find spots in a specific location ?">
         <source>Want to find spots in a specific location ?</source>
@@ -73,8 +73,8 @@
         <source>Find your ideal spot</source>
         <target>Trouvez votre spot idéal</target>
       </trans-unit>
-      <trans-unit id="92cT3Dx" resname="No spots match your search">
-        <source>No spots match your search</source>
+      <trans-unit id="92cT3Dx" resname="No spot matches your search">
+        <source>No spot matches your search</source>
         <target>Aucun spot ne correspond à votre recherche</target>
       </trans-unit>
       <trans-unit id="ukRc.zi" resname="Privacy policy">
@@ -93,9 +93,9 @@
         <source>Profile of</source>
         <target>Profil de</target>
       </trans-unit>
-      <trans-unit id="RjJ8gcY" resname="Your personal informations">
-        <source>Your personal informations</source>
-        <target>Vos informations personelles</target>
+      <trans-unit id="RjJ8gcY" resname="Your personal information">
+        <source>Your personal information</source>
+        <target>Vos informations personnelles</target>
       </trans-unit>
       <trans-unit id="VNESBAp" resname="Avatar of">
         <source>Avatar of</source>
@@ -109,8 +109,8 @@
         <source>Delete your profile picture</source>
         <target>Supprimer votre photo de profil</target>
       </trans-unit>
-      <trans-unit id="lY3BxAq" resname="Modify your informations">
-        <source>Modify your informations</source>
+      <trans-unit id="lY3BxAq" resname="Modify your information">
+        <source>Modify your information</source>
         <target>Modifier vos informations</target>
       </trans-unit>
       <trans-unit id="imodqOy" resname="Change your password">
@@ -121,9 +121,9 @@
         <source>Your spots</source>
         <target>Vos spots</target>
       </trans-unit>
-      <trans-unit id="qbu46VH" resname="You haven't published any spots yet">
-        <source>You haven't published any spots yet</source>
-        <target>Vous n'avez pas encore publier de spots</target>
+      <trans-unit id="qbu46VH" resname="You haven't published any spot yet">
+        <source>You haven't published any spot yet</source>
+        <target>Vous n'avez pas encore publié de spot</target>
       </trans-unit>
       <trans-unit id="n9coxmy" resname="Add">
         <source>Add</source>
@@ -225,8 +225,8 @@
         <source>Delete my comment</source>
         <target>Supprimer mon commentaire</target>
       </trans-unit>
-      <trans-unit id="ayWAg2V" resname="No comments yet">
-        <source>No comments yet</source>
+      <trans-unit id="ayWAg2V" resname="No comment yet">
+        <source>No comment yet</source>
         <target>Pas encore de commentaire</target>
       </trans-unit>
       <trans-unit id="ZqryVx2" resname="Add a comment">
@@ -239,7 +239,7 @@
       </trans-unit>
       <trans-unit id="fWPcglB" resname="Other spots published for this user">
         <source>Other spots published for this user</source>
-        <target>Autres spots publié pour cet utilisateur</target>
+        <target>Autres spots publiés pour cet utilisateur</target>
       </trans-unit>
       <trans-unit id="cPpl2ek" resname="User has no post">
         <source>User has no post</source>
@@ -277,9 +277,9 @@
         <source>Register on the site</source>
         <target>S'inscrire sur le site</target>
       </trans-unit>
-      <trans-unit id="UK49N8m" resname="Confirm Registration">
-        <source>Confirm Registration</source>
-        <target>Confirmez l'Inscription</target>
+      <trans-unit id="UK49N8m" resname="Confirm registration">
+        <source>Confirm registration</source>
+        <target>Confirmez l'inscription</target>
       </trans-unit>
       <trans-unit id="c3XcNH1" resname="An error has occurred, username or password is invalid">
         <source>An error has occurred, username or password is invalid</source>
@@ -311,11 +311,11 @@
       </trans-unit>
       <trans-unit id="GMNxLzl" resname="See all users">
         <source>See all users</source>
-        <target>Voir tout les users</target>
+        <target>Voir tous les users</target>
       </trans-unit>
       <trans-unit id="pnqCs3a" resname="See all posts">
         <source>See all posts</source>
-        <target>Voir tout les posts</target>
+        <target>Voir tous les posts</target>
       </trans-unit>
       <trans-unit id="awzJBNC" resname="Users">
         <source>Users</source>
@@ -387,7 +387,7 @@
       </trans-unit>
       <trans-unit id="YWodz2g" resname="Management of comments for the publication">
         <source>Management of comments for the publication</source>
-        <target>Gestion des commentaire pour la publication</target>
+        <target>Gestion des commentaires pour la publication</target>
       </trans-unit>
       <trans-unit id="RPXj__x" resname="Comment">
         <source>Comment</source>
@@ -427,7 +427,7 @@
       </trans-unit>
       <trans-unit id="2ggTkbL" resname="The comment has been edited">
         <source>The comment has been edited</source>
-        <target>Le commentaire à bien été modifié</target>
+        <target>Le commentaire a bien été modifié</target>
       </trans-unit>
       <trans-unit id="bg5nM37" resname="The post has been successfully added">
         <source>The post has been successfully added</source>
@@ -435,7 +435,7 @@
       </trans-unit>
       <trans-unit id="o3hLf3V" resname="The information of the publication has been modified">
         <source>The information of the publication has been modified</source>
-        <target>Les informations de la publication a bien été modifiée</target>
+        <target>Les informations de la publication ont bien été modifiées</target>
       </trans-unit>
       <trans-unit id="285TgRN" resname="The image of the post has been successfully modified">
         <source>The image of the post has been successfully modified</source>
@@ -443,11 +443,11 @@
       </trans-unit>
       <trans-unit id="0ETDmBI" resname="The note has been added">
         <source>The note has been added</source>
-        <target>La note à bien été ajoutée</target>
+        <target>La note a bien été rajoutée</target>
       </trans-unit>
       <trans-unit id="NpY2TDN" resname="The note has been modified">
         <source>The note has been modified</source>
-        <target>La note à bien été modifiée</target>
+        <target>La note a bien été modifiée</target>
       </trans-unit>
       <trans-unit id="oUDAwe2" resname="test5">
         <source>test5</source>
@@ -463,11 +463,11 @@
       </trans-unit>
       <trans-unit id="35lax6J" resname="Enter the name of the country where the photo was taken">
         <source>Enter the name of the country where the photo was taken</source>
-        <target>Entrez le nom du pays d'oû la photo à été prise</target>
+        <target>Entrez le nom du pays d'où la photo a été prise</target>
       </trans-unit>
       <trans-unit id="_LmGFQU" resname="Enter the name of the city where the photo was taken">
         <source>Enter the name of the city where the photo was taken</source>
-        <target>Entrez le nom de la ville d'oû la photo à été prise</target>
+        <target>Entrez le nom de la ville d'où la photo a été prise</target>
       </trans-unit>
       <trans-unit id="PN..9Ga" resname="Adress">
         <source>Adress</source>
@@ -483,7 +483,7 @@
       </trans-unit>
       <trans-unit id="rgjMD3O" resname="Give additional details on the photo">
         <source>Give additional details on the photo</source>
-        <target>Donnez des détails supplémentaire sur la photo</target>
+        <target>Donnez des détails supplémentaires sur la photo</target>
       </trans-unit>
       <trans-unit id="oBC12tu" resname="Tips ( not mandatory )">
         <source>Tips ( not mandatory )</source>
@@ -547,7 +547,7 @@
       </trans-unit>
       <trans-unit id="nUKH11S" resname="Please confirm your password">
         <source>Please confirm your password</source>
-        <target>Veuillez confimer votre mot de passe</target>
+        <target>Veuillez confirmer votre mot de passe</target>
       </trans-unit>
       <trans-unit id=".cc59SZ" resname="Date of Birth">
         <source>Date of Birth</source>
@@ -583,7 +583,7 @@
       </trans-unit>
       <trans-unit id="bJUZXyP" resname="Confirm your new password">
         <source>Confirm your new password</source>
-        <target>Veuillez confimer votre nouveau mot de passe</target>
+        <target>Veuillez confirmer votre nouveau mot de passe</target>
       </trans-unit>
       <trans-unit id="6DnfUDY" resname="Search for a spot by name, city, country or street">
         <source>Search for a spot by name, city, country or street</source>
@@ -679,7 +679,7 @@
       </trans-unit>
       <trans-unit id="va02Mwn" resname="your favorites">
         <source>your favorites</source>
-        <target>__your favorites</target>
+        <target>Vos favoris</target>
       </trans-unit>
       <trans-unit id="EbdfGqh" resname="Your favorite posts">
         <source>Your favorite posts</source>

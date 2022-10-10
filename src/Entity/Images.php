@@ -23,6 +23,10 @@ class Images
     #[ORM\JoinColumn(nullable: false)]
     private ?Publication $publication = null;
 
+    #[ORM\ManyToOne(inversedBy: 'images')]
+    private ?Users $user = null;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +64,18 @@ class Images
     public function setPublication(?Publication $publication): self
     {
         $this->publication = $publication;
+
+        return $this;
+    }
+
+    public function getUser(): ?Users
+    {
+        return $this->user;
+    }
+
+    public function setUser(?Users $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

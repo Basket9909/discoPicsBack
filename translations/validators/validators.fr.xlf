@@ -8,23 +8,23 @@
             </trans-unit>
             <trans-unit id="publication.name.notBlank">
                 <source>publication.name.notBlank</source>
-                <target>Veuillez renseignez le nom de la photo</target>
+                <target>Veuillez renseigner le nom de la photo</target>
             </trans-unit>
             <trans-unit id="publication.city.notBlank">
                 <source>publication.city.notBlank</source>
-                <target>Veuillez renseignez une ville</target>
+                <target>Veuillez renseigner une ville</target>
             </trans-unit>
             <trans-unit id="publication.country.notBlank">
                 <source>publication.country.notBlank</source>
-                <target>Veuillez renseignez le nom d'un pays</target>
+                <target>Veuillez renseigner le nom d'un pays</target>
             </trans-unit>
             <trans-unit id="publication.adress.notBlank">
                 <source>publication.adress.notBlank</source>
-                <target>Veuillez renseignez une adresse</target>
+                <target>Veuillez renseigner une adresse</target>
             </trans-unit>
             <trans-unit id="publication.image.notBlank">
                 <source>publication.image.notBlank</source>
-                <target>Vous devez upload un fichier jpg, jpeg, png ou gif</target>
+                <target>Vous devez télécharger un fichier jpg, jpeg, png ou gif</target>
             </trans-unit>
             <trans-unit id="publication.image.big">
                 <source>publication.image.big</source>
@@ -52,19 +52,19 @@
             </trans-unit>
             <trans-unit id="user.unique.entity">
                 <source>user.unique.entity</source>
-                <target>Un utilisateur ayant cette adresse email existe déjà</target>
+                <target>Cette adresse mail est déjà utilisée par un autre utilisateu</target>
             </trans-unit>
             <trans-unit id="user.firstName.notBlank">
                 <source>user.firstName.notBlank</source>
-                <target>Veuillez renseignez votre Prénom</target>
+                <target>Veuillez renseigner votre Prénom</target>
             </trans-unit>
             <trans-unit id="user.lastName.notBlank">
                 <source>user.lastName.notBlank</source>
-                <target>Veuillez renseignez votre Nom</target>
+                <target>Veuillez renseigner votre Nom</target>
             </trans-unit>
             <trans-unit id="user.email.notBlank">
                 <source>user.email.notBlank</source>
-                <target>Veuillez donner un e-mail valide</target>
+                <target>Veuillez utiliser un e-mail valide</target>
             </trans-unit>
             <trans-unit id="user.password.notBlank">
                 <source>user.password.notBlank</source>

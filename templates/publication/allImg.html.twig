@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Discopics - {{publication.name}}{% endblock %}
+
+{% block body %}
+<div class="container_global_input_search wrapper">
+    <h1 class="hight_title text_black">Toutes les images pour la publication : {{publication.name}}</h1>
+
+    <div class="images_container_publication">
+        {% for image in publication.images %}
+        <div class="container_size_img">
+           <img src="{{image.url}}" alt="{{image.user.fullName}}"> 
+           <div class="container_hover_img">
+                <div class="container_infos_publication_img">
+                    <p><i class="fa-solid fa-camera"></i> : {{image.user.fullName}}</p>
+                    <a href="#">Voir le profil</a> | <a href="#">Agrandir</a>
+                </div>
+           </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

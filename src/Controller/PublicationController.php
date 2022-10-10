@@ -37,6 +37,7 @@ class PublicationController extends AbstractController
          ]);
      }
 
+
      # Permet d'ajouter une publication
      #[Route("/publication/new", name : "new_publication")]
      #[Security("(is_granted('ROLE_USER') and user.getIsVerified() == true) or is_granted('ROLE_ADMIN')")]
@@ -232,6 +233,19 @@ class PublicationController extends AbstractController
     }
 
    
+
+    # Permet d'afficher toutes les images pour une publication
+    #[Route('/publication/img/{slug}', name: 'publication_show_img')]
+    # @return Response
+    
+    public function allImg($slug, Publication $publication)
+    {
+
+        return $this->render('publication/allImg.html.twig',[
+            'publication' => $publication
+        ]);
+    }
+
 
     # Permet d'afficher une seule publication
     #[Route('/publication/{slug}', name: 'publication_show')]

@@ -5,8 +5,12 @@
 {% block body %}
 {% set url = path('show_user', {'slug': publication.user.slug, 'id' : publication.user.id}) %}
 	<div class="container_page">
-		<div class="def_size">
-			<img src="{{publication.image}}" alt="{{publication.name}}" class="big_img_show">
+		<div class="def_size wrapper">
+			<img src="{{publication.image}}" alt="{{publication.name}}" class="big_img_show hover_for_big_img_show">
+            <div class="rect_hover_publication">
+            <a href="{{path('publication_show_img', {'slug' : publication.slug})}}" id="margin_right_publication">Voir d'autres photos pour ce spot</a>
+            <a href="#" id="margin_left_publication">Ajouter ma photo pour ce spot</a>
+            </div>
 		</div>
         {% if ((app.user and app.user == publication.user))%}
         <a href="{{path('publication_delete',{'slug' : publication.slug})}}">
@@ -157,7 +161,7 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <small class="text_black">{% trans %}No comments yet{% endtrans %}</small>
+                <small class="text_black">{% trans %}No comment yet{% endtrans %}</small>
             {% endif %}
             <a href="{{path('new_comment',{'slug':publication.slug})}}">
             <div class="button margin_button">

@@ -98,7 +98,8 @@ class AppFixtures extends Fixture
                 $images = new Images();
                 $images->setCaption($faker->sentence($nbWords = 5, $variableNbWords = true))
                        ->setUrl('https://picsum.photos/500/500')
-                       ->setPublication($publication);
+                       ->setPublication($publication)
+                       ->setUser($users[rand(0,count($users)-1)]);
 
                 $manager->persist($images);
             }

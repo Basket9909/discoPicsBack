@@ -52,7 +52,7 @@
             </trans-unit>
             <trans-unit id="user.unique.entity">
                 <source>user.unique.entity</source>
-                <target>A user with this email address already exists</target>
+                <target>This email address already exists</target>
             </trans-unit>
             <trans-unit id="user.firstName.notBlank">
                 <source>user.firstName.notBlank</source>

@@ -10,7 +10,7 @@
             </div>
         </a>
 
-        <h1 class="hight_title text_black">{% trans %}Your personal informations{% endtrans %}</h1>
+        <h1 class="hight_title text_black">{% trans %}Your personal information{% endtrans %}</h1>
 
         <div class="personal_infos_container">
             <div class="picture_container">
@@ -44,7 +44,7 @@
                 {% endif %}
                 <a href="{{ path('profile_modify') }}">
                     <div class="button margin_button">
-                        <p><i class="fa-solid fa-info"></i> | {% trans %}Modify your informations{% endtrans %}</p>
+                        <p><i class="fa-solid fa-info"></i> | {% trans %}Modify your information{% endtrans %}</p>
                     </div>
                 </a>
                 <a href="{{ path('password_modify')}}">
@@ -62,7 +62,7 @@
             {% endfor %}
         </div>
         {% else %}
-            <h3 class="little_title title_in_middle text_black">{% trans %}You haven't published any spots yet{% endtrans %}</h3>
+            <h3 class="little_title title_in_middle text_black">{% trans %}You haven't published any spot yet{% endtrans %}</h3>
         {% endif %}
         </div>
         </div>

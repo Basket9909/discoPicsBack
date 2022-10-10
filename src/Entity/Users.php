@@ -78,12 +78,16 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Publication::class, mappedBy: 'favorite')]
     private Collection $favoris;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Images::class)]
+    private Collection $images;
+
     public function __construct()
     {
         $this->publications = new ArrayCollection();
         $this->coments = new ArrayCollection();
         $this->ratings = new ArrayCollection();
         $this->favoris = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     #Permet d'initialiser le slug automatiquement
@@ -231,6 +235,8 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    
+
     /**
      * @see UserInterface
      */
@@ -374,6 +380,36 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->favoris->removeElement($favori)) {
             $favori->removeFavorite($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Images>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Images $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Images $image): self
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getUser() === $this) {
+                $image->setUser(null);
+            }
         }
 
         return $this;
