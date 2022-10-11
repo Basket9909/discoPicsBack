@@ -9,7 +9,7 @@
         <source>Welcome to Discopics</source>
         <target>Bienvenue sur Discopics</target>
       </trans-unit>
-      <trans-unit id="fxu4XtE" resname="Discopics will help you find beautiful places for your photoshoots or for taking beautiful photos in awesome landscapes.">
+      <trans-unit id="IdOyWQL" resname="Discopics will help you find beautiful places for your photoshoots or for taking beautiful photos in awesome landscapes.">
         <source>Discopics will help you find beautiful places for your photoshoots or for taking beautiful photos in awesome landscapes.</source>
         <target>Discopics va vous aider à trouver de beaux endroits pour vos photoshoots ou réaliser de magnifiques photos dans de beaux paysages.</target>
       </trans-unit>
@@ -73,7 +73,7 @@
         <source>Find your ideal spot</source>
         <target>Trouvez votre spot idéal</target>
       </trans-unit>
-      <trans-unit id="92cT3Dx" resname="No spot matches your search">
+      <trans-unit id="WBC6YFw" resname="No spot matches your search">
         <source>No spot matches your search</source>
         <target>Aucun spot ne correspond à votre recherche</target>
       </trans-unit>
@@ -93,7 +93,7 @@
         <source>Profile of</source>
         <target>Profil de</target>
       </trans-unit>
-      <trans-unit id="RjJ8gcY" resname="Your personal information">
+      <trans-unit id="Kkozka0" resname="Your personal information">
         <source>Your personal information</source>
         <target>Vos informations personnelles</target>
       </trans-unit>
@@ -109,7 +109,7 @@
         <source>Delete your profile picture</source>
         <target>Supprimer votre photo de profil</target>
       </trans-unit>
-      <trans-unit id="lY3BxAq" resname="Modify your information">
+      <trans-unit id="fe0fl__" resname="Modify your information">
         <source>Modify your information</source>
         <target>Modifier vos informations</target>
       </trans-unit>
@@ -121,7 +121,7 @@
         <source>Your spots</source>
         <target>Vos spots</target>
       </trans-unit>
-      <trans-unit id="qbu46VH" resname="You haven't published any spot yet">
+      <trans-unit id="ED0XFzT" resname="You haven't published any spot yet">
         <source>You haven't published any spot yet</source>
         <target>Vous n'avez pas encore publié de spot</target>
       </trans-unit>
@@ -225,7 +225,7 @@
         <source>Delete my comment</source>
         <target>Supprimer mon commentaire</target>
       </trans-unit>
-      <trans-unit id="ayWAg2V" resname="No comment yet">
+      <trans-unit id="zjQiox7" resname="No comment yet">
         <source>No comment yet</source>
         <target>Pas encore de commentaire</target>
       </trans-unit>
@@ -277,7 +277,7 @@
         <source>Register on the site</source>
         <target>S'inscrire sur le site</target>
       </trans-unit>
-      <trans-unit id="UK49N8m" resname="Confirm registration">
+      <trans-unit id="Yhjcexj" resname="Confirm registration">
         <source>Confirm registration</source>
         <target>Confirmez l'inscription</target>
       </trans-unit>
@@ -688,6 +688,58 @@
       <trans-unit id="fnFY2Lj" resname="You don't have any spots in your favorites yet">
         <source>You don't have any spots in your favorites yet</source>
         <target>Vous n'avez encore aucun spots dans vos favoris</target>
+      </trans-unit>
+      <trans-unit id="6YjfKG3" resname="The image has been deleted">
+        <source>The image has been deleted</source>
+        <target>L'image a été suprimée</target>
+      </trans-unit>
+      <trans-unit id="_ssT6TR" resname="The image has been added">
+        <source>The image has been added</source>
+        <target>L'image a été ajoutée</target>
+      </trans-unit>
+      <trans-unit id="BBNgYLQ" resname="Add image">
+        <source>Add image</source>
+        <target>Ajouter une image</target>
+      </trans-unit>
+      <trans-unit id="iXYQbTG" resname="All images for publication :">
+        <source>All images for publication :</source>
+        <target>Toutes les images pour la publication :</target>
+      </trans-unit>
+      <trans-unit id="ocEhJhm" resname="Enlarge">
+        <source>Enlarge</source>
+        <target>Agrandir</target>
+      </trans-unit>
+      <trans-unit id="lcDyvpk" resname="No other images for this spot">
+        <source>No other images for this spot</source>
+        <target>Pas d'autre images pour ce spot</target>
+      </trans-unit>
+      <trans-unit id="fyDpBOI" resname="See other photos for this spot">
+        <source>See other photos for this spot</source>
+        <target>Voir d'autres photos pour ce spot</target>
+      </trans-unit>
+      <trans-unit id="ShBrNU_" resname="Add my photo for this spot">
+        <source>Add my photo for this spot</source>
+        <target>Ajouter ma photo pour ce spot</target>
+      </trans-unit>
+      <trans-unit id="YZdZVQP" resname="delete">
+        <source>delete</source>
+        <target>supprimer</target>
+      </trans-unit>
+      <trans-unit id="CM3_2Wc" resname="My posts">
+        <source>My posts</source>
+        <target>Mes posts</target>
+      </trans-unit>
+      <trans-unit id="FNDFlGL" resname="All of your spots">
+        <source>All of your spots</source>
+        <target>Tous vos spots</target>
+      </trans-unit>
+      <trans-unit id="7dgAI8." resname="All your photos in other publications">
+        <source>All your photos in other publications</source>
+        <target>Toutes vos photos dans d'autres publications</target>
+      </trans-unit>
+      <trans-unit id=".dM7BdM" resname="See publication">
+        <source>See publication</source>
+        <target>Voir la publication</target>
       </trans-unit>
     </body>
   </file>

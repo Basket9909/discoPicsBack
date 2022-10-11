@@ -1,23 +1,76 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Discopics - {{publication.name}}{% endblock %}
+{% block title %}Discopics -
+	{{publication.name}}
+{% endblock %}
 
 {% block body %}
-<div class="container_global_input_search wrapper">
-    <h1 class="hight_title text_black">Toutes les images pour la publication : {{publication.name}}</h1>
 
-    <div class="images_container_publication">
-        {% for image in publication.images %}
-        <div class="container_size_img">
-           <img src="{{image.url}}" alt="{{image.user.fullName}}"> 
-           <div class="container_hover_img">
-                <div class="container_infos_publication_img">
-                    <p><i class="fa-solid fa-camera"></i> : {{image.user.fullName}}</p>
-                    <a href="#">Voir le profil</a> | <a href="#">Agrandir</a>
-                </div>
-           </div>
+	<div class="fond_black"></div>
+	<div class="container_global_input_search wrapper">
+		<h1 class="hight_title text_black">{% trans %}All images for publication :{% endtrans %}
+			{{publication.name}}</h1>
+
+		<div class="images_container_publication">
+			{% if publication.images %}
+				{% for image in publication.images %}
+					<div class="container_size_img">
+						<img src="{{image.url}}" alt="{{image.user.fullName}}">
+						<div class="container_hover_img" data-url="{{image.url}}" data-alt="{{image.user.fullName}}">
+							<div class="container_infos_publication_img">
+								<p>
+									<i class="fa-solid fa-camera"></i>
+									:
+									{{image.user.fullName}}</p>
+								<a href="{{path('show_user', {'slug': image.user.slug, 'id' : image.user.id})}}">{% trans %}See profile{% endtrans %}</a>
+								|
+								<a class="elarge_img_link">{% trans %}Enlarge{% endtrans %}</a>
+								{% if (app.user and app.user == image.user) or (is_granted('ROLE_ADMIN')) %}
+                                <br>
+									<a href="{{path('publication_remove_img', {'id' : image.id})}}">{% trans %}delete{% endtrans %}</a>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			{% else %}
+				<h3 class="little_title title_in_middle text_black">{% trans %}No other images for this spot{% endtrans %}</h3>
+			{% endif %}
+			<div class="container_zoom_galerie">
+				<div class="zoom_galerie">
+					<img src='' alt='g'/>
+				</div>
+				<div class="close_img">
+					<i class="fa-solid fa-xmark"></i>
+				</div>
+			</div>
         </div>
-        {% endfor %}
-    </div>
-</div>
+
+
+
+		<div class="images_container_publication_for_phone">
+			{% if publication.images %}
+				{% for image in publication.images %}
+					<div class="container_size_img">
+						<img src="{{image.url}}" alt="{{image.user.fullName}}">
+							<div class="container_infos_publication_img">
+								<p>
+									<i class="fa-solid fa-camera"></i>
+									:
+									{{image.user.fullName}}</p>
+								<a href="{{path('show_user', {'slug': image.user.slug, 'id' : image.user.id})}}">{% trans %}See profile{% endtrans %}</a>
+								{% if app.user and app.user == image.user %}
+									| <a href="{{path('publication_remove_img', {'id' : image.id})}}">{% trans %}delete{% endtrans %}</a>
+								{% endif %}
+							</div>
+						
+					</div>
+				{% endfor %}
+			{% else %}
+				<h3 class="little_title title_in_middle text_black">{% trans %}No other images for this spot{% endtrans %}</h3>
+			{% endif %}
+		</div>
+
+	</div>
 {% endblock %}
+

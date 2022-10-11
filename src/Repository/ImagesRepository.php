@@ -39,6 +39,17 @@ class ImagesRepository extends ServiceEntityRepository
         }
     }
 
+    public function getImagesForUserWithAllResult(int $id): array
+    {
+        return $this->createQueryBuilder('i')
+            ->select('i as images, u as user')
+            ->join('i.user', 'u')
+            ->andWhere('u.id = :id')
+            ->setParameter(':id', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Images[] Returns an array of Images objects
 //     */
@@ -64,3 +75,5 @@ class ImagesRepository extends ServiceEntityRepository
 //        ;
 //    }
 }
+
+

@@ -12,6 +12,7 @@ use App\Form\PasswordUpdateType;
 use App\Service\SendMailService;
 use App\Repository\UsersRepository;
 use App\Form\ModificationAccountType;
+use App\Repository\ImagesRepository;
 use Symfony\Component\Form\FormError;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\PublicationRepository;
@@ -198,6 +199,18 @@ class AccountController extends AbstractController
          ]);
      }
 
+    #Permet d'afficher tout les posts d'un utilisateur
+    #[Route("/account/{id}/posts/all", name : "show_all_posts_user")]
+    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+    public function allPostsforuser(PublicationRepository $publicationRepo,$id, ImagesRepository $imagesRepo ){
+
+        return $this->render('account/fullPosts.html.twig',[
+            'publications'=> $publicationRepo->getPublicationForUserWithAllResult($id),
+            'images'=> $imagesRepo->getImagesForUserWithAllResult($id),
+            'user' => $this->getUser()
+         ]);
+
+    }
 
     # Permet de modifier son profil 
     #[Route("/account/profile/modify", name : "profile_modify")]

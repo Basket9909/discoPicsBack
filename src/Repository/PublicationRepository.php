@@ -64,6 +64,19 @@ class PublicationRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function getPublicationForUserWithAllResult(int $id): array
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p as publication, u as user')
+            ->join('p.user', 'u')
+            ->andWhere('u.id = :id')
+            ->setParameter(':id', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
+    
+
     public function search($words){
         $query = $this->createQueryBuilder('p');
         // ->select('p as publication, u as user')

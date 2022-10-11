@@ -9,6 +9,8 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class AdminController extends AbstractController
 {
+
+    
     
     #Permet à l'utilisateur de se connecter
     #[Route("/admin/login", name : "admin_account_login")]

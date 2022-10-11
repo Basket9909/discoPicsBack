@@ -2,14 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Images;
 use App\Entity\Publication;
 use App\Form\PublicationType;
+use App\Service\PaginationService;
 use App\Form\PublicationModifyType;
 use App\Entity\PublicationImgModify;
+use App\Form\AddPublicationImageType;
 use App\Form\ImgPublicationModifyType;
-use App\Repository\PublicationRepository;
-use App\Service\PaginationService;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\PublicationRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\File;
@@ -174,6 +176,82 @@ class PublicationController extends AbstractController
 
         return $this->redirectToRoute('homepage');
     }
+
+    # Permet d'ajouter une image a une publication
+    #[Route("/publication/{slug}/add/img", name : "publication_add_img")]
+    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+    # param Request $request
+    # @param EntityManagerInterface $manager
+    # @return Response
+    public function imgAdd(Request $request, EntityManagerInterface $manager, Publication $publication, TranslatorInterface $translator)
+    {
+        $images = new Images();
+        $form = $this->createForm(AddPublicationImageType::class, $images);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+
+            $file = $form['url']->getData();
+            if(!empty($file))
+            {
+                $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()',$originalFilename);
+                $newFilename = $safeFilename."-".uniqid().".".$file->guessExtension();
+                try{
+                    $file->move(
+                        $this->getParameter('uploads_directory'),
+                        $newFilename
+                    );
+                }catch(FileException $e){
+                    return $e->getMessage();
+                }
+                $images->setUrl($newFilename);
+                $images->setUser($this->getUser());
+                $images->setPublication($publication);
+            }
+
+            $manager->persist($images);
+            $manager->flush();
+
+            $message = $translator->trans(('The image has been added'));
+            
+            $this->addFlash(
+                'success',
+                $message
+            );
+
+            return $this->redirectToRoute('publication_show', ['slug' => $publication->getSlug(), 'withAlert' => true]);
+        }
+
+        return $this->render("publication/addImage.html.twig",[
+            'publication' => $publication,
+            'myForm' => $form->createView()
+        ]);
+
+    }
+    # Permet de supprimer une image a une publication
+    #[Route("/publication/{id}/remove/img", name : "publication_remove_img")]
+    #[Security("(is_granted('ROLE_USER') and user == images.getUser() ) or is_granted('ROLE_ADMIN')")]
+    # param Request $request
+    # @param EntityManagerInterface $manager
+    # @return Response
+    public function imgRemove(Request $request, EntityManagerInterface $manager, Images $images, TranslatorInterface $translator)
+    {
+        $message = $translator->trans(('The image has been deleted'));
+
+
+        $this->addFlash(
+            'success',
+            $message
+        );
+
+        $manager->remove($images);
+        $manager->flush();
+
+        return $this->redirect($request->headers->get('referer'));
+    }
+
 
     # Permet de modifier l'image d'une publication
     #[Route("/publication/{slug}/edit/img", name : "publication_edit_img")]

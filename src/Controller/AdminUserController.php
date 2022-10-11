@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -48,5 +49,19 @@ class AdminUserController extends AbstractController
          $manager->flush();
  
          return $this->redirectToRoute('admin_users_index');
+     }
+
+     # Permet de changer le rôle d'un user
+     #[Route("/admin/user/{id}/new/role", name : "admin_user_new_admin")]
+     #[IsGranted('ROLE_ADMIN')]
+     public function newRole(Users $user,  EntityManagerInterface $manager, TranslatorInterface $translator){
+
+
+        $user->setRoles(['ROLE_ADMIN']);
+
+        $manager->persist($user);
+        $manager->flush();
+
+        return $this->redirectToRoute('admin_users_index');
      }
 }
