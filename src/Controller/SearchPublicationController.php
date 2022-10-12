@@ -11,12 +11,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SearchPublicationController extends AbstractController
 {
-    # permet de rechercher des festivals
+    # permet de rechercher des posts
     #[Route('/search', name: 'search_posts')]
     public function index(PublicationRepository $publication, Request $request): Response
-    {
-
-        
+    {   
         $form = $this->createForm(SearchPublicationType::class);
 
         $search = $form->handleRequest($request);

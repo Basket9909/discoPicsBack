@@ -43,10 +43,10 @@ class RegistrationType extends ApplicationType
             ]))
             ->add('Picture',FileType::class, [
                 "label" => $this->translator->trans("Choose your Avatar"),
-                "label_attr" => ['class' => 'avatar_label'],
+                
                 "required"=> false,
                 "attr" =>[
-                    "class" => "global_input special_button_img"
+                    "class" => "global_input special_input_file "
                 ]
             ])
         ;

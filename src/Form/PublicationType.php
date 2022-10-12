@@ -38,7 +38,7 @@ class PublicationType extends ApplicationType
                 "label" => $this->translator->trans('Your photo'),
                 "required"=> true,
                 "attr" =>[
-                    "class" => "global_input"
+                    "class" => "global_input special_input_file "
                 ]
             ])
         ;

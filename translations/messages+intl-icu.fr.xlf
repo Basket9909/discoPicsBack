@@ -741,6 +741,30 @@
         <source>See publication</source>
         <target>Voir la publication</target>
       </trans-unit>
+      <trans-unit id="1wkkm_s" resname="You do not have permission to access this resource">
+        <source>You do not have permission to access this resource</source>
+        <target>Vous n'avez pas le droit d'accéder à cette ressource</target>
+      </trans-unit>
+      <trans-unit id="L_UpxQs" resname="Whoops! The page you are looking for does not exist!">
+        <source>Whoops! The page you are looking for does not exist!</source>
+        <target>Oups! La page que vous recherchez n'existe pas!</target>
+      </trans-unit>
+      <trans-unit id="qpdSePY" resname="It is surely difficult to inform you! No worries, you can go back to the homepage or see our posts!">
+        <source>It is surely difficult to inform you! No worries, you can go back to the homepage or see our posts!</source>
+        <target>On a surement du mal vous renseigner! Aucun soucis, vous pouvez retourne à l'accueil ou voir nos posts!</target>
+      </trans-unit>
+      <trans-unit id="7seEJnd" resname="Back to Home">
+        <source>Back to Home</source>
+        <target>Retour à l'accueil</target>
+      </trans-unit>
+      <trans-unit id="fmwzUyH" resname="Our posts">
+        <source>Our posts</source>
+        <target>Nos posts</target>
+      </trans-unit>
+      <trans-unit id="zBHUFdk" resname="Access denied">
+        <source>Access denied</source>
+        <target>Accès Refusé</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

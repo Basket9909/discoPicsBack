@@ -22,7 +22,10 @@ class ImgPublicationModifyType extends AbstractType
     {
         $builder
             ->add('newPublicationPicture', FileType::class, [
-                'label' => $this->translator->trans('Your photo (jpg , png  ,gif)')
+                'label' => $this->translator->trans('Your photo (jpg , png  ,gif)'),
+                "attr" =>[
+                    "class" => "global_input special_input_file "
+                ]
             ])
         ;
     }

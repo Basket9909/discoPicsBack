@@ -86,4 +86,9 @@ form ul li{
     cursor: pointer;
 }
 
+.special_input_file{
+    border-bottom: none;
+    
+}
+
 

@@ -402,3 +402,11 @@ textarea{
     line-height: 50px;
 }
 
+input::file-selector-button{
+    background-color: #7B5644;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
