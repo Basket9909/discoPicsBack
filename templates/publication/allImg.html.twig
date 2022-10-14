@@ -15,15 +15,15 @@
 			{% if publication.images %}
 				{% for image in publication.images %}
 					<div class="container_size_img">
-						<img src="{{image.url}}" alt="{{image.user.fullName}}">
+						<img src="/uploads/{{image.url}}" alt="{{image.user.fullName}}">
 						<div class="container_hover_img" data-url="{{image.url}}" data-alt="{{image.user.fullName}}">
 							<div class="container_infos_publication_img">
 								<p>
 									<i class="fa-solid fa-camera"></i>
 									:
 									{{image.user.fullName}}</p>
-								<a href="{{path('show_user', {'slug': image.user.slug, 'id' : image.user.id})}}">{% trans %}See profile{% endtrans %}</a>
-								|
+								<a href="{{path('show_user', {'slug': image.user.slug, 'id' : image.user.id})}}">{% trans %}See profile{% endtrans %}</a><br>
+								
 								<a class="elarge_img_link">{% trans %}Enlarge{% endtrans %}</a>
 								{% if (app.user and app.user == image.user) or (is_granted('ROLE_ADMIN')) %}
                                 <br>
@@ -52,7 +52,7 @@
 			{% if publication.images %}
 				{% for image in publication.images %}
 					<div class="container_size_img">
-						<img src="{{image.url}}" alt="{{image.user.fullName}}">
+						<img src="/uploads/{{image.url}}" alt="{{image.user.fullName}}">
 							<div class="container_infos_publication_img">
 								<p>
 									<i class="fa-solid fa-camera"></i>

@@ -39,6 +39,16 @@ class UsersRepository extends ServiceEntityRepository
         }
     }
 
+    // public function search($words){
+    //     $query = $this->createQueryBuilder('u');
+    //     if($words != null){
+    //         $query->andWhere('MATCH_AGAINST(u.lastName) AGAINST(:words boolean)>0')
+    //               ->setParameter(':words', $words);
+    //     }
+    //     return $query->getQuery()
+    //                 ->getResult();
+    // }
+
 //    /**
 //     * @return Users[] Returns an array of Users objects
 //     */

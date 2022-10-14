@@ -2,7 +2,7 @@
 <a href="{{url}}">
 
 <div class="rect_whith_hover">
-    <img src="{{publication.image}}" alt="{{publication.name}}">
+    <img src="/uploads/{{publication.image}}" alt="{{publication.name}}">
     <div class="hover_infos">
         <div class="container_infos">
             <h3 class="infos little_title">{{publication.place}}</h3>
@@ -19,7 +19,7 @@
 
 <div class="rect_whithout_hover">
     <h3 class="infos little_title">{{publication.place}}</h3>
-    <img src="{{publication.image}}" alt="{{publication.name}}">
+    <img src="/uploads/{{publication.image}}" alt="{{publication.name}}">
     <div class="rating_container">
         {% if publication.ratings | length > 0 %}
             {% include "partials/rating.html.twig" with {'rating' : publication.avgRatings} %} ({{publication.ratings | length }} {% trans %}reviews{% endtrans %})

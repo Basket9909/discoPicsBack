@@ -410,3 +410,7 @@ input::file-selector-button{
     cursor: pointer;
 }
 
+.nav-left{
+    margin-left: 5px;
+}
+

@@ -34,8 +34,8 @@
 									:
 									{{image.images.user.fullName}}</p>
 								<a href="{{path('publication_show', {'slug': image.images.publication.slug})}}">{% trans %}See publication{% endtrans %}</a>
-								|
-								<a class="elarge_img_link">{% trans %}Enlarge{% endtrans %}</a>
+								<br>
+								<a class="elarge_img_link">{% trans %}Enlarge{% endtrans %}</a>s
 								{% if (app.user and app.user == image.images.user) %}
                                 <br>
 									<a href="{{path('publication_remove_img', {'id' : image.images.id})}}">{% trans %}delete{% endtrans %}</a>
