@@ -26,7 +26,7 @@
 			{% if images %}
 				{% for image in images %}
 					<div class="container_size_img">
-						<img src="{{image.images.url}}" alt="{{image.images.user.fullName}}">
+						<img src="/uploads/{{image.images.url}}" alt="{{image.images.user.fullName}}">
 						<div class="container_hover_img" data-url="{{image.images.url}}" data-alt="{{image.images.user.fullName}}">
 							<div class="container_infos_publication_img">
 								<p>
@@ -63,7 +63,7 @@
 			{% if images %}
 				{% for image in images %}
 					<div class="container_size_img">
-						<img src="{{image.images.url}}" alt="{{image.images.user.fullName}}">
+						<img src="/uploads/{{image.images.url}}" alt="{{image.images.user.fullName}}">
 							<div class="container_infos_publication_img">
 								<p>
 									<i class="fa-solid fa-camera"></i>

@@ -13,7 +13,7 @@ hovers.forEach((hover)=>{
     hover.querySelector('.elarge_img_link').addEventListener('click',()=>{
         containerGalerie.style.display = 'block'
         galerie.style.display = 'block'
-        galerie.querySelector('img').setAttribute('src',hover.dataset.url)
+        galerie.querySelector('img').setAttribute('src',"/uploads/"+hover.dataset.url)
         galerie.querySelector('img').setAttribute('alt',hover.dataset.alt)
     })
 })
