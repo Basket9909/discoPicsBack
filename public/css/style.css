@@ -375,6 +375,7 @@ textarea{
     display: flex;
     justify-content: center;
     height: 100%;
+    padding-left: 0;
 }
 .container_pagination ul li{
     list-style: none;
@@ -412,5 +413,9 @@ input::file-selector-button{
 
 .nav-left{
     margin-left: 5px;
+}
+
+a:focus{
+    outline: none;
 }
 

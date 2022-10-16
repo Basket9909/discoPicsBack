@@ -184,6 +184,9 @@ class AccountController extends AbstractController
             return $this->redirectToRoute('homepage');
     }
 
+
+
+
     # Permet d'afficher le profil de l'utilisateur connecté
     #[Route("/account/{id}", name : "account_index")]
     #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
@@ -192,12 +195,31 @@ class AccountController extends AbstractController
      {
         
          return $this->render('account/profile.html.twig',[
-            'publications'=> $publicationRepo->getPublicationForUserWithMaxResult($id),
             'user' => $this->getUser(),
-            
-            
          ]);
      }
+
+    # Permet de supprimer un user
+    #[Route("/account/{id}/delete", name : "account_delete")]
+    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+    public function delete(Users $user, EntityManagerInterface $manager, TranslatorInterface $translator, Request $request)
+    {
+
+        $message = $translator->trans(('The user has been deleted'));
+        
+        $this->addFlash(
+            'success',
+            $message
+        );
+
+        $request->getSession()->invalidate();
+        $this->container->get('security.token_storage')->setToken(null);
+
+        $manager->remove($user);
+        $manager->flush();
+
+        return $this->redirectToRoute('account_login');
+    }
 
     #Permet d'afficher tout les posts d'un utilisateur
     #[Route("/account/{id}/posts/all", name : "show_all_posts_user")]
@@ -364,6 +386,8 @@ class AccountController extends AbstractController
         ]);
 
     }
+
+  
 
     # Permet de supprimer l'image de l'utilisateur
     #[Route("/account/img/delete", name : "profile_img_delete")]

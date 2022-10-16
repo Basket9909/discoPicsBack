@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
 			{% block title %}Discopics{% endblock %}
 		</title>
@@ -15,19 +17,35 @@
 		<link rel="stylesheet" href="/css/profile.css">
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		<!--icon Internet Explorer-->
-		<link
-		rel="shortcut icon" href="/images/discopicslogo_black.ico"> <!--safari-->
-		<link
-		rel="mask-icon" href="/images/discopicslogo_black.ico" color="#000000">
+		<link rel="shortcut icon" href="/images/discopicslogo_black.ico">
+		 <!--safari-->
+		<link rel="mask-icon" href="/images/discopicslogo_black.ico" color="#000000">
 		<!--Windows-->
 		<link rel="icon" type="image/ico" href="/images/discopicslogo_black.ico" sizes="32x32">
-		<link
-		rel="icon" type="image/ico" href="/images/discopicslogo_black.ico" sizes="16x16">
+		<link rel="icon" type="image/ico" href="/images/discopicslogo_black.ico" sizes="16x16">
 		<!--Apple-->
 		<link rel="apple-touch-icon" sizes="120x120" href="/images/discopicslogo_black.ico">
 		<link rel="apple-touch-icon" sizes="152x152" href="/images/discopicslogo_black.ico">
 		<link rel="apple-touch-icon" sizes="180x180" href="/images/discopicslogo_black.ico">
 		<link rel="apple-touch-icon" sizes="192x192" href="/images/discopicslogo_black.ico">
+		 <!--refernecement-->
+		<meta name="title" content="Discopics">
+		<meta name="description" content="Trouvez votre lieu idéal pour faire votre photo parfaite">
+		<!--og-->
+		<meta property="og:title" content="Discopics">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="/images/discopicslogo_black.png">
+		<meta property="og:image:width" content="500">
+		<meta property="og:image:height" content="500">
+		<meta property="og:url" content="http://discopics.romeowilmart.be">
+		<meta property="og:description" content="Trouvez votre lieu idéal pour faire votre photo parfaite">
+		<meta property="og:locale"content="fr_FR">
+		<meta property="og:site_name"content="Discopics">
+		<meta name="twitter:card"content="summary">
+		<meta name="twitter:site"content="@Discopics">
+		<meta name="twitter:title"content="Discopics">
+		<meta name="twitter:description"content="Trouvez votre lieu idéal pour faire votre photo parfaite">
+		<meta name="twitter:image"content="/images/discopicslogo_black.png">
 
 		{% include "partials/header.html.twig" %}
 		{% if app.user and app.user.isVerified == false %}
@@ -46,9 +64,8 @@
 		{% block javascripts %}
 		<script src="/js/toastAlert.js"></script>
 		<script src="/js/galerieImage.js"></script>
-			{#{{ encore_entry_script_tags('app') }}#}
-		{% endblock %}
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		{% endblock %}
 		
 	</head>
 </html>

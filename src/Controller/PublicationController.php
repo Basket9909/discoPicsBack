@@ -46,7 +46,7 @@ class PublicationController extends AbstractController
      # param Request $request
      # param EntityManagerInterface $manager
      # return Response
-     public function register(Request $request,EntityManagerInterface $manager, TranslatorInterface $translator)
+     public function add(Request $request,EntityManagerInterface $manager, TranslatorInterface $translator)
      {
          $publication = new Publication();
          $form = $this->createForm(PublicationType::class, $publication);
@@ -56,7 +56,6 @@ class PublicationController extends AbstractController
          {
              //gestion de mon image
              $file = $form['image']->getData();
-             dump($file);
              if(!empty($file))
              {
                  $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);

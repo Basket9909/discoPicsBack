@@ -78,7 +78,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Publication::class, mappedBy: 'favorite')]
     private Collection $favoris;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Images::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Images::class,orphanRemoval: true)]
     private Collection $images;
 
     public function __construct()

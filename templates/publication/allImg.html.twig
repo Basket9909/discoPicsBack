@@ -12,7 +12,7 @@
 			{{publication.name}}</h1>
 
 		<div class="images_container_publication">
-			{% if publication.images %}
+			{% if (publication.images | length) > 0 %}
 				{% for image in publication.images %}
 					<div class="container_size_img">
 						<img src="/uploads/{{image.url}}" alt="{{image.user.fullName}}">
@@ -49,7 +49,7 @@
 
 
 		<div class="images_container_publication_for_phone">
-			{% if publication.images %}
+			{% if (publication.images | length) > 0 %}
 				{% for image in publication.images %}
 					<div class="container_size_img">
 						<img src="/uploads/{{image.url}}" alt="{{image.user.fullName}}">

@@ -54,5 +54,17 @@
                 </a>
             </div>
         </div>
+
+    <div class="delete_profile_container">
+        <a href="{{path('account_delete',{'id' : user.id})}}">
+            <div class="button margin_button delete_publication">
+                <p>
+                    <i class="fas fa-trash"></i>
+                    |
+                    {% trans %}Delete your account{% endtrans %}</p>
+            </div>
+        </a>
         </div>
+        </div>
+
 {% endblock %}

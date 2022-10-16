@@ -127,7 +127,7 @@
       </trans-unit>
       <trans-unit id="n9coxmy" resname="Add">
         <source>Add</source>
-        <target>Nom du spot</target>
+        <target>Ajouter</target>
       </trans-unit>
       <trans-unit id="X.A0SqM" resname="Editing the profile">
         <source>Editing the profile</source>
@@ -395,7 +395,7 @@
       </trans-unit>
       <trans-unit id="d5mSk96" resname="You have been successfully registered, An email has been sent to you to activate your account">
         <source>You have been successfully registered, An email has been sent to you to activate your account</source>
-        <target>Vous avez bien été enregistré, Un email vous a été envoyer pour activer votre compte</target>
+        <target>Vous avez bien été enregistré, Un email vous a été envoyé pour activer votre compte</target>
       </trans-unit>
       <trans-unit id="j3OL8eO" resname="Data saved successfully">
         <source>Data saved successfully</source>
@@ -631,7 +631,7 @@
       </trans-unit>
       <trans-unit id="E7FI9kn" resname="You must be logged in to access this page">
         <source>You must be logged in to access this page</source>
-        <target>Vous devez être connecté pour acceder à cette page</target>
+        <target>vous devez être connecté pour accéder à cette page</target>
       </trans-unit>
       <trans-unit id="A9x5s2T" resname="This account is already activated">
         <source>This account is already activated</source>
@@ -639,7 +639,7 @@
       </trans-unit>
       <trans-unit id="NgG6w4a" resname="The validation email has been resent">
         <source>The validation email has been resent</source>
-        <target>L'email de validation à été renvoyer</target>
+        <target>L'email de validation à été renvoyé</target>
       </trans-unit>
       <trans-unit id="ycIWSDi" resname="Choose your Avatar">
         <source>Choose your Avatar</source>
@@ -683,11 +683,11 @@
       </trans-unit>
       <trans-unit id="EbdfGqh" resname="Your favorite posts">
         <source>Your favorite posts</source>
-        <target>Vos post favoris</target>
+        <target>Vos posts favoris</target>
       </trans-unit>
       <trans-unit id="fnFY2Lj" resname="You don't have any spots in your favorites yet">
-        <source>You don't have any spots in your favorites yet</source>
-        <target>Vous n'avez encore aucun spots dans vos favoris</target>
+        <source>You don't have any spot in your favorites yet</source>
+        <target>Vous n'avez encore aucun spot dans vos favoris</target>
       </trans-unit>
       <trans-unit id="6YjfKG3" resname="The image has been deleted">
         <source>The image has been deleted</source>
@@ -764,6 +764,10 @@
       <trans-unit id="zBHUFdk" resname="Access denied">
         <source>Access denied</source>
         <target>Accès Refusé</target>
+      </trans-unit>
+      <trans-unit id="erYFlTW" resname="Delete your account">
+        <source>Delete your account</source>
+        <target>Supprimer votre compte</target>
       </trans-unit>
     </body>
   </file>
