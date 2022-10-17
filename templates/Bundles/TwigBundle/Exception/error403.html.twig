@@ -6,11 +6,8 @@
     <div class="container_global_input_search wrapper">
         <h1 class="hight_title text_black">{% trans %}Access denied{% endtrans %}</h1>
         
-        <div class="alert alert-danger">
+        <div>
             <p class="text_black">{% trans %}You do not have permission to access this resource{% endtrans %}</p>
-            {# attention dump c'est du dev #}
-            {# {{dump()}} #}
-            {# attention avec le cache ! voir la gestion du cache de symfony #}
             <p class="text_black">{{exception.message}}</p>
         </div>
         <a href="{{ path('homepage') }}">

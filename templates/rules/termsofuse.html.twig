@@ -1,128 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Conditions d’utilisation{% endblock %}
+{% block title %}{% trans %}Terms of use{% endtrans %}{% endblock %}
 
 {% block body %}
 <div class="container text_black">
-        <h1 class="text-center mt-3 mb-3">Conditions d’utilisation</h1>
-        <h2 class="mt-3 mb-3">Définition et application</h2>
+        <h1 class="text-center mt-3 mb-3">{% trans %}Terms of use{% endtrans %}</h1>
 
-        <p class="mt-1 mb-1">Le « site web » est le site disponible à l’adresse suivante : www.searchfestival.romeowilmart.be</p>
-        <p class="mt-1 mb-1">Les site web est administré et géré parSearchFestival, peut être contactée par email : Search@Festival.com, inscrite à la BCE sous le numéro</p>
-        <p class="mt-1 mb-1">Le terme « utilisateur » fait référence à tout utilisateur, soit toute personne physique ou morale, inscrite ou non sur le site web et qui consulte le site web ou son contenu, qui télécharge des fichiers, les utilise, s’enregistre via tout formulaire disponible sur le site web, devient membre, s’abonne ou contracte avec le prestataire. </p>
-        <p class="mt-1 mb-1">Le prestataire et l’utilisateur sont ci-après dénommés « les parties ».</p>
-        <p class="mt-1 mb-1">En surfant sur le site web, en lisant les documents, en téléchargeant des fichiers, en les consultant et/ou en les utilisant d’une quelconque manière, en s’enregistrant via tout formulaire disponible sur le site web, en devenant membre, en s’abonnant ou en contractant avec le prestataire, l’utilisateur marque formellement, sans conditions et sans aucune réserve, son accord sur les présentes conditions générales et s’engage à les respecter.</p>
-        <p class="mt-1 mb-1">Ces conditions sont applicables à toute consultation d’information, commande, abonnement et contrat liant les parties. En outre, les présentes conditions générales excluent toutes autres conditions générales et s’y substituent. </p>
-        <p class="mt-1 mb-1">Le prestataire se réserve le droit de modifier les présentes conditions générales à tout moment, sans notification préalable. Ces modifications s’appliqueront immédiatement à toute l’utilisation du site web. </p>
+        <h2 class="mt-3 mb-3">{% trans %}Website{% endtrans %}</h2>
+        <p class="mt-1 mb-1">https://discopics.romeowilmart.be</p>
 
-        <h2>Accès et utilisation sur site web et son contenu</h2>
+        <h2 class="mt-3 mb-3">{% trans %}Editor{% endtrans %}</h2>
+        <p class="mt-1 mb-1">{% trans %}Email: romeo.wilmart@gmail.com{% endtrans %}</p>
+        
+        
+        <h2 class="mt-3 mb-3">{% trans %}Host{% endtrans %}</h2>
+        <p class="mt-1 mb-1">{% trans %}Discopics is hosted by O2switch{% endtrans %}</p>
+        
+        
+        <h2 class="mt-3 mb-3">{% trans %}Access to the site{% endtrans %}</h2>
+        <p class="mt-1 mb-1">{% trans %}Access to the site and its use are reserved for strictly personal use. You agree not to use this site and the information or data contained therein for commercial, political, advertising purposes and for any form of commercial solicitation and in particular the sending of unsolicited e-mails.{% endtrans %}</p>
+        
+        
+        <h2 class="mt-3 mb-3">{% trans %}Content of the site{% endtrans %}</h2>
+        <p class="mt-1 mb-1">{% trans %}All trademarks, photographs, texts, comments, illustrations, animated or still images, video sequences, sounds, as well as all computer applications that could be used to operate this site and more generally all elements reproduced or used on the site are protected by the laws in force under intellectual property. They are the full and entire property of the publisher or its partners. Any reproduction, representation, use or adaptation, in any form whatsoever, of all or part of these elements, including computer applications, without the prior written consent of the publisher, is strictly prohibited. The fact that the publisher does not initiate proceedings upon becoming aware of these unauthorized uses does not constitute acceptance of said uses and waiver of prosecution.{% endtrans %}</p>
+        
+        
+        <h2 class="mt-3 mb-3">{% trans %}Site management{% endtrans %}</h2>
+        <p class="mt-1 mb-1">{% trans %}For the proper management of the site, the publisher may at any time: - suspend, interrupt or limit access to all or part of the site, reserve access to the site, or to certain parts of the site, to a specific category of Internet users; - delete any information that could disrupt its operation or contravene national or international laws; - suspend the site in order to carry out updates.{% endtrans %}</p>
+        
+        
+        <h2 class="mt-3 mb-3">{% trans %}Responsibilities{% endtrans %}</h2>
+        <p class="mt-1 mb-1">{% trans %}The responsibility of the publisher cannot be engaged in the event of failure, breakdown, difficulty or interruption of operation, preventing access to the site or to one of its functionalities. The site connection equipment you use is your sole responsibility. You must take all appropriate measures to protect your equipment and your own data, in particular from viral attacks via the Internet. You are also solely responsible for the sites and data that you consult.
+        The publisher cannot be held responsible in the event of legal proceedings against you:{% endtrans %}
+        
+        <ul class="secondary__text">
+            <li class="mt-1 mb-1">{% trans %}due to the use of the site or any service accessible via the Internet{% endtrans %}</li>
+            <li class="mt-1 mb-1">{% trans %}due to your failure to comply with these terms and conditions.{% endtrans %}</li>
+        </ul>
 
-        <p class="mt-1 mb-1">Le site web peut être consulté par des ordinateurs, tablettes, smartphones ou tout autre dispositif sur lesquels un software actuel est installé (navigateur, système opérationnel, ...). Le prestataire en garantit aucune comptabilité et ne peut nullement être tenu responsable si l’utilisateur ne peut consulter et/ou utiliser tout ou partie du site web ou de son contenu, quelle qu’en soit la raison.</p>
-        <p class="mt-1 mb-1">Par conséquent, il appartient à l’utilisateur de se doter des moyens informatiques et éventuellement humains nécessaires afin de s’assurer de la connectivité avec le site web. </p>
-        <p class="mt-1 mb-1">Dans le cadre de l’accès de l’utilisateur au site web ou à son contenu, celui-ci s’interdit expressément, de quelque manière que ce soit et quels que soient les moyens techniques utilisés de : </p>
-        <p class="mt-1 mb-1">
-            <ul class="secondary__text">
-                <li class="mt-1 mb-1">Tenter de se procurer l’accès à des parties du site web qui ne sont pas placées publiquement en ligne.</li>
-                <li class="mt-1 mb-1">Poser quelconque acte qui à un quelconque moment, pourrait compromettre le bon fonctionnement du site web de quelque manière que ce soit.</li>
-                <li class="mt-1 mb-1">
-                    Utiliser un système (automatique) que ce soit, tel que, sans que cette liste soit limitative, les « robots », ..., ayant pour but de créer :
-                    <ul class="tertiary__text">
-                        <li class="mt-1 mb-1">Des attaques par déni de service (notamment mais sans s’y limiter, les DoS réseau, Dos applicatives, DdoS réseau en ce compris les DrDOS).</li>
-                        <li class="mt-1 mb-1">Des messages permettant d’influencer les questions et requêtes, les réponses et participations à des concours, les votes ou encore sur toute interaction avec un autre utilisateur du site web même lorsque l’utilisateur réagit à une requête formulée sur le site web.</li>
-                    </ul>
-                </li>
-                <li class="mt-1 mb-1">Afficher, télécharger, envoyer, transmettre, par e-mail ou de toute autre manière tout contenu qui soit illégal, nuisible, menaçant, constitutif de harcèlement, abusif, diffamatoire, vulgaire, obscène, menaçant pour la vie privée d’autrui, haineux, raciste ou autrement répréhensible. </li>
-                <li class="mt-1 mb-1">Consulter, afficher, télécharger, envoyer, transmettre tout contenu qui serait contraire aux lois internationales en vigueur. </li>
-                <li class="mt-1 mb-1">Tenter d’induire en erreur d’autres utilisateurs en usurpant le nom ou la dénomination sociale d’autres personnes.</li>
-                <li class="mt-1 mb-1">Télécharger, afficher, envoyer, transmettre par e-mail ou de toute autre manière tout contenu violant, tout brevet, marque déposée, secret de fabrication, droit de propriété intellectuelle ou tout autre droit de propriété appartenant à autrui. </li>
-                <li class="mt-1 mb-1">Télécharger, afficher, transmettre par e-mail ou de toute autre manière tout contenu comprenant des virus informatiques ou tout autre code, dossier ou programme conçus pour interrompre, détruire, entraver, perturber ou limiter la fonctionnalité de tout logiciel, ordinateur, service, serveur, réseau ou outil de télécommunication sans que cette énumération soit limitative.</li>
-                <li class="mt-1 mb-1">Commettre toute action ayant un effet perturbateur entravant la capacité d’autres utilisateurs d’accéder au site web. </li>
-                <li class="mt-1 mb-1">Refuser de se conformer aux conditions requises, aux procédures, aux règles générales ou aux dispositions réglementaires applicables aux réseaux connectés au site web.</li>
-                <li class="mt-1 mb-1">Harceler de quelque manière que ce soit un ou plusieurs autres utilisateurs du site web ou de son contenu.</li>
-                <li class="mt-1 mb-1">Collecter et stocker des données personnelles afférentes aux autres utilisateurs.</li>
-            </ul>
-        </p>
-        <p class="mt-1 mb-1">L’utilisateur s’engage à prendre toutes les précautions raisonnables et nécessaires afin d’éviter que son équipement ou ses données soient atteints par des virus, des bugs, des chevaux de Troie ou tout autre programme informatique malveillant de quelque nature que ce soit. </p>
-        <p class="mt-1 mb-1">Pour l’accès ou l’utilisation de certaines parties du site web, l’utilisateur pourrait devoir s’enregistrer ou devenir membre. Dans ce cas, lors de son enregistrement, l’utilisateur s’engage à fournir des données exactes, à jour, complètes et d’en assurer la mise à jour régulière. Dans le cas contraire, le prestataire sera en droit de suspendre ou de résilier le compte de l’utilisateur ou de lui refuser l’accès à tout ou partie du site web ou de son contenu. </p>
-        <p class="mt-1 mb-1">Le cas échéant, l’utilisateur s’engage à garder son login et son mot de passe secrets et de ne pas les partager avec des tiers. L’utilisateur reste seul responsable de la confidentialité de son mot de passe et de toute utilisation qui pourrait survenir à son insu. En cas de doute sur le caractère confidentiel du mot de passe, il appartient à l’utilisateur de le modifier immédiatement ou d’en aviser dans les plus brefs délais le prestataire par écrit. </p>
-        <p class="mt-1 mb-1">L’utilisateur accepte que les fonctionnalités proposées au travers du site web soient susceptibles d’évoluer. Ainsi, certaines seront supprimées et d’autres ajoutées sans que l’utilisateur ne puisse considérer que l’accès à une fonctionnalité particulière ne constitue un droit acquis. De même, le prestataire décidera seul de l’opportunité d’inclure ou de supprimer tout contenu présenté sur le site web. </p>
-        <p class="mt-1 mb-1">Le prestataire se réserve le droit, à tout moment et pour quelque motif que ce soit, de modifier ou d’interrompre temporairement ou de manière permanente tout ou partie du l’accès au site web et ce sans devoir en informer préalablement les utilisateurs.</p>
-        <p class="mt-1 mb-1">Il en sera ainsi par exemple en cas de maintenance du site web ou de modification importante du contenu et/ou des fonctionnalités proposés.</p>
-        <p class="mt-1 mb-1">Il en sera également ainsi dans le cas où le prestataire peut légitimement croire que l’utilisateur a violé ou agi en contradiction avec les présentes conditions générales ou toute autre prescription légale en vigueur au moment de la violation. </p>
-
-        <h2 class="mt-3 mb-3">Licence</h2>
-
-        <p class="mt-1 mb-1">L’utilisateur reçoit uniquement le droit de consulter le site web et son contenu à titre personnel. A ce titre, l’utilisateur bénéficie d’une licence personnelle d’utilisation du site web et de son contenu incessible, non transférable et exclusivement limitée à une utilisation à des fins personnelles. La durée de la licence d’utilisation est limitée à la durée de l’accès de l’utilisateur au site web. </p>
-        <p class="mt-1 mb-1">Toute utilisation commerciale du site web est strictement interdite. Le terme « utilisation commerciale » fait référence, sans que cette énumération ne soit limitative, à toute vente ou toute location des diverses fonctionnalités du site web, des enregistrements de tout ou partie du contenu disponible sur le site web ou à toute utilisation du site web et de ses composants avec pour but unique de générer des revenus. </p>
-        <p class="mt-1 mb-1">Il est en outre strictement interdit à l’utilisateur qui ne peut par ailleurs accorder l’autorisation à autrui de :
-            <ul class="secondary__text">
-                <li class="mt-1 mb-1">Modifier, reproduire, copier, emprunter, distribuer tout ou partie du site web ou de son contenu.</li>
-                <li class="mt-1 mb-1">Créer des œuvres dérivées basées en tout ou en partie sur les éléments présents sur le site web.</li>
-                <li class="mt-1 mb-1">Inverser la conception ou l’assemblage ou de toute autre manière tenter de trouver le code source de tout ou partie du site web.</li>
-                <li class="mt-1 mb-1">Créer un lien hypertexte vers ou depuis le site web sans l’accord préalable et express du prestataire. </li>
-                <li class="mt-1 mb-1">Sous-licencier ou transférer de quelque manière que ce soit tout droit afférent au site web et/ou à son contenu, y compris mais sans s’y limiter, tout droit relatif au logiciel.</li>
-            </ul>
+        {% trans %}The publisher is not responsible for any damage caused to you, to third parties and/or to your equipment as a result of your connection or your use of the site and you renounce any action against him as a result.
+        If the publisher were to be the subject of an amicable or legal procedure because of your use of the site, it may turn against you to obtain compensation for all damages, sums, convictions and costs that may arise from this procedure.{% endtrans %}
         </p>
 
-        <h2 class="mt-3 mb-3">Propriété intellectuelle et industrielle</h2>
+        <h2 class="mt-3 mb-3">{% trans %}Hypertext links{% endtrans %}</h2>
+        <p class="mt-1 mb-1">{% trans %}The establishment by users of any hypertext links to all or part of the site is authorized by the publisher. Any link must be removed at the publisher's request. Any information accessible via a link to other sites is not published by the publisher. The publisher has no rights to the content present in said link.{% endtrans %}</p>
 
-        <p class="mt-1 mb-1">Le concept, le contenu, le lay-out, la structure, les codes sources, la programmation, les images, les photos, les informations, les éléments d’information, les logos, les dessins, les marques, les modèles, les slogans, les logiciels, les animations, les œuvres audiovisuelles, les textes, les données, base de données, la musique et tous les autres éléments du site web, appartiennent, sont et restent la propriété exclusive du prestataire et sont protégés par divers droits de la propriété intellectuelle et/ou industrielle (parmi lesquels le droit d’auteur, le droit des marques, le droit sui generis du producteur de base de données, ...), ce que l’utilisateur reconnaît et accepte. </p>
-        <p class="mt-1 mb-1">En surfant sur le site web ou en le consultant, en s’inscrivant, en devenant membre, en téléchargeant les fichiers ou en utilisant le contenu du site web de quelque manière que ce soit, l’utilisateur ne devient en aucun cas titulaire d’un quelconque des droits visés ci-avant ou des droits assimilés.</p>
-        <p class="mt-1 mb-1">Le prestataire garantit que les éléments présents sur le site web et mis à disposition de l’utilisateur du seul chef du prestataire respectent les droits des tiers et de manière générale ne sont pas illicites.</p>
-        <p class="mt-1 mb-1">Le stockage d’une quelconque information et/ou élément du site web dans une base de données n’est pas autorisé à l’exception de la prise automatique d’information par le navigateur. </p>
-        <p class="mt-1 mb-1">En plaçant certaines données, textes, images et/ou tout autre élément en ligne, l’utilisateur donne automatiquement et gratuitement au prestataire l’autorisation exclusive de reproduire ces éléments, de la communiquer et/ou de les utiliser autrement, tant sur le site web que dans un ou plusieurs magazines ou produits édités par le prestataire. </p>
-
-        <h2 class="mt-3 mb-3">Responsabilités</h2>
-        <h3 class="mt-3 mb-3">Responsabilité de l’utilisateur</h3>
-
-        <p class="mt-1 mb-1">La consultation et l’utilisation du site web ainsi que le téléchargement de fichiers, de quelque nature que ce soit et avec quelques moyens techniques que ce soit, du site web et de son contenu, se déroulent toujours sous la responsabilité de l’utilisateur, en ce compris vis-à-vis des tiers.</p>
-        <p class="mt-1 mb-1">Chaque utilisateur est lui-même responsable de son enregistrement et/ou de son affiliation ainsi que des éventuels abus ou dégâts qui en découleraient. Le prestataire ne peut être tenu pour responsable de quelque utilisation impropre de l’enregistrement ou de l’affiliation, du login et/ou du mot de passe que ce soit. </p>
-        <p class="mt-1 mb-1">L’utilisateur accepte également d’être responsable vis-à-vis de toute personne et plus particulièrement des personnes représentées, de quelque manière que ce soit, de tout contenu qu’il publie soit sur le site web, soit par l’intermédiaire du site web. </p>
-        <p class="mt-1 mb-1">Le site web peut contenir des liens vers d’autres sites web sur lesquels le prestataire n’exerce aucun contrôle sur le plan technique ni sur celui du contenu. L’utilisateur reste seul responsable de la décision d’activer ces liens. Le prestataire ne garantit par conséquent en aucun cas le caractère exact et complet du contenu, l’accès et la disponibilité de ces autres sites web, les liens externes auxquels ils renvoient, ni les conséquences pouvant résulter de la consultation et/ou de l’utilisation, de quelque manière que ce soit de ces sites. Il revient dès lors à l’utilisateur de déterminer lui-même s’il est opportun de visiter ces sites.</p>
-        <p class="mt-1 mb-1">Si l’utilisateur place un message de quelque nature qu’il soit ou toute forme d’information, de données et/ou d’avis sur le site web, celui-ci s’engage à utiliser exclusivement des informations qui n’entrent pas en conflit avec des droits intellectuels et/ou industriels de tiers, ni avec les normes et les bonnes mœurs, ni avec une quelconque disposition légale. A ce titre, l’utilisateur garantit expressément le prestataire contre toute plainte ou action intentée par des tiers fondée sur le contenu qu’il aurait placé sur le site web.</p>
-
-        <h3 class="mt-3 mb-3">Responsabilité du prestataire</h3>
-
-        <p class="mt-1 mb-1">Le prestataire est tenu à une obligation de moyen. Le prestataire ne sera en aucun cas tenu pour responsable d'éventuels dommages directs ou indirects que l’utilisateur encourt lors de son utilisation du site web, des sites qui y sont liés et/ou du contenu mis à sa disposition.</p>
-        <p class="mt-1 mb-1">Le prestataire fait ses meilleurs efforts afin de veiller à ce que les données et documents qui font partie du site web soient complets, exacts et actuels. Les fautes et/ou les lacunes et/ou les données dépassées ne peuvent jamais être exclues et par conséquent, le prestataire ne donne aucune garantie à cet égard.</p>
-        <p class="mt-1 mb-1">De même, le prestataire n’est tenu que de son dol ou de sa faute lourde. Il n’est pas responsable du dol ou de la faute lourde de ses préposés commettants et en règle générale de ses agents d’exécution.</p>
-        <p class="mt-1 mb-1">Le prestataire fait ses meilleurs efforts afin de veiller à ce que le site web reste accessible à chaque instant pour un nombre normal d’utilisateurs mais ne pourra être tenu pour responsable pour tout dommage direct ou indirect lié une modification, suspension ou interruption de l’accès au site web pour quelque cause que ce soit.</p>
-        <p class="mt-1 mb-1">Le prestataire n’est pas non plus responsable des contacts et relations entre les utilisateurs du site web.</p>
-        <p class="mt-1 mb-1">Le prestataire ne garantit en outre pas la compatibilité des fichiers qui font partie du ou qui figurent sur le site web avec l’équipement de l’utilisateur, ni l’accessibilité à ces éléments.</p>
-        <p class="mt-1 mb-1">L’utilisateur tiendra également le prestataire indemne de toute réclamation dans l’un ou l’autre cas suivants :
-            <ul class="secondary__text">
-                <li class="mt-1 mb-1">Perte d’occasion ou de revenus de quelque nature que ce soit en raison du fonctionnement ou du non fonctionnement ou de l’utilisation ou de l’absence d’utilisation du site web ou du contenu s’y trouvant ou devant s’y trouver.</li>
-                <li class="mt-1 mb-1">Intrusion illégale ou non autorisée de tout tiers dans le serveur web ou sur le site web du prestataire.</li>
-                <li class="mt-1 mb-1">Introduction d’un virus informatique dans le serveur web ou sur le site web.</li>
-                <li class="mt-1 mb-1">Encombrement temporaire de la bande passante.</li>
-                <li class="mt-1 mb-1">Interruption du service de connexion internet pour une cause hors du contrôle du prestataire.</li>
-            </ul>
-        </p>
-
-        <h3 class="mt-3 mb-3">L’utilisateur reconnaît et accepte :</h3>
-        <p class="mt-1 mb-1">
-            <ul class="secondary__text">
-                <li class="mt-1 mb-1">Les restrictions et les risques liés à l’utilisation d’internet ou de tout autre moyen par lequel le site web est actuellement ou sera à l’avenir mis à disposition.</li>
-                <li class="mt-1 mb-1">Les risques de stockage et de transmission d’informations par la voie électronique ou numérique.</li>
-                <li class="mt-1 mb-1">Le fait que le prestataire ne peut être tenu pour responsable de tout dommage causé par l’utilisation du site web ou d’internet suite aux risques précités.</li>
-                <li class="mt-1 mb-1">Le fait que les communications électroniques échangées et les backups réalisés par le prestataire puissent servir de preuve.</li>
-            </ul>
-        </p>
-        <p class="mt-1 mb-1">Bien que le prestataire fasse ses meilleurs efforts afin de maintenir le site web libre de bugs, virus, chevaux de Troie, ..., ceux-ci ne peuvent être exclus. Le prestataire ne peut nullement être tenu pour responsable pour tout préjudice et/ou perte qui en résulteraient, notamment eu égard aux données des utilisateurs. Il est dès lors fortement conseillé aux utilisateurs d’installer anti-virus, ... afin d’empêcher les éventuels endommagements de leurs ordinateurs et d’être prudent quant à la communication de données personnelles.</p>
-        <p class="mt-1 mb-1">En ce qui concerne les messages provenant de tiers, le prestataire ne peut d’aucune manière être tenu pour responsable d’un quelconque préjudice qui en découlerait, ni d’éventuelles fautes dans leurs contenus. Tous les textes, données, photos, vidéos, messages ou autres matériels placés dans ces messages tombent sous la responsabilité exclusive de la personne qui les a postés.</p>
-
-        <h2 class="mt-3 mb-3">Dispositions diverses</h2>
-        <h3 class="mt-3 mb-3">Force majeure</h3>
-        <p class="mt-1 mb-1">Le prestataire ne peut être tenu pour responsable tant sur le plus contractuel qu’extra-contractuel en cas d’inexécution, temporaire ou définitive de ses obligations lorsque cette inexécution résulte d’un cas de force majeure ou fortuit.</p>
-
-        <h3 class="mt-3 mb-3">Droit applicable et juridictions compétentes</h3>
-
-        <p class="mt-1 mb-1">La présente convention est soumise au droit belge.</p>
-        <p class="mt-1 mb-1">En cas de litige relatif à la validité, à l’interprétation, à l’exécution ou à la rupture de la présente convention, les parties s’engagent à recourir à la médiation préalablement à tout autre mode de résolution de conflits.</p>
-        <p class="mt-1 mb-1">Les parties désignent dès lors un médiateur agréé par la commission fédérale de médiation (Boulevard Simon Bolivar, 30 (WTC III) à 1000 Bruxelles – https://www.cfm-fbc.be/fr) de commun accord ou chargent un tiers de cette désignation.</p>
-        <p class="mt-1 mb-1">Une fois le médiateur désigné, les parties définissent entre-elles, avec l’aide du médiateur, les modalités d’organisation de la médiation et la durée du processus.</p>
-        <p class="mt-1 mb-1">Chacune des parties peut mettre fin à la médiation à tout moment sans que cela ne lui porte préjudice.</p>
-        <p class="mt-1 mb-1">En cas d’échec de la médiation, seuls les tribunaux de l’arrondissement judiciaire du Hainaut seront compétents.</p>
     </div>
 
 {% endblock %}

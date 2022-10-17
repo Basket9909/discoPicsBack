@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
@@ -686,7 +686,7 @@
         <target>Vos posts favoris</target>
       </trans-unit>
       <trans-unit id="fnFY2Lj" resname="You don't have any spots in your favorites yet">
-        <source>You don't have any spot in your favorites yet</source>
+        <source>You don't have any spots in your favorites yet</source>
         <target>Vous n'avez encore aucun spot dans vos favoris</target>
       </trans-unit>
       <trans-unit id="6YjfKG3" resname="The image has been deleted">
@@ -768,6 +768,176 @@
       <trans-unit id="erYFlTW" resname="Delete your account">
         <source>Delete your account</source>
         <target>Supprimer votre compte</target>
+      </trans-unit>
+      <trans-unit id="UG.zlGI" resname="Privacy Policy">
+        <source>Privacy Policy</source>
+        <target>Politique de confidentialité</target>
+      </trans-unit>
+      <trans-unit id="bR.wTfZ" resname="Data collection and protection">
+        <source>Data collection and protection</source>
+        <target>Collecte et protection des données</target>
+      </trans-unit>
+      <trans-unit id="vvwnhLS" resname="Your data is collected by Discopics. Personal data means any information relating to an identified or identifiable natural person (data subject); is deemed to be identifiable a person who can be identified, directly or indirectly, in particular by reference to a name, an identification number or to one or more specific elements, specific to his physical, physiological, genetic, psychic, economic, cultural or social. The personal information that may be collected on the site is mainly used by the publisher for the management of relations with you, and if necessary for the processing of your requests. The personal data collected is as follows:">
+        <source>Your data is collected by Discopics. Personal data means any information relating to an identified or identifiable natural person (data subject); is deemed to be identifiable a person who can be identified, directly or indirectly, in particular by reference to a name, an identification number or to one or more specific elements, specific to his physical, physiological, genetic, psychic, economic, cultural or social. The personal information that may be collected on the site is mainly used by the publisher for the management of relations with you, and if necessary for the processing of your requests. The personal data collected is as follows:</source>
+        <target>Vos données sont collectées par Discopics. Une donnée à caractère personnel désigne toute information concernant une personne physique identifiée ou identifiable (personne concernée) ; est réputée identifiable une personne qui peut être identifiée, directement ou indirectement, notamment par référence à un nom, un numéro d'identification ou à un ou plusieurs éléments spécifiques, propres à son identité physique, physiologique, génétique, psychique, économique, culturelle ou sociale. Les informations personnelles pouvant être recueillies sur le site sont principalement utilisées par l'éditeur pour la gestion des relations avec vous, et le cas échéant pour le traitement de vos demandes. Les données personnelles collectées sont les suivantes :</target>
+      </trans-unit>
+      <trans-unit id="y6qkcFK" resname="firstname and lastname">
+        <source>firstname and lastname</source>
+        <target>nom et prénom</target>
+      </trans-unit>
+      <trans-unit id="rfZixBy" resname="e-mail address">
+        <source>e-mail address</source>
+        <target>adresse e-mail</target>
+      </trans-unit>
+      <trans-unit id="Cj_oDPB" resname="Right of access, rectification and delisting of your data">
+        <source>Right of access, rectification and delisting of your data</source>
+        <target>Droit d’accès, de rectification et de déréférencement de vos données</target>
+      </trans-unit>
+      <trans-unit id="roJdoGo" resname="In application of the regulations applicable to personal data, users have the following rights:">
+        <source>In application of the regulations applicable to personal data, users have the following rights:</source>
+        <target>En application de la réglementation applicable aux données à caractère personnel, les utilisateurs disposent des droits suivants :</target>
+      </trans-unit>
+      <trans-unit id="fKidiOr" resname="the right of access: they can exercise their right of access, to know the personal data concerning them, by writing to the following email address romeo.wilmart@gmail.com. In this case, before the implementation of this right, the Platform may request proof of the user's identity in order to verify its accuracy;">
+        <source>the right of access: they can exercise their right of access, to know the personal data concerning them, by writing to the following email address romeo.wilmart@gmail.com. In this case, before the implementation of this right, the Platform may request proof of the user's identity in order to verify its accuracy;</source>
+        <target>le droit d’accès : ils peuvent exercer leur droit d'accès, pour connaître les données personnelles les concernant, en écrivant à l'adresse électronique suivante romeo.wilmart@gmail.com. Dans ce cas, avant la mise en œuvre de ce droit, la Plateforme peut demander une preuve de l'identité de l'utilisateur afin d'en vérifier l'exactitude ;</target>
+      </trans-unit>
+      <trans-unit id="Pzhkdjr" resname="the right of rectification: if the personal data held by the Platform is inaccurate, they can request that the information be updated;">
+        <source>the right of rectification: if the personal data held by the Platform is inaccurate, they can request that the information be updated;</source>
+        <target>le droit de rectification : si les données à caractère personnel détenues par la Plateforme sont inexactes, ils peuvent demander la mise à jour des informations ;</target>
+      </trans-unit>
+      <trans-unit id="mLkkfwG" resname="the right to delete data: users can request the deletion of their personal data, in accordance with applicable data protection laws;">
+        <source>the right to delete data: users can request the deletion of their personal data, in accordance with applicable data protection laws;</source>
+        <target>le droit de suppression des données : les utilisateurs peuvent demander la suppression de leurs données à caractère personnel, conformément aux lois applicables en matière de protection des données ;</target>
+      </trans-unit>
+      <trans-unit id="Gv8GVTH" resname="the right to limit processing: users can ask the Platform to limit the processing of personal data in accordance with the assumptions provided for by the GDPR;">
+        <source>the right to limit processing: users can ask the Platform to limit the processing of personal data in accordance with the assumptions provided for by the GDPR;</source>
+        <target>le droit à la limitation du traitement : les utilisateurs peuvent de demander à la Plateforme de limiter le traitement des données personnelles conformément aux hypothèses prévues par le RGPD ;</target>
+      </trans-unit>
+      <trans-unit id="OEEUW9t" resname="the right to object to the processing of data: users can object to their data being processed in accordance with the assumptions provided for by the GDPR">
+        <source>the right to object to the processing of data: users can object to their data being processed in accordance with the assumptions provided for by the GDPR</source>
+        <target>le droit de s’opposer au traitement des données : les utilisateurs peuvent s’opposer à ce que leurs données soient traitées conformément aux hypothèses prévues par le RGPD</target>
+      </trans-unit>
+      <trans-unit id="BwHJ8o7" resname="the right to portability: they can request that the Platform give them the personal data they have provided to transmit them to a new Platform.">
+        <source>the right to portability: they can request that the Platform give them the personal data they have provided to transmit them to a new Platform.</source>
+        <target>le droit à la portabilité : ils peuvent réclamer que la Plateforme leur remette les données personnelles qu'ils ont fournies pour les transmettre à une nouvelle Plateforme.</target>
+      </trans-unit>
+      <trans-unit id="hrpYxoq" resname="You can exercise this right by contacting us at the following email address: romeo.wilmart@gmail.com.&#10;       All requests must be accompanied by a photocopy of a valid, signed identity document and mention the address at which the publisher can contact the applicant. The response will be sent within one month of receipt of the request. This one-month period may be extended by two months if the complexity of the request and/or the number of requests so requires.">
+        <source>You can exercise this right by contacting us at the following email address: romeo.wilmart@gmail.com.
+       All requests must be accompanied by a photocopy of a valid, signed identity document and mention the address at which the publisher can contact the applicant. The response will be sent within one month of receipt of the request. This one-month period may be extended by two months if the complexity of the request and/or the number of requests so requires.</source>
+        <target>Vous pouvez exercer ce droit en nous contactant, à l’adresse mail suivante : romeo.wilmart@gmail.com.
+       Toute demande doit être accompagnée de la photocopie d’un titre d’identité en cours de validité signé et faire mention de l’adresse à laquelle l'éditeur pourra contacter le demandeur. La réponse sera adressée dans le mois suivant la réception de la demande. Ce délai d'un mois peut être prolongé de deux mois si la complexité de la demande et/ou le nombre de demandes l'exigent.</target>
+      </trans-unit>
+      <trans-unit id="Q3xeu4J" resname="Data usage">
+        <source>Data usage</source>
+        <target>Utilisation des données</target>
+      </trans-unit>
+      <trans-unit id="uH4uepk" resname="The personal data collected from users is intended to provide the services of the Platform, to improve them and to maintain a secure environment. The legal basis of the processing is the execution of the contract between the user and the Platform. Specifically, the uses are as follows:">
+        <source>The personal data collected from users is intended to provide the services of the Platform, to improve them and to maintain a secure environment. The legal basis of the processing is the execution of the contract between the user and the Platform. Specifically, the uses are as follows:</source>
+        <target>Les données personnelles collectées auprès des utilisateurs ont pour objectif la mise à disposition des services de la Plateforme, leur amélioration et le maintien d'un environnement sécurisé. La base légale des traitements est l’exécution du contrat entre l’utilisateur et la Plateforme. Plus précisément, les utilisations sont les suivantes :</target>
+      </trans-unit>
+      <trans-unit id=".tT51qT" resname="implementation of assistance for requests or questions posed by the use">
+        <source>implementation of assistance for requests or questions posed by the use</source>
+        <target>mise en œuvre d'une assistance pour les demandes ou questions posées par l'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="uWADOVP" resname="Data retention policy">
+        <source>Data retention policy</source>
+        <target>Politique de conservation des données</target>
+      </trans-unit>
+      <trans-unit id="E1jYowI" resname="The Platform keeps your data for the duration necessary to provide you with its services or assistance. To the extent reasonably necessary or required to meet legal or regulatory obligations, resolve disputes, prevent fraud and abuse, or enforce our terms and conditions, we may also retain some of your information as necessary, even after you have closed your account. or that we no longer need to provide our services to you.">
+        <source>The Platform keeps your data for the duration necessary to provide you with its services or assistance. To the extent reasonably necessary or required to meet legal or regulatory obligations, resolve disputes, prevent fraud and abuse, or enforce our terms and conditions, we may also retain some of your information as necessary, even after you have closed your account. or that we no longer need to provide our services to you.</source>
+        <target>La Plateforme conserve vos données pour la durée nécessaire pour vous fournir ses services ou son assistance. Dans la mesure raisonnablement nécessaire ou requise pour satisfaire aux obligations légales ou réglementaires, régler des litiges, empêcher les fraudes et abus ou appliquer nos modalités et conditions, nous pouvons également conserver certaines de vos informations si nécessaire, même après que vous ayez fermé votre compte ou que nous n'ayons plus besoin pour vous fournir nos services.</target>
+      </trans-unit>
+      <trans-unit id="zA.RUcW" resname="Applicable law">
+        <source>Applicable law</source>
+        <target>Loi applicable</target>
+      </trans-unit>
+      <trans-unit id="ZxIJX7r" resname="Any dispute in connection with the use of the site https://discopics.romeowilmart.be is subject to Belgian law. Except in cases where the law does not allow it, exclusive jurisdiction is given to the competent courts of Belgium.">
+        <source>Any dispute in connection with the use of the site https://discopics.romeowilmart.be is subject to Belgian law. Except in cases where the law does not allow it, exclusive jurisdiction is given to the competent courts of Belgium.</source>
+        <target>Tout litige en relation avec l’utilisation du site https://discopics.romeowilmart.be y est soumis au droit belge. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Belges.</target>
+      </trans-unit>
+      <trans-unit id="S9GeOjE" resname="contact us">
+        <source>contact us</source>
+        <target>Contactez-nous</target>
+      </trans-unit>
+      <trans-unit id="fRNAl.f" resname="For any question, information on the products presented on the site, or concerning the site itself, you can leave a message at the following address: romeo.wilmart@hotmail.fr">
+        <source>For any question, information on the products presented on the site, or concerning the site itself, you can leave a message at the following address: romeo.wilmart@hotmail.fr</source>
+        <target>Pour toute question, information sur les produits présentés sur le site, ou concernant le site lui-même, vous pouvez laisser un message à l'adresse suivante : romeo.wilmart@hotmail.fr</target>
+      </trans-unit>
+      <trans-unit id="taIprIv" resname="Website">
+        <source>Website</source>
+        <target>Site</target>
+      </trans-unit>
+      <trans-unit id="k2oWHDk" resname="Editor">
+        <source>Editor</source>
+        <target>Editeur</target>
+      </trans-unit>
+      <trans-unit id="mDMunzX" resname="Email: romeo.wilmart@gmail.com">
+        <source>Email: romeo.wilmart@gmail.com</source>
+        <target>E-mail: romeo.wilmart@gmail.com</target>
+      </trans-unit>
+      <trans-unit id="SoIxGLm" resname="Host">
+        <source>Host</source>
+        <target>Hébergeur</target>
+      </trans-unit>
+      <trans-unit id="lm.PRMT" resname="Discopics is hosted by O2switch">
+        <source>Discopics is hosted by O2switch</source>
+        <target>Discopics est hébergé par O2Switch</target>
+      </trans-unit>
+      <trans-unit id="mopVVni" resname="Access to the site">
+        <source>Access to the site</source>
+        <target>Accés au site</target>
+      </trans-unit>
+      <trans-unit id="niUjH4h" resname="Access to the site and its use are reserved for strictly personal use. You agree not to use this site and the information or data contained therein for commercial, political, advertising purposes and for any form of commercial solicitation and in particular the sending of unsolicited e-mails.">
+        <source>Access to the site and its use are reserved for strictly personal use. You agree not to use this site and the information or data contained therein for commercial, political, advertising purposes and for any form of commercial solicitation and in particular the sending of unsolicited e-mails.</source>
+        <target>L’accès au site et son utilisation sont réservés à usage strictement personnel. Vous vous engagez à ne pas utiliser ce site et les informations ou données qui y figurent à des fins commerciales, politques, publicitaires et pour toute forme de sollicitation commerciale et notamment l’envoi de courriers électroniques non sollicités.</target>
+      </trans-unit>
+      <trans-unit id="mjZtyai" resname="Content of the site">
+        <source>Content of the site</source>
+        <target>Contenu du site</target>
+      </trans-unit>
+      <trans-unit id="2zgMddM" resname="All trademarks, photographs, texts, comments, illustrations, animated or still images, video sequences, sounds, as well as all computer applications that could be used to operate this site and more generally all elements reproduced or used on the site are protected by the laws in force under intellectual property. They are the full and entire property of the publisher or its partners. Any reproduction, representation, use or adaptation, in any form whatsoever, of all or part of these elements, including computer applications, without the prior written consent of the publisher, is strictly prohibited. The fact that the publisher does not initiate proceedings upon becoming aware of these unauthorized uses does not constitute acceptance of said uses and waiver of prosecution.">
+        <source>All trademarks, photographs, texts, comments, illustrations, animated or still images, video sequences, sounds, as well as all computer applications that could be used to operate this site and more generally all elements reproduced or used on the site are protected by the laws in force under intellectual property. They are the full and entire property of the publisher or its partners. Any reproduction, representation, use or adaptation, in any form whatsoever, of all or part of these elements, including computer applications, without the prior written consent of the publisher, is strictly prohibited. The fact that the publisher does not initiate proceedings upon becoming aware of these unauthorized uses does not constitute acceptance of said uses and waiver of prosecution.</source>
+        <target>Toutes les marques, photographies, textes, commentaires, illustrations, images animées ou non, séquences vidéo, sons, ainsi que toutes les applications informatiques qui pourraient être utilisées pour faire fonctionner ce site et plus généralement tous les éléments reproduits ou utilisés sur le site sont protégés par les lois en vigueur au titre de la propriété intellectuelle. Ils sont la propriété pleine et entière de l’éditeur ou de ses partenaires. Toutes reproduction, représentation, utilisation ou adaptation, sous quelque forme que ce soit, de tout ou partie de ces éléments, y compris les applications informatiques, sans l’accord préalable et écrit de l’éditeur, sont strictement interdites. Le fait pour l’éditeur de ne pas engager de procédure dès la prise de connaissance de ces utilisations non autorisées ne vaut pas acceptation des dites utilisations et renonciation aux poursuites.</target>
+      </trans-unit>
+      <trans-unit id="KJ3Nyye" resname="Site management">
+        <source>Site management</source>
+        <target>Gestion du site</target>
+      </trans-unit>
+      <trans-unit id="7BwtrvF" resname="For the proper management of the site, the publisher may at any time: - suspend, interrupt or limit access to all or part of the site, reserve access to the site, or to certain parts of the site, to a specific category of Internet users; - delete any information that could disrupt its operation or contravene national or international laws; - suspend the site in order to carry out updates.">
+        <source>For the proper management of the site, the publisher may at any time: - suspend, interrupt or limit access to all or part of the site, reserve access to the site, or to certain parts of the site, to a specific category of Internet users; - delete any information that could disrupt its operation or contravene national or international laws; - suspend the site in order to carry out updates.</source>
+        <target>Pour la bonne gestion du site, l'éditeur pourra à tout moment : - suspendre, interrompre ou limiter l'accès à tout ou partie du site, réserver l'accès au site, ou à certaines parties du site, à une catégorie déterminée d'internautes ; - supprimer toute information pouvant en perturber le fonctionnement ou entrant en contravention avec les lois nationales ou internationales ; - suspendre le site afin de procéder à des mises à jour.</target>
+      </trans-unit>
+      <trans-unit id="V1BqPAZ" resname="Responsibilities">
+        <source>Responsibilities</source>
+        <target>Responsabilités</target>
+      </trans-unit>
+      <trans-unit id="E_PwnXB" resname="The responsibility of the publisher cannot be engaged in the event of failure, breakdown, difficulty or interruption of operation, preventing access to the site or to one of its functionalities. The site connection equipment you use is your sole responsibility. You must take all appropriate measures to protect your equipment and your own data, in particular from viral attacks via the Internet. You are also solely responsible for the sites and data that you consult.&#10;        The publisher cannot be held responsible in the event of legal proceedings against you:">
+        <source>The responsibility of the publisher cannot be engaged in the event of failure, breakdown, difficulty or interruption of operation, preventing access to the site or to one of its functionalities. The site connection equipment you use is your sole responsibility. You must take all appropriate measures to protect your equipment and your own data, in particular from viral attacks via the Internet. You are also solely responsible for the sites and data that you consult.
+        The publisher cannot be held responsible in the event of legal proceedings against you:</source>
+        <target>La responsabilité de l'éditeur ne peut être engagée en cas de défaillance, panne, difficulté ou interruption de fonctionnement, empêchant l'accès au site ou à une de ses fonctionnalités. Le matériel de connexion au site que vous utilisez est sous votre entière responsabilité. Vous devez prendre toutes les mesures appropriées pour protéger votre matériel et vos propres données notamment d'attaques virales par Internet. Vous êtes par ailleurs seul responsable des sites et données que vous consultez.
+        L'éditeur ne pourra être tenu responsable en cas de poursuites judiciaires à votre encontre :</target>
+      </trans-unit>
+      <trans-unit id="SvirHyD" resname="due to the use of the site or any service accessible via the Internet">
+        <source>due to the use of the site or any service accessible via the Internet</source>
+        <target>du fait de l'usage du site ou de tout service accessible via Internet </target>
+      </trans-unit>
+      <trans-unit id="C1Vjw_1" resname="due to your failure to comply with these terms and conditions.">
+        <source>due to your failure to comply with these terms and conditions.</source>
+        <target>du fait du non-respect par vous des présentes conditions générales.</target>
+      </trans-unit>
+      <trans-unit id="JEzF_Q0" resname="The publisher is not responsible for any damage caused to you, to third parties and/or to your equipment as a result of your connection or your use of the site and you renounce any action against him as a result.&#10;        If the publisher were to be the subject of an amicable or legal procedure because of your use of the site, it may turn against you to obtain compensation for all damages, sums, convictions and costs that may arise from this procedure.">
+        <source>The publisher is not responsible for any damage caused to you, to third parties and/or to your equipment as a result of your connection or your use of the site and you renounce any action against him as a result.
+        If the publisher were to be the subject of an amicable or legal procedure because of your use of the site, it may turn against you to obtain compensation for all damages, sums, convictions and costs that may arise from this procedure.</source>
+        <target>L'éditeur n'est pas responsable des dommages causés à vous-même, à des tiers et/ou à votre équipement du fait de votre connexion ou de votre utilisation du site et vous renoncez à toute action contre lui de ce fait.
+        Si l'éditeur venait à faire l'objet d'une procédure amiable ou judiciaire en raison de votre utilisation du site, il pourra se retourner contre vous pour obtenir l'indemnisation de tous les préjudices, sommes, condamnations et frais qui pourraient découler de cette procédure.</target>
+      </trans-unit>
+      <trans-unit id="Al6n.6U" resname="Hypertext links">
+        <source>Hypertext links</source>
+        <target>Liens hypertextes</target>
+      </trans-unit>
+      <trans-unit id="6QQpgHJ" resname="The establishment by users of any hypertext links to all or part of the site is authorized by the publisher. Any link must be removed at the publisher's request. Any information accessible via a link to other sites is not published by the publisher. The publisher has no rights to the content present in said link.">
+        <source>The establishment by users of any hypertext links to all or part of the site is authorized by the publisher. Any link must be removed at the publisher's request. Any information accessible via a link to other sites is not published by the publisher. The publisher has no rights to the content present in said link.</source>
+        <target>La mise en place par les utilisateurs de tous liens hypertextes vers tout ou partie du site est autorisée par l'éditeur. Tout lien devra être retiré sur simple demande de l'éditeur. Toute information accessible via un lien vers d'autres sites n'est pas publiée par l'éditeur. L'éditeur ne dispose d'aucun droit sur le contenu présent dans ledit lien.</target>
       </trans-unit>
     </body>
   </file>

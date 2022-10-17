@@ -9,18 +9,11 @@
 		<h1 class="hight_title text_black">{% trans %}Whoops! The page you are looking for does not exist!{% endtrans %}</h1>
 		<p class="text_black">{% trans %}It is surely difficult to inform you! No worries, you can go back to the homepage or see our posts!{% endtrans %}</p>
 		<a href="{{ path('homepage') }}">
-			<div class="button">
+			<div class="button ">
 				<p>
 					{% trans %}Back to Home{% endtrans %}</p>
 			</div>
 		</a>
-		<a href="{{ path('publications_all') }}">
-			<div class="button">
-				<p>
-					<i class="fa-solid fa-earth-americas"></i>
-					|
-					{% trans %}Our posts{% endtrans %}</p>
-			</div>
-		</a>
+		
 	</div>
 {% endblock %}

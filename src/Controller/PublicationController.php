@@ -72,16 +72,6 @@ class PublicationController extends AbstractController
                  $publication->setImage($newFilename);
              }
  
-        //      //gestion des images
-        //      foreach($festival->getImages() as $image)
-        //      {
-        //          $image->setFestival($festival);
-        //          $manager->persist($image);
-        //      }
-        //  //     foreach($festival->getImages() as $image){
-        //  //     $image->setFestival($festival);
-        //  //     $manager->persist($image);
-        //  // }
  
              $user = $this->getUser();
              $publication->setUser($user);

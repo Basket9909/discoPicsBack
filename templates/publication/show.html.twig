@@ -72,7 +72,7 @@
             {% if ((app.user and app.user == publication.user))%}
             <a href="{{path('publication_edit',{'slug' : publication.slug})}}">
                 <div class="button margin_button">
-                <p>{% trans %}Edit information{% endtrans %}</p>
+                <p><i class="fa-solid fa-pen-to-square"></i> | {% trans %}Edit information{% endtrans %}</p>
             </div>
             </a>
         {% endif %}
@@ -110,6 +110,10 @@
 	{% endif %}
 
     {% else %}
+    <a href="{{path('new_rate',{'slug':publication.slug})}}">
+            <div class="button margin_button">
+                <p><i class="fa-solid fa-star"></i> | {% trans %}Rate this spot{% endtrans %}</p>
+            </div>
 {% endif %}
 
 
