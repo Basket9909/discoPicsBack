@@ -52,7 +52,7 @@
             </trans-unit>
             <trans-unit id="user.unique.entity">
                 <source>user.unique.entity</source>
-                <target>Cette adresse mail est déjà utilisée par un autre utilisateu</target>
+                <target>Cette adresse mail est déjà utilisée par un autre utilisateur</target>
             </trans-unit>
             <trans-unit id="user.firstName.notBlank">
                 <source>user.firstName.notBlank</source>
