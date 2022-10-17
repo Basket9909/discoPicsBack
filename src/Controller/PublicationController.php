@@ -86,7 +86,7 @@ class PublicationController extends AbstractController
                  $message
              );
  
-             return $this->redirectToRoute('homepage');
+             return $this->redirectToRoute('publication_show', ['slug' => $publication->getSlug(), 'withAlert' => true]);
          }
  
  

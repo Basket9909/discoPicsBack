@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ImagesRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ImagesRepository::class)]
@@ -17,6 +18,8 @@ class Images
     private ?string $caption = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Image(mimeTypes : ["image/png","image/jpeg","image/jpg","image/gif"], mimeTypesMessage : "publication.image.notBlank")]
+    #[Assert\File(maxSize : "1024k", maxSizeMessage : "publication.image.big")]
     private ?string $url = null;
 
     #[ORM\ManyToOne(inversedBy: 'images')]

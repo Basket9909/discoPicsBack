@@ -11,6 +11,13 @@
     transform: translateX(-50%);
 }
 
+@media all and (max-width: 995px){
+    .big_img_show{
+        width: 100%;
+        height: auto;
+    }
+}
+
 .meta_photo{
     text-align: center;
 }
@@ -43,6 +50,7 @@
     height: 75px;
     border-radius: 50%;
     margin: 25px;
+    object-fit: cover;
 }
 .container_content_comment{
     margin: 25px;

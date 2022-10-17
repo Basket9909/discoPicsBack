@@ -63,7 +63,7 @@ class Publication
 
     #[ORM\Column(length: 255)]
     #[Assert\Image(mimeTypes : ["image/png","image/jpeg","image/jpg","image/gif"], mimeTypesMessage : "publication.image.notBlank")]
-    #[Assert\File(maxSize : "1024k", maxSizeMessage : "")]
+    #[Assert\File(maxSize : "1024k", maxSizeMessage : "publication.image.big")]
     private ?string $image = null;
 
     #[ORM\ManyToMany(targetEntity: Users::class, inversedBy: 'favoris')]

@@ -199,6 +199,33 @@ class AccountController extends AbstractController
          ]);
      }
 
+      # Permet de supprimer l'image de l'utilisateur
+    #[Route("/account/img/delete", name : "profile_img_delete")]
+    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
+    # @param EntityManagerInterface $manager
+    # @return Response
+    public function removeImg(EntityManagerInterface $manager, TranslatorInterface $translator)
+    {
+        $user = $this->getUser();
+        if(!empty($user->getPicture()))
+        {
+            unlink($this->getParameter('uploads_directory').'/'.$user->getPicture());
+            $user->setPicture('');
+            $manager->persist($user);
+            $manager->flush();
+
+            $message = $translator->trans(('Your avatar has been successfully deleted'));
+
+            $this->addFlash(
+                'success',
+                $message
+            );
+        }
+
+        return $this->redirectToRoute('account_index', ['id' => $user->getId(), 'withAlert' => true]);
+
+    }
+
     # Permet de supprimer un user
     #[Route("/account/{id}/delete", name : "account_delete")]
     #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
@@ -389,32 +416,7 @@ class AccountController extends AbstractController
 
   
 
-    # Permet de supprimer l'image de l'utilisateur
-    #[Route("/account/img/delete", name : "profile_img_delete")]
-    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
-    # @param EntityManagerInterface $manager
-    # @return Response
-    public function removeImg(EntityManagerInterface $manager, TranslatorInterface $translator)
-    {
-        $user = $this->getUser();
-        if(!empty($user->getPicture()))
-        {
-            unlink($this->getParameter('uploads_directory').'/'.$user->getPicture());
-            $user->setPicture('');
-            $manager->persist($user);
-            $manager->flush();
-
-            $message = $translator->trans(('Your avatar has been successfully deleted'));
-
-            $this->addFlash(
-                'success',
-                $message
-            );
-        }
-
-        return $this->redirectToRoute('account_index', ['id' => $user->getId(), 'withAlert' => true]);
-
-    }
+   
 
     
     # Permet à l'utilisateur de se connecter

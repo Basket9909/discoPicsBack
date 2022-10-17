@@ -338,6 +338,12 @@ textarea{
     z-index: 1000;
     overflow: hidden;
 }
+
+@media all and (max-width: 700px){
+    .container_flash .alert{
+       opacity: 0;
+    }
+}
 .container_flash .bar{
     position: absolute;
     bottom: 0;
