@@ -14,11 +14,16 @@ alertBlock.style.top = ((window.innerHeight- alertBlockHeigth -50))+"px"
 // console.log(window.innerHeight)
 
 setInterval(()=>{
+    timeAlertD()
     if(timer>=time) timeAlert()
     timer+=5
     bar.style.width =  timer/time*100 +"%"
 },20)
 
+const timeAlertD = () =>{
+    alertBlock.style.transition = 0.5
+    alertBlock.style.opacity = 1
+}
 const timeAlert = () =>{
     alertBlock.style.transition = 1 
     alertBlock.style.opacity = 0

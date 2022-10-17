@@ -4,12 +4,15 @@
 .container_global_input_search{
     min-height: 60vh;
 }
+.container_global_input_search_top{
+    min-height: 45vh;
+}
 .container_global_input h1{
     text-align: center;
     margin-top: 25px;
     margin-bottom: 25px;
 }
-.container_global_input_search h1{
+.container_global_input_search h1,.container_global_input_search_top h1{
     text-align: center;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -18,7 +21,7 @@
     margin-top: 25px;
     color: black;
 }
-.container_global_input_search label{
+.container_global_input_search label,.container_global_input_search_top h1{
     margin-top: 25px;
 }
 

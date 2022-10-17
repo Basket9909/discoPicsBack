@@ -97,7 +97,6 @@ class PublicationController extends AbstractController
 
     # Permet de modifier une publication
     #[Route("/publication/{slug}/edit", name : "publication_edit")]
-    #[Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")]
     #[Security("(is_granted('ROLE_USER') and user === publication.getUser() ) or is_granted('ROLE_ADMIN')")]
     # @param Request $request
     # @param EntityManagerInterface $manager
